@@ -1,0 +1,106 @@
+//
+//  UtilClass.swift
+//  BusTransit_IOS
+//
+//  Created by Milan Sheladiya on 2022-07-08.
+//
+
+import Foundation
+import UIKit
+
+class UtilClass
+{
+    
+    static func getUIColor(hex: String, alpha: Double = 1.0) -> UIColor? {
+        var cleanString = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
+
+        if (cleanString.hasPrefix("#")) {
+            cleanString.remove(at: cleanString.startIndex)
+        }
+
+        if ((cleanString.count) != 6) {
+            return nil
+        }
+
+        var rgbValue: UInt32 = 0
+        Scanner(string: cleanString).scanHexInt32(&rgbValue)
+
+        return UIColor(
+            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+            alpha: CGFloat(1.0)
+        )
+    }
+    
+    
+    // return all list textfield that have in passed view
+    static func getTextfield(view: UIView) -> [UITextField] {
+        var results = [UITextField]()
+        for subview in view.subviews as [UIView] {
+            if let textField = subview as? UITextField {
+                results += [textField]
+            } else {
+                results += getTextfield(view: subview)
+            }
+        }
+        return results
+    }
+    
+    // show simple alert view
+    static func _Alert(_ uiView: UIViewController,_ title:String,_ msg:String)
+    {
+        let uialert = UIAlertController(title: title, message: msg, preferredStyle: UIAlertController.Style.alert)
+        uialert.addAction(UIAlertAction(title: "Okay", style: UIAlertAction.Style.default, handler: nil))
+        uiView.present(uialert, animated: true, completion: nil)
+    }
+    
+    
+    // show alert view with dismiss function
+    static func _AlertWithDismiss(_ uiView: UIViewController,_ title:String,_ msg:String)
+    {
+        let uialert = UIAlertController(title: title, message: msg, preferredStyle: UIAlertController.Style.alert)
+        uialert.addAction(UIAlertAction(title: "Okay", style: UIAlertAction.Style.default, handler: nil))
+        uiView.present(uialert, animated: true, completion: {
+            uiView.dismiss(animated: true, completion: nil)
+        })
+    }
+    
+    
+    static func isValidEmail(_ email: String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+
+        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailPred.evaluate(with: email)
+    }
+    
+    static func isValidNumber(_ phone: String) -> Bool {
+        let PHONE_REGEX = "^\\d{3}-\\d{3}-\\d{4}$"
+        let phoneTest = NSPredicate(format: "SELF MATCHES %@", PHONE_REGEX)
+        let result = phoneTest.evaluate(with: phone)
+        return result
+    }
+    
+    
+    
+    static func UserToFirebaseMap(obj: User) -> [String:Any]
+    {
+        let newUser = ["user_id":obj.user_id,
+                       "bus_id":obj.bus_id,
+                       "email_id":obj.email_id,
+                       "fullname":obj.fullname,
+                       "gender":obj.gender,
+                       "phone_no":obj.phone_no,
+                       "address":obj.address,
+                       "user_lat":obj.user_lat,
+                       "user_long":obj.user_long,
+                       "photo_url":obj.photo_url,
+                       "user_type":obj.user_type,
+                       "school_id":obj.school_id
+        ] as [String : Any]
+        
+        
+        return newUser
+    }
+    
+}
