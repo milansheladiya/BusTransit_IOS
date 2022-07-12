@@ -8,8 +8,10 @@
 import UIKit
 import DropDown
 import GooglePlaces
+import FirebaseFirestore
+import FirebaseStorage
 
-class SignupViewController: UIViewController{
+class SignupViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
     
     let dropDown = DropDown()
     
@@ -17,16 +19,22 @@ class SignupViewController: UIViewController{
     
     let dropDownGender = DropDown()
     
+    @IBOutlet weak var imgPerson: UIImageView!
+    
+    
+    var imagePicker = UIImagePickerController()
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtFullname: UITextField!
     @IBOutlet weak var txtContact: UITextField!
-    @IBOutlet weak var txtAddress: UITextField!
+    @IBOutlet weak var btnAddress: UIButton!
     @IBOutlet weak var btnSelectUser: UIButton!
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var txtRePassword: UITextField!
     @IBOutlet weak var btnSchool: UIButton!
     
     @IBOutlet weak var btnGender: UIButton!
+    
+    var imgURL:String = "https://firebasestorage.googleapis.com/v0/b/kitchenanywhere-84ad5.appspot.com/o/splashMainLogo.png?alt=media&token=693ad5fe-45d4-4db4-975e-40026a249530"
     
      let Schools = [
             "Gajera School",
@@ -39,10 +47,6 @@ class SignupViewController: UIViewController{
     
     //address place api
     
-    @IBOutlet private var nameLabel: UILabel!
-    @IBOutlet private var addressLabel: UILabel!
-    
-    
     private var placesClient: GMSPlacesClient!
     
 
@@ -50,6 +54,14 @@ class SignupViewController: UIViewController{
         super.viewDidLoad()
         setBorder()
         fillName()
+        imgPerson.layer.cornerRadius = imgPerson.frame.size.width/2
+        imgPerson.clipsToBounds = true
+        
+
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+        imgPerson.isUserInteractionEnabled = true
+        imgPerson.addGestureRecognizer(tapGestureRecognizer)
         
         
         placesClient = GMSPlacesClient.shared()
@@ -70,9 +82,8 @@ class SignupViewController: UIViewController{
         txtContact.layer.borderWidth = 1.0
         
         
-        txtAddress.layer.cornerRadius = 10
-        txtAddress.layer.borderWidth = 1.0
-        
+        btnAddress.layer.cornerRadius = 10
+        btnGender.layer.cornerRadius = 10
         btnSelectUser.layer.cornerRadius = 10
         
         
@@ -99,6 +110,55 @@ class SignupViewController: UIViewController{
               sender.setTitle(item, for: .normal) //9
             }
         
+    }
+    
+    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
+    {
+        imagePicker.delegate = self
+        imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
+        self.present(imagePicker, animated: true, completion: nil)
+        
+    }
+    
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let img = info[.originalImage] as! UIImage
+    
+        self.imgPerson.image = img
+        let imageURL = info[UIImagePickerController.InfoKey.imageURL] as! URL
+          // Handle your logic here, e.g. uploading file to Cloud Storage for Firebase
+        UploadImage(fileUrl: imageURL)
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    // ---------------- upload images ---------------
+    
+    func UploadImage(fileUrl: URL)
+    {
+        do{
+            let fileExtension = fileUrl.pathExtension
+            let storageref = Storage.storage().reference()
+            let imagenode = storageref.child("\(UUID().uuidString).\(fileExtension)")
+
+            imagenode.putFile(from: fileUrl, metadata: nil){(storageMetaData, error) in
+                
+                if let error = error {
+                        print("Upload error: \(error.localizedDescription)")
+                        return
+                }
+                // Show UIAlertController here
+                                                                                                
+                imagenode.downloadURL { (url, error) in
+                        if let error = error  {
+                          print("Error on getting download url: \(error.localizedDescription)")
+                          return
+                        }
+                    self.imgURL = url!.absoluteString
+                      }
+            }
+        }
+    
     }
     
     
@@ -128,6 +188,8 @@ class SignupViewController: UIViewController{
             }
         
     }
+    
+    
     
     
     @IBAction func SignupPressed(_ sender: UIButton) {
@@ -165,9 +227,21 @@ class SignupViewController: UIViewController{
         }
         
         
+        if(btnAddress.currentTitle == "Search here")
+        {
+            UtilClass._Alert(self,"Signup Error", "Please find the address")
+            return
+        }
+        
+        if(imgURL == "")
+        {
+            UtilClass._Alert(self,"Signup Error", "Please select image by tap on image")
+            return
+        }
+        
         // collect information
         
-        UserList.GlobleUser = User(user_id: "", bus_id: "", email_id: txtEmail.text!, fullname: txtFullname.text!, gender: btnGender.titleLabel!.text!, phone_no: txtContact.text!, address: txtAddress.text!, user_lat: 2202.22, user_long: 2.2222, photo_url: "https:url/", user_type: btnSelectUser.titleLabel!.text!, school_id: [])
+        UserList.GlobleUser = User(user_id: "", bus_id: "", email_id: txtEmail.text!, fullname: txtFullname.text!, gender: btnGender.titleLabel!.text!, phone_no: txtContact.text!, address: btnAddress.currentTitle ?? "Search here", user_lat: 2202.22, user_long: 2.2222, photo_url: imgURL, user_type: btnSelectUser.titleLabel!.text!, school_id: [])
 
         FirebaseUtil.createUser(newUser: UserList.GlobleUser, password: txtPassword.text!) { (uid) in
                     if (uid == "") {
@@ -208,7 +282,7 @@ class SignupViewController: UIViewController{
     func CleanForm(){
         print("Form clearing ---------------")
         txtEmail.text = ""
-        txtAddress.text = ""
+        btnAddress.setTitle("Search here", for: .normal)
         txtFullname.text = ""
         txtContact.text = ""
         txtPassword.text = ""
@@ -218,7 +292,6 @@ class SignupViewController: UIViewController{
     func fillName(){
         
         txtEmail.text = "milan@gmail.com"
-        txtAddress.text = "5055 rolsyn Ave."
         txtFullname.text = "Milan Sheladiya"
         txtContact.text = "514-661-9876"
         txtPassword.text = "123456"
@@ -265,8 +338,7 @@ extension SignupViewController: GMSAutocompleteViewControllerDelegate {
 
   // Handle the user's selection.
   func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
-      nameLabel.text = String(place.coordinate.latitude)
-      addressLabel.text = place.name
+      btnAddress.setTitle(place.name, for: .normal)
       print("Place lat: \(place.coordinate.latitude)")
       print("Place long: \(place.coordinate.longitude)")
     print("Place name: \(place.name)")
@@ -295,3 +367,18 @@ extension SignupViewController: GMSAutocompleteViewControllerDelegate {
   }
 
 }
+
+/*
+
+ tapped event from image view
+//https://www.codegrepper.com/code-examples/swift/uiimageview+add+tap+gesture+swift
+
+
+ image choose from photos
+// help from https://www.youtube.com/watch?v=mx7oL5CP5AQ
+ 
+ 
+image crop to round in UIimageview
+ https://www.youtube.com/watch?v=XReZoS32dy8
+
+ */
