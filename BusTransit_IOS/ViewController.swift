@@ -15,11 +15,11 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var btnLogin: UIButton!
     
+    
+    @IBOutlet weak var imgLoginWithApple: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        view.backgroundColor = UtilClass.getUIColor(hex: "#FFD100")
-        // Do any additional setup after loading the view.
         
         txtEmail.layer.cornerRadius = 15.0;
         txtEmail.layer.borderWidth = 1;
@@ -28,22 +28,39 @@ class ViewController: UIViewController {
         txtPassword.layer.borderWidth = 1;
         
         btnLogin.layer.cornerRadius = 15.0;
-
-        
-//        getRandomColor()
         
     }
-
     
-    func getRandomColor() {
-        let red   = CGFloat((arc4random() % 256)) / 255.0
-        let green = CGFloat((arc4random() % 256)) / 255.0
-        let blue  = CGFloat((arc4random() % 256)) / 255.0
-        let alpha = CGFloat(1.0)
-
-        UIView.animate(withDuration: 1.0, delay: 0.0, options:[.repeat, .autoreverse], animations: {
-            self.view.backgroundColor = UIColor(red: red, green: green, blue: blue, alpha: alpha)
-        }, completion:nil)
+    
+    @IBAction func tabLogin(_ sender: UIButton) {
+        
+        if (!UtilClass.isValidEmail(txtEmail.text!))
+        {
+            UtilClass._Alert(self, "Error", "Invalid Email!")
+            return
+        }
+        
+        FirebaseUtil.signIn(email: txtEmail.text!, pass: txtPassword.text!) {
+            [weak self] (success) in
+                if (success != "") {
+                    print("--------> ", success)
+                    UtilClass._Alert(self!, "Error", success)
+                    return
+                }
+            else
+            {
+                UtilClass._Alert(self!, "Success", "Login successed \(FirebaseUtil.auth.currentUser?.uid ?? "M2ND")")
+            }
+        
+        }
+        
+        
+    }
+    
+    @IBAction func tabSignUp(_ sender: UIButton) {
+        
+        self.performSegue(withIdentifier: "goToSignup", sender: self)
+        
     }
 
 }
