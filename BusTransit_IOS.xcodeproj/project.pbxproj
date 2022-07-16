@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4DB925812882049700CD6F26 /* Admin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DB925802882049700CD6F26 /* Admin.storyboard */; };
+		4DB925842882050000CD6F26 /* AdminHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB925832882050000CD6F26 /* AdminHomeViewController.swift */; };
 		B63D0FD428789C4400C92C6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63D0FD328789C4400C92C6B /* AppDelegate.swift */; };
 		B63D0FD628789C4400C92C6B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63D0FD528789C4400C92C6B /* SceneDelegate.swift */; };
 		B63D0FD828789C4400C92C6B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63D0FD728789C4400C92C6B /* ViewController.swift */; };
@@ -15,7 +17,6 @@
 		B63D0FE028789C4400C92C6B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B63D0FDE28789C4400C92C6B /* LaunchScreen.storyboard */; };
 		B63D0FF12878A2CF00C92C6B /* UtilClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63D0FF02878A2CF00C92C6B /* UtilClass.swift */; };
 		B63D0FF52878D98900C92C6B /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63D0FF42878D98900C92C6B /* LaunchScreenViewController.swift */; };
-		B63D0FF72878DA1E00C92C6B /* moving-bus.gif in Resources */ = {isa = PBXBuildFile; fileRef = B63D0FF62878DA1E00C92C6B /* moving-bus.gif */; };
 		B63D0FF92878F13200C92C6B /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63D0FF82878F13200C92C6B /* SignupViewController.swift */; };
 		B63D0FFB2879F8D000C92C6B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B63D0FFA2879F8D000C92C6B /* GoogleService-Info.plist */; };
 		B63D0FFE2879FA1800C92C6B /* Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63D0FFD2879FA1800C92C6B /* Firebase.swift */; };
@@ -28,6 +29,8 @@
 /* Begin PBXFileReference section */
 		302F983C23E10CAD38C520D2 /* Pods-BusTransit_IOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusTransit_IOS.debug.xcconfig"; path = "Target Support Files/Pods-BusTransit_IOS/Pods-BusTransit_IOS.debug.xcconfig"; sourceTree = "<group>"; };
 		41405AC38B79B1BB0100833A /* Pods-BusTransit_IOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusTransit_IOS.release.xcconfig"; path = "Target Support Files/Pods-BusTransit_IOS/Pods-BusTransit_IOS.release.xcconfig"; sourceTree = "<group>"; };
+		4DB925802882049700CD6F26 /* Admin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Admin.storyboard; path = BusTransit_IOS/Admin.storyboard; sourceTree = SOURCE_ROOT; };
+		4DB925832882050000CD6F26 /* AdminHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminHomeViewController.swift; sourceTree = "<group>"; };
 		9102DD997EADC548258612DF /* Pods_BusTransit_IOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BusTransit_IOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B63D0FD028789C4400C92C6B /* BusTransit_IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BusTransit_IOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B63D0FD328789C4400C92C6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -39,7 +42,6 @@
 		B63D0FE128789C4400C92C6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B63D0FF02878A2CF00C92C6B /* UtilClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilClass.swift; sourceTree = "<group>"; };
 		B63D0FF42878D98900C92C6B /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
-		B63D0FF62878DA1E00C92C6B /* moving-bus.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "moving-bus.gif"; path = "../../../../../Downloads/moving-bus.gif"; sourceTree = "<group>"; };
 		B63D0FF82878F13200C92C6B /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		B63D0FFA2879F8D000C92C6B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B63D0FFD2879FA1800C92C6B /* Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase.swift; sourceTree = "<group>"; };
@@ -60,6 +62,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4DB92582288204F100CD6F26 /* Admin */ = {
+			isa = PBXGroup;
+			children = (
+				4DB925832882050000CD6F26 /* AdminHomeViewController.swift */,
+			);
+			path = Admin;
+			sourceTree = "<group>";
+		};
 		B63D0FC728789C4400C92C6B = {
 			isa = PBXGroup;
 			children = (
@@ -84,7 +94,6 @@
 				B63D0FED2878A1D100C92C6B /* Utilities */,
 				B63D0FFC2879FA0600C92C6B /* Firebase */,
 				B63D0FFA2879F8D000C92C6B /* GoogleService-Info.plist */,
-				B63D0FF62878DA1E00C92C6B /* moving-bus.gif */,
 				B63D0FEC2878A0EE00C92C6B /* Controller */,
 				B63D0FEB2878A0E000C92C6B /* Model */,
 				B63D0FE72878A0A700C92C6B /* View */,
@@ -114,6 +123,7 @@
 		B63D0FE82878A0BC00C92C6B /* Admin */ = {
 			isa = PBXGroup;
 			children = (
+				4DB925802882049700CD6F26 /* Admin.storyboard */,
 			);
 			path = Admin;
 			sourceTree = "<group>";
@@ -144,6 +154,7 @@
 		B63D0FEC2878A0EE00C92C6B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				4DB92582288204F100CD6F26 /* Admin */,
 				B63D0FFF2879FCB400C92C6B /* SignUp_Controller.swift */,
 			);
 			path = Controller;
@@ -244,7 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B63D0FE028789C4400C92C6B /* LaunchScreen.storyboard in Resources */,
-				B63D0FF72878DA1E00C92C6B /* moving-bus.gif in Resources */,
+				4DB925812882049700CD6F26 /* Admin.storyboard in Resources */,
 				B63D0FFB2879F8D000C92C6B /* GoogleService-Info.plist in Resources */,
 				B63D0FDD28789C4400C92C6B /* Assets.xcassets in Resources */,
 				B63D0FDB28789C4400C92C6B /* Main.storyboard in Resources */,
@@ -321,6 +332,7 @@
 				B63D0FF92878F13200C92C6B /* SignupViewController.swift in Sources */,
 				B63D0FD828789C4400C92C6B /* ViewController.swift in Sources */,
 				B63D10002879FCB400C92C6B /* SignUp_Controller.swift in Sources */,
+				4DB925842882050000CD6F26 /* AdminHomeViewController.swift in Sources */,
 				B63D0FD428789C4400C92C6B /* AppDelegate.swift in Sources */,
 				B63D1004287A0F2200C92C6B /* Constants.swift in Sources */,
 				B63D0FF12878A2CF00C92C6B /* UtilClass.swift in Sources */,

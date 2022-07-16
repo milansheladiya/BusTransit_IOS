@@ -11,7 +11,7 @@
         <!--Login-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="Login" id="BYZ-38-t0r" customClass="ViewController" customModule="BusTransit_IOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Login" modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="BusTransit_IOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -169,11 +169,22 @@
                         <outlet property="txtEmail" destination="DId-rd-dQL" id="yrw-wV-yiO"/>
                         <outlet property="txtPassword" destination="8pr-Kf-2RV" id="o2g-2D-Vef"/>
                         <segue destination="IIh-bh-0y9" kind="presentation" identifier="goToSignup" modalPresentationStyle="fullScreen" id="XiK-k9-pug"/>
+                        <segue destination="1O0-xf-0ta" kind="presentation" identifier="goToAdmin" id="7DW-8i-SKA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="510" y="84"/>
+        </scene>
+        <!--VCAdminHome-->
+        <scene sceneID="o2f-ms-oBx">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Admin" referencedIdentifier="VCAdminHome" id="1O0-xf-0ta" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="yOT-oc-tEr"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wfu-Ll-2HE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="509" y="563"/>
         </scene>
         <!--Signup View Controller-->
         <scene sceneID="Jze-JG-eEC">
@@ -531,7 +542,7 @@
         <!--Launch Screen View Controller-->
         <scene sceneID="LmX-dD-Vrq">
             <objects>
-                <viewController id="pEb-sE-5zX" customClass="LaunchScreenViewController" customModule="BusTransit_IOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="VCAdminHome" id="pEb-sE-5zX" customClass="LaunchScreenViewController" customModule="BusTransit_IOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BB9-5g-HQZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -562,7 +573,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="FOT-A9-JKo"/>
+        <segue reference="fIt-RE-X75"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="applelogo" catalog="system" width="103" height="128"/>

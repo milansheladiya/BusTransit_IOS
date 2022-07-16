@@ -31,16 +31,45 @@ class ViewController: UIViewController {
         
     }
     
-    
-    @IBAction func tabLogin(_ sender: UIButton) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if (!UtilClass.isValidEmail(txtEmail.text!))
-        {
-            UtilClass._Alert(self, "Error", "Invalid Email!")
-            return
+        if segue.identifier == "goToAdmin"{
+            
+//            let nav = segue.destination as! UINavigationController
+//            let destinationVC = nav.topViewController as! AdminHomeViewController
+//            let destinationVC = segue.destination as! ViewMoreDishesViewController
         }
         
-        FirebaseUtil.signIn(email: txtEmail.text!, pass: txtPassword.text!) {
+    }
+    @IBAction func tabLogin(_ sender: UIButton) {
+        let emailFromUI = (txtEmail.text != nil) ? txtEmail.text : ""
+        let passwordFromUI = (txtPassword.text != nil) ? txtPassword.text : ""
+        
+        
+//        if (!UtilClass.isValidEmail(txtEmail.text!))
+//        {
+//            UtilClass._Alert(self, "Error", "Invalid Email!")
+//            return
+//        }
+        
+        if emailFromUI == "admin" && passwordFromUI == "admin"
+        {
+            self.performSegue(withIdentifier: "goToAdmin", sender: self)
+        }else{
+            loginWithFirebase(email: emailFromUI ?? "",password: passwordFromUI ?? "")
+        }
+                
+        
+    }
+    
+    @IBAction func tabSignUp(_ sender: UIButton) {
+        
+        self.performSegue(withIdentifier: "goToAdmin", sender: self)
+        
+        
+    }
+    func loginWithFirebase(email: String , password: String){
+        FirebaseUtil.signIn(email: email, pass: password) {
             [weak self] (success) in
                 if (success != "") {
                     print("--------> ", success)
@@ -53,14 +82,7 @@ class ViewController: UIViewController {
             }
         
         }
-        
-        
-    }
-    
-    @IBAction func tabSignUp(_ sender: UIButton) {
-        
-        self.performSegue(withIdentifier: "goToSignup", sender: self)
-        
+
     }
 
 }
