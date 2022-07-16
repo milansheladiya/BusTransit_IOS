@@ -73,11 +73,17 @@ class FirebaseUtil{
             
             }
     }
-    
-    
-    
-    
+    func _readAllDocuments(_collection:String, callback: @escaping(QuerySnapshot) -> Void) {
+            
+        FirebaseUtil._db.collection(_collection).getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                        print("Error getting documents: \(err)")
+                    }
+                callback(querySnapshot!)
+                
+            }
 
+    }
 }
     
     

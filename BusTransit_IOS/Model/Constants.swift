@@ -13,4 +13,6 @@ class Constants{
     
     static var PlaceAPI : String = "AIzaSyAgpLONoQLPhvXWh05qs8cCBdmZS9NDolw";
     
+    static let DRIVER = "DRIVER"
+    static let PARENT = "PARENT"
 }

@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		4DB925812882049700CD6F26 /* Admin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DB925802882049700CD6F26 /* Admin.storyboard */; };
 		4DB925842882050000CD6F26 /* AdminHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB925832882050000CD6F26 /* AdminHomeViewController.swift */; };
+		4DBF1B0528830EE70035FA5E /* SchoolTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBF1B0328830EE70035FA5E /* SchoolTableViewCell.swift */; };
+		4DBF1B0628830EE70035FA5E /* SchoolTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DBF1B0428830EE70035FA5E /* SchoolTableViewCell.xib */; };
+		4DBF1B08288312C50035FA5E /* SchoolListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBF1B07288312C50035FA5E /* SchoolListViewController.swift */; };
+		4DBF1B0A2883172E0035FA5E /* SchoolModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBF1B092883172E0035FA5E /* SchoolModel.swift */; };
+		4DBF1B0D288347810035FA5E /* AddSchoolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBF1B0C288347810035FA5E /* AddSchoolViewController.swift */; };
 		B63D0FD428789C4400C92C6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63D0FD328789C4400C92C6B /* AppDelegate.swift */; };
 		B63D0FD628789C4400C92C6B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63D0FD528789C4400C92C6B /* SceneDelegate.swift */; };
 		B63D0FD828789C4400C92C6B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63D0FD728789C4400C92C6B /* ViewController.swift */; };
@@ -31,6 +36,11 @@
 		41405AC38B79B1BB0100833A /* Pods-BusTransit_IOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusTransit_IOS.release.xcconfig"; path = "Target Support Files/Pods-BusTransit_IOS/Pods-BusTransit_IOS.release.xcconfig"; sourceTree = "<group>"; };
 		4DB925802882049700CD6F26 /* Admin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Admin.storyboard; path = BusTransit_IOS/Admin.storyboard; sourceTree = SOURCE_ROOT; };
 		4DB925832882050000CD6F26 /* AdminHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminHomeViewController.swift; sourceTree = "<group>"; };
+		4DBF1B0328830EE70035FA5E /* SchoolTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SchoolTableViewCell.swift; path = BusTransit_IOS/Controller/Admin/Cell/SchoolTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		4DBF1B0428830EE70035FA5E /* SchoolTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SchoolTableViewCell.xib; path = Admin/Cell/SchoolTableViewCell.xib; sourceTree = SOURCE_ROOT; };
+		4DBF1B07288312C50035FA5E /* SchoolListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolListViewController.swift; sourceTree = "<group>"; };
+		4DBF1B092883172E0035FA5E /* SchoolModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolModel.swift; sourceTree = "<group>"; };
+		4DBF1B0C288347810035FA5E /* AddSchoolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSchoolViewController.swift; sourceTree = "<group>"; };
 		9102DD997EADC548258612DF /* Pods_BusTransit_IOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BusTransit_IOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B63D0FD028789C4400C92C6B /* BusTransit_IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BusTransit_IOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B63D0FD328789C4400C92C6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -65,9 +75,28 @@
 		4DB92582288204F100CD6F26 /* Admin */ = {
 			isa = PBXGroup;
 			children = (
+				4DBF1B0B28831DDC0035FA5E /* Cell */,
 				4DB925832882050000CD6F26 /* AdminHomeViewController.swift */,
+				4DBF1B07288312C50035FA5E /* SchoolListViewController.swift */,
+				4DBF1B0C288347810035FA5E /* AddSchoolViewController.swift */,
 			);
 			path = Admin;
+			sourceTree = "<group>";
+		};
+		4DBF1B0228830EC00035FA5E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				4DBF1B0428830EE70035FA5E /* SchoolTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		4DBF1B0B28831DDC0035FA5E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				4DBF1B0328830EE70035FA5E /* SchoolTableViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		B63D0FC728789C4400C92C6B = {
@@ -123,6 +152,7 @@
 		B63D0FE82878A0BC00C92C6B /* Admin */ = {
 			isa = PBXGroup;
 			children = (
+				4DBF1B0228830EC00035FA5E /* Cell */,
 				4DB925802882049700CD6F26 /* Admin.storyboard */,
 			);
 			path = Admin;
@@ -147,6 +177,7 @@
 			children = (
 				B63D1001287A001B00C92C6B /* UserModel.swift */,
 				B63D1003287A0F2200C92C6B /* Constants.swift */,
+				4DBF1B092883172E0035FA5E /* SchoolModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -255,6 +286,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B63D0FE028789C4400C92C6B /* LaunchScreen.storyboard in Resources */,
+				4DBF1B0628830EE70035FA5E /* SchoolTableViewCell.xib in Resources */,
 				4DB925812882049700CD6F26 /* Admin.storyboard in Resources */,
 				B63D0FFB2879F8D000C92C6B /* GoogleService-Info.plist in Resources */,
 				B63D0FDD28789C4400C92C6B /* Assets.xcassets in Resources */,
@@ -335,10 +367,14 @@
 				4DB925842882050000CD6F26 /* AdminHomeViewController.swift in Sources */,
 				B63D0FD428789C4400C92C6B /* AppDelegate.swift in Sources */,
 				B63D1004287A0F2200C92C6B /* Constants.swift in Sources */,
+				4DBF1B0528830EE70035FA5E /* SchoolTableViewCell.swift in Sources */,
+				4DBF1B08288312C50035FA5E /* SchoolListViewController.swift in Sources */,
 				B63D0FF12878A2CF00C92C6B /* UtilClass.swift in Sources */,
 				B63D0FF52878D98900C92C6B /* LaunchScreenViewController.swift in Sources */,
+				4DBF1B0A2883172E0035FA5E /* SchoolModel.swift in Sources */,
 				B63D1002287A001B00C92C6B /* UserModel.swift in Sources */,
 				B63D0FD628789C4400C92C6B /* SceneDelegate.swift in Sources */,
+				4DBF1B0D288347810035FA5E /* AddSchoolViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

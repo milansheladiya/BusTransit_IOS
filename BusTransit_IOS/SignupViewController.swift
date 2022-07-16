@@ -241,7 +241,7 @@ class SignupViewController: UIViewController,UIImagePickerControllerDelegate,UIN
         
         // collect information
         
-        UserList.GlobleUser = User(user_id: "", bus_id: "", email_id: txtEmail.text!, fullname: txtFullname.text!, gender: btnGender.titleLabel!.text!, phone_no: txtContact.text!, address: btnAddress.currentTitle ?? "Search here", user_lat: 2202.22, user_long: 2.2222, photo_url: imgURL, user_type: btnSelectUser.titleLabel!.text!, school_id: [])
+        UserList.GlobleUser = User(user_id: "", bus_id: "", email_id: txtEmail.text!, fullName: txtFullname.text!, gender: btnGender.titleLabel!.text!, phone_no: txtContact.text!, address: btnAddress.currentTitle ?? "Search here", user_lat: "2202.22", user_long: "2.2222", photo_url: imgURL, user_type: btnSelectUser.titleLabel!.text!, school_id: [])
 
         FirebaseUtil.createUser(newUser: UserList.GlobleUser, password: txtPassword.text!) { (uid) in
                     if (uid == "") {

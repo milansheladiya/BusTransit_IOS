@@ -227,21 +227,111 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="busCountLbl" destination="fkp-Xp-yex" id="C2X-uE-3EN"/>
                         <outlet property="busCountView" destination="rDn-CG-pPK" id="zbq-OL-6j0"/>
+                        <outlet property="driverCountLbl" destination="csz-tn-OmF" id="rcK-7i-7vT"/>
                         <outlet property="driverCountView" destination="6fl-qS-xcb" id="4Sj-fJ-kaF"/>
                         <outlet property="logoutBtn" destination="U3K-TN-dDw" id="eBH-LF-Jke"/>
+                        <outlet property="schoolCountLbl" destination="wA3-gp-OpI" id="vWr-fn-BLf"/>
                         <outlet property="schoolCountView" destination="ZIu-fe-p94" id="Wmr-rm-420"/>
+                        <segue destination="jHU-dQ-jfw" kind="presentation" identifier="goToSchools" modalPresentationStyle="fullScreen" id="oei-1K-EF8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="60.869565217391312" y="86.383928571428569"/>
         </scene>
+        <!--School List View Controller-->
+        <scene sceneID="2QY-Bo-wJ1">
+            <objects>
+                <viewController id="jHU-dQ-jfw" customClass="SchoolListViewController" customModule="BusTransit_IOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="p17-8o-pD9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Kz-Pw-phZ">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <color key="barTintColor" red="1" green="0.81960784310000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <items>
+                                    <navigationItem title="School Section" id="yWH-Op-cDW">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" image="arrow.backward" catalog="system" id="2EK-Bm-hTL">
+                                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="goBack:" destination="jHU-dQ-jfw" id="hIW-1F-bWA"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus.circle.fill" catalog="system" id="ZXw-cC-eCz">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Okr-r6-YcB">
+                                <rect key="frame" x="0.0" y="125" width="414" height="737"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="45G-OO-VyH">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="45G-OO-VyH" id="S0x-DF-EVs">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="School List" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7lE-IO-2Tv">
+                                <rect key="frame" x="8" y="96" width="398" height="29"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="SYl-kk-HhH"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Okr-r6-YcB" firstAttribute="top" secondItem="7lE-IO-2Tv" secondAttribute="bottom" id="8gV-Kd-Ezv"/>
+                            <constraint firstItem="Okr-r6-YcB" firstAttribute="leading" secondItem="SYl-kk-HhH" secondAttribute="leading" id="A5t-1T-6nr"/>
+                            <constraint firstItem="7lE-IO-2Tv" firstAttribute="top" secondItem="4Kz-Pw-phZ" secondAttribute="bottom" constant="8" id="BPm-CK-IAs"/>
+                            <constraint firstItem="4Kz-Pw-phZ" firstAttribute="trailing" secondItem="SYl-kk-HhH" secondAttribute="trailing" id="Q9Z-zT-T3s"/>
+                            <constraint firstItem="7lE-IO-2Tv" firstAttribute="leading" secondItem="SYl-kk-HhH" secondAttribute="leading" constant="8" id="REV-nK-4xu"/>
+                            <constraint firstItem="SYl-kk-HhH" firstAttribute="trailing" secondItem="7lE-IO-2Tv" secondAttribute="trailing" constant="8" id="S4M-iE-RlT"/>
+                            <constraint firstItem="SYl-kk-HhH" firstAttribute="trailing" secondItem="Okr-r6-YcB" secondAttribute="trailing" id="eEQ-zJ-n2H"/>
+                            <constraint firstItem="SYl-kk-HhH" firstAttribute="bottom" secondItem="Okr-r6-YcB" secondAttribute="bottom" id="eOm-JW-Wvu"/>
+                            <constraint firstItem="4Kz-Pw-phZ" firstAttribute="top" secondItem="SYl-kk-HhH" secondAttribute="top" id="nlw-iN-3x7"/>
+                            <constraint firstItem="4Kz-Pw-phZ" firstAttribute="leading" secondItem="SYl-kk-HhH" secondAttribute="leading" id="ve5-hY-Aph"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="schoolListView" destination="Okr-r6-YcB" id="yXz-hl-MgT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dj0-fc-wAM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="914" y="86"/>
+        </scene>
+        <!--Add School View Controller-->
+        <scene sceneID="YwH-Du-KVj">
+            <objects>
+                <viewController id="b5X-eo-KwP" customClass="AddSchoolViewController" customModule="BusTransit_IOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qkY-To-DL5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="7fa-iU-o1L"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KO2-8y-nmB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1621" y="97"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="arrow.backward" catalog="system" width="128" height="98"/>
         <image name="bus.fill" catalog="system" width="128" height="122"/>
         <image name="image 1" width="60" height="57"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="plus.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
