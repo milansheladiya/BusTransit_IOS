@@ -102,5 +102,19 @@ class UtilClass
         
         return newUser
     }
-    
+    static func SchoolToFirebaseMap(obj: School) -> [String:Any]
+    {
+        let newUser = ["school_id":obj.school_id,
+                       "address":obj.address,
+                       "name":obj.name,
+                       "email_id":obj.email_id,
+                       "lat":obj.lat,
+                       "long":obj.long,
+                       "phone_no":obj.phone_no,
+                    ] as [String : Any]
+        
+        
+        return newUser
+    }
+
 }

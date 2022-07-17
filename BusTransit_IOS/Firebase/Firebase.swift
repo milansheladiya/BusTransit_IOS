@@ -57,7 +57,23 @@ class FirebaseUtil{
     
     
     //------------------ Input ------------------------
-    
+    static func _insertDocument(_collection:String, _data:[String:Any?], callback: @escaping(String) -> Void) -> String {
+            
+        var ref = FirebaseUtil._db.collection(_collection).addDocument(data: _data as [String : Any])
+        { err in
+                if let err = err {
+                    print("Error adding document: \(err)")
+                    callback(err.localizedDescription)
+                    Constants.RecentError = err.localizedDescription
+                } else {
+                    print("Document added!")
+                    callback("success");
+                }
+            
+            }
+        return ref.documentID
+    }
+
     static func _insertDocumentWithId(_collection:String,_docId: String, _data:[String:Any?], callback: @escaping(String) -> Void) {
             
         FirebaseUtil._db.collection(_collection).document(_docId ).setData(_data as [String : Any])
@@ -84,6 +100,22 @@ class FirebaseUtil{
             }
 
     }
+    
+    static func _updateExistingFieldInDocumentWithId(_collection:String,_docId: String, _data:[String:Any?]){
+        
+        let firebaseRef = FirebaseUtil._db.collection(_collection).document(_docId)
+
+        //https://firebase.google.com/docs/firestore/manage-data/add-data#update-data
+        
+        firebaseRef.updateData(_data) { err in
+            if let err = err {
+                print("Error updating document: \(err)")
+            } else {
+                print("Document successfully updated")
+            }
+        }
+    }
+
 }
     
     

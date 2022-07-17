@@ -59,6 +59,9 @@ class SchoolListViewController: UIViewController,UITableViewDataSource,UISearchR
         }
     }
 
+    @IBAction func addSchool(_ sender: Any) {
+        self.performSegue(withIdentifier: "goToAddSchool", sender: self)
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if(searchController.isActive){
             return filteredArr.count
