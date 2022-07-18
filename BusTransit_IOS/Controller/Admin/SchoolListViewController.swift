@@ -7,19 +7,19 @@
 
 import UIKit
 
-class SchoolListViewController: UIViewController,UITableViewDataSource,UISearchResultsUpdating, UISearchBarDelegate {
+class SchoolListViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,UISearchResultsUpdating, UISearchBarDelegate {
     let searchController =  UISearchController(searchResultsController: nil)
     let fb = FirebaseUtil()
     
     @IBOutlet weak var schoolListView: UITableView!
     
     var filteredArr = [School]()
-
+    var school:School? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
         schoolListView.register(UINib(nibName: SchoolTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: SchoolTableViewCell.identifier)
         schoolListView.dataSource = self
-        schoolListView.allowsSelection = false
+        schoolListView.delegate = self
         // Do any additional setup after loading the view.
         
         //Search Controller
@@ -40,7 +40,15 @@ class SchoolListViewController: UIViewController,UITableViewDataSource,UISearchR
         
         loadData()
     }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToAssignBus"{
+            let destinationVC = segue.destination as! AssignBusViewController
+            destinationVC.name = school?.name ?? ""
+            destinationVC.address = school?.address ?? ""
+            destinationVC.email = school?.email_id ?? ""
+            destinationVC.phoneNo = school?.phone_no ?? ""
+        }
+    }
     @IBAction func goBack(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true,completion: nil)
     }
@@ -75,7 +83,10 @@ class SchoolListViewController: UIViewController,UITableViewDataSource,UISearchR
         return cell
 
     }
-
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        school = SchoolList.SchoolListCollection[indexPath.row]
+        self.performSegue(withIdentifier: "goToAssignBus", sender: self)
+    }
     func loadData(){
         SchoolList.SchoolListCollection.removeAll()
         fb._readAllDocuments(_collection: "School"){
