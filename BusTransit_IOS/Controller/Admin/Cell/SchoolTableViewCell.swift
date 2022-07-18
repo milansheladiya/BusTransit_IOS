@@ -19,6 +19,7 @@ class SchoolTableViewCell: UITableViewCell {
     }
     func setUp(school: School){
         schoolName.text = school.name
+        self.selectionStyle = UITableViewCell.SelectionStyle.none
     }
 
 }

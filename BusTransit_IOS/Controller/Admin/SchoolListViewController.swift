@@ -47,6 +47,9 @@ class SchoolListViewController: UIViewController,UITableViewDataSource,UITableVi
             destinationVC.address = school?.address ?? ""
             destinationVC.email = school?.email_id ?? ""
             destinationVC.phoneNo = school?.phone_no ?? ""
+            destinationVC.schoolId = school?.school_id ?? ""
+            destinationVC.school_lat = school?.lat ?? ""
+            destinationVC.school_long = school?.long ?? ""
         }
     }
     @IBAction func goBack(_ sender: UIBarButtonItem) {

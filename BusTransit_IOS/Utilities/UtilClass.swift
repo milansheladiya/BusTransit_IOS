@@ -13,18 +13,18 @@ class UtilClass
     
     static func getUIColor(hex: String, alpha: Double = 1.0) -> UIColor? {
         var cleanString = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
-
+        
         if (cleanString.hasPrefix("#")) {
             cleanString.remove(at: cleanString.startIndex)
         }
-
+        
         if ((cleanString.count) != 6) {
             return nil
         }
-
+        
         var rgbValue: UInt32 = 0
         Scanner(string: cleanString).scanHexInt32(&rgbValue)
-
+        
         return UIColor(
             red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
             green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
@@ -69,11 +69,16 @@ class UtilClass
     
     static func isValidEmail(_ email: String) -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-
+        
         let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         return emailPred.evaluate(with: email)
     }
-    
+    static func isValidPassword(_ password: String) -> Bool {
+        let passwordRegex = "^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*()\\-_=+{}|?>.<,:;~`’]{8,}$"
+        
+        let passPred = NSPredicate(format:"SELF MATCHES %@", passwordRegex)
+        return passPred.evaluate(with: password)
+    }
     static func isValidNumber(_ phone: String) -> Bool {
         let PHONE_REGEX = "^\\d{3}-\\d{3}-\\d{4}$"
         let phoneTest = NSPredicate(format: "SELF MATCHES %@", PHONE_REGEX)
@@ -111,10 +116,32 @@ class UtilClass
                        "lat":obj.lat,
                        "long":obj.long,
                        "phone_no":obj.phone_no,
-                    ] as [String : Any]
+        ] as [String : Any]
         
         
         return newUser
+    }
+    static func BusToFirebaseMap(obj: Bus) -> [String:Any]
+    {
+        
+        let newBus = [
+                        "bus_id":obj.bus_id,
+                       "bus_number":obj.bus_number,
+                       "active_sharing":obj.active_sharing,
+                       "school_id":obj.school_id,
+                       "source":obj.source,
+                       "source_lat":obj.source_lat,
+                       "source_long":obj.source_long,
+                       "destination":obj.destination,
+                       "destination_lat":obj.destination_lat,
+                       "destination_long":obj.destination_long,
+                       "current_lat":obj.current_lat,
+                       "current_long":obj.current_long,
+                       "going_to_school":obj.going_to_school
+        ] as [String : Any]
+        
+        
+        return newBus
     }
 
 }

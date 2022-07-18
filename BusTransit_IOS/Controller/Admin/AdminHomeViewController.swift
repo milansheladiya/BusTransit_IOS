@@ -29,6 +29,8 @@ class AdminHomeViewController: UIViewController {
         // Do any additional setup after loading the view.
         let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.goToSchoolList))
         self.schoolCountView.addGestureRecognizer(gesture)
+    }
+    override func viewWillAppear(_ animated: Bool) {
         loadData()
     }
     @objc func goToSchoolList(sender : UITapGestureRecognizer) {

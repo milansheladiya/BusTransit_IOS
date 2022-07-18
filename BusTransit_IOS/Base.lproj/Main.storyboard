@@ -573,6 +573,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="XiK-k9-pug"/>
         <segue reference="FOT-A9-JKo"/>
     </inferredMetricsTieBreakers>
     <resources>

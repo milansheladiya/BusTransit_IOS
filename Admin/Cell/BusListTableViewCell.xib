@@ -18,13 +18,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KKz-ok-DqM">
-                        <rect key="frame" x="0.0" y="0.0" width="398" height="91"/>
+                        <rect key="frame" x="0.0" y="0.0" width="398" height="83"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ToK-n7-DKu">
-                                <rect key="frame" x="0.0" y="0.0" width="100" height="91"/>
+                                <rect key="frame" x="0.0" y="0.0" width="100" height="83"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fKv-ya-V8E">
-                                        <rect key="frame" x="44" y="30.5" width="12" height="30"/>
+                                        <rect key="frame" x="44" y="26.5" width="12" height="30"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -39,7 +39,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K5M-Nw-Pju">
-                                <rect key="frame" x="100" y="0.0" width="298" height="91"/>
+                                <rect key="frame" x="100" y="0.0" width="298" height="83"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="iFz-hD-0gT">
                                         <rect key="frame" x="8" y="8" width="282" height="31.5"/>
@@ -62,7 +62,7 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="96 Rue Jacques Cartier, Gaspé, QC G4X 2S8" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JrM-dQ-Een">
-                                        <rect key="frame" x="8" y="39.5" width="282" height="51.5"/>
+                                        <rect key="frame" x="8" y="39.5" width="282" height="35.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" red="0.16078431369999999" green="0.58039215690000001" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -75,7 +75,7 @@
                                     <constraint firstItem="iFz-hD-0gT" firstAttribute="top" secondItem="K5M-Nw-Pju" secondAttribute="top" constant="8" id="Wn4-7y-FWO"/>
                                     <constraint firstItem="JrM-dQ-Een" firstAttribute="leading" secondItem="K5M-Nw-Pju" secondAttribute="leading" constant="8" id="XT8-cQ-8mF"/>
                                     <constraint firstItem="iFz-hD-0gT" firstAttribute="leading" secondItem="K5M-Nw-Pju" secondAttribute="leading" constant="8" id="bg9-eE-7oC"/>
-                                    <constraint firstAttribute="bottom" secondItem="JrM-dQ-Een" secondAttribute="bottom" id="gAA-7z-8MQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="JrM-dQ-Een" secondAttribute="bottom" constant="8" id="gAA-7z-8MQ"/>
                                     <constraint firstItem="JrM-dQ-Een" firstAttribute="top" secondItem="iFz-hD-0gT" secondAttribute="bottom" id="qA7-h9-mi7"/>
                                 </constraints>
                             </view>
@@ -94,12 +94,17 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="KKz-ok-DqM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="4ZI-t6-aJE"/>
-                    <constraint firstAttribute="bottom" secondItem="KKz-ok-DqM" secondAttribute="bottom" id="O17-nW-7nP"/>
+                    <constraint firstAttribute="bottom" secondItem="KKz-ok-DqM" secondAttribute="bottom" constant="8" id="O17-nW-7nP"/>
                     <constraint firstItem="KKz-ok-DqM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Zck-JN-EyA"/>
                     <constraint firstAttribute="trailing" secondItem="KKz-ok-DqM" secondAttribute="trailing" id="nqa-hK-zP4"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="busNumberLbl" destination="fKv-ya-V8E" id="uMu-OT-0vE"/>
+                <outlet property="destAddressLbl" destination="JrM-dQ-Een" id="tgz-Ya-G8Z"/>
+                <outlet property="tripStatusLbl" destination="1AD-Rc-zgy" id="KQN-lZ-0xG"/>
+            </connections>
             <point key="canvasLocation" x="194.20289855072465" y="96.09375"/>
         </tableViewCell>
     </objects>

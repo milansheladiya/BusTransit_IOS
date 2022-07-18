@@ -214,13 +214,14 @@ class SignupViewController: UIViewController,UIImagePickerControllerDelegate,UIN
             return
         }
         
-        print(txtPassword.text!.count)
-        
-        if txtPassword.text!.count < 6  {
-            UtilClass._Alert(self,"Signup Error", "The password must be 6 characters long or more.")
+        if txtPassword.text!.count < 8  {
+            UtilClass._Alert(self,"Password Weak", "The password must be min 8 characters.")
             return
         }
-        
+        if !UtilClass.isValidPassword(txtPassword.text!)  {
+            UtilClass._Alert(self,"Password Weak", "must contain  at least 1 Alphabet, 1 Number and 1 Special Character")
+            return
+        }
         if txtPassword.text != txtRePassword.text{
             UtilClass._Alert(self,"Signup Error", "Re-Password does not match with password")
             return
