@@ -64,7 +64,7 @@ class ViewController: UIViewController {
     
     @IBAction func tabSignUp(_ sender: UIButton) {
         
-        self.performSegue(withIdentifier: "goToAdmin", sender: self)
+        self.performSegue(withIdentifier: "goToSignup", sender: self)
         
         
     }
@@ -72,7 +72,6 @@ class ViewController: UIViewController {
         FirebaseUtil.signIn(email: email, pass: password) {
             [weak self] (success) in
                 if (success != "") {
-                    print("--------> ", success)
                     UtilClass._Alert(self!, "Error", success)
                     return
                 }

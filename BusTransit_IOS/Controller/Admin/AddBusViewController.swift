@@ -1,32 +1,32 @@
 //
-//  AddSchoolViewController.swift
+//  AddBusViewController.swift
 //  BusTransit_IOS
 //
-//  Created by Dishant Desai on 2022-07-16.
+//  Created by Dishant Desai on 2022-07-18.
 //
 
 import UIKit
 import GooglePlaces
-
-class AddSchoolViewController: UIViewController {
+class AddBusViewController: UIViewController {
     let ADDRESS_PLACEHOLDER = "Select Address"
-    let ERROR = "Add School Error"
-    
+    let ERROR = "Add Bus Error"
     @IBOutlet weak var addressTxtLabel: UILabel!
+    @IBOutlet weak var busNumber: UITextField!
+    @IBOutlet weak var addBusBtn: UIButton!
     @IBOutlet weak var clearAddressBtn: UIButton!
-    @IBOutlet weak var nameTxtField: UITextField!
-    @IBOutlet weak var emailTxtField: UITextField!
-    @IBOutlet weak var phoneNoTxtField: UITextField!
-    @IBOutlet weak var addBtn: UIButton!
-    
     let fb = FirebaseUtil()
-    
-    
-    var schoolLat="",schoolLong="";
+    var destLat="",destLong="",busNumberVal = 0;
+    var source = "", source_lat="", source_long = "", school_id = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-        addBtn.layer.cornerRadius = 20
+        addBusBtn.layer.cornerRadius = 20
         // Do any additional setup after loading the view.
+        fb._readAllDocuments(_collection: "Bus"){
+            QueryDocumentSnapshot in
+            self.busNumber.text = String(QueryDocumentSnapshot.documents.count + Int.random(in: 2..<9))
+            self.busNumberVal = QueryDocumentSnapshot.documents.count + Int.random(in: 2..<9)
+        }
+        busNumber.isUserInteractionEnabled = false
         setupAddressBox()
     }
     func setupAddressBox(){
@@ -56,41 +56,35 @@ class AddSchoolViewController: UIViewController {
         // Display the autocomplete view controller.
         present(autocompleteController, animated: true, completion: nil)
     }
-    func resetAddressField(){
-        addressTxtLabel.text = ADDRESS_PLACEHOLDER
-        addressTxtLabel.textColor = UtilClass.getUIColor(hex: "#D1D1D6")
-        clearAddressBtn.isHidden = true
+    
+    @IBAction func back(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true)
     }
-    @IBAction func backHandler(_ sender: UIBarButtonItem) {
-        redirectToHome()
-    }
-    @IBAction func clearAddress(_ sender: UIButton) {
+    @IBAction func clearAddressHandler(_ sender: UIButton) {
         resetAddressField()
     }
-    @IBAction func addSchollHandler(_ sender: UIButton) {
-        let allTextField = UtilClass.getTextfield(view: self.view)
-        for txtField in allTextField
-        {
-            if txtField.text!.isEmpty{
-                UtilClass._Alert(self,ERROR, "All fields are mandatory!")
-                return
-            }
-        }
+    
+    @IBAction func addBusHandler(_ sender: UIButton) {
         if(addressTxtLabel.text == ADDRESS_PLACEHOLDER){
             UtilClass._Alert(self,ERROR, "Please select address!")
             return
         }
-        if !UtilClass.isValidEmail(emailTxtField.text!) {
-            UtilClass._Alert(self,ERROR, Constants.INVALID_EMAIL_MSG)
-            return
-        }
-        
-        if !UtilClass.isValidNumber(phoneNoTxtField.text!){
-            UtilClass._Alert(self,ERROR, Constants.INVALID_PHONE_NO)
-            return
-        }
-        let schoolObj = School(school_id: Constants.DEFAULT_SCHOOL_ID, address: addressTxtLabel.text!, email_id: emailTxtField.text!, name: nameTxtField.text!, phone_no: phoneNoTxtField.text!, lat: schoolLat, long: schoolLong)
-        let docId = FirebaseUtil._insertDocument(_collection: "School", _data: UtilClass.SchoolToFirebaseMap(obj: schoolObj)){
+        let busObj = Bus(
+            bus_id: "",
+            bus_number: busNumberVal,
+            active_sharing: false,
+            current_lat: "",
+            current_long: "",
+            destination_lat: destLat,
+            destination_long: destLong,
+            destination: addressTxtLabel.text ?? "",
+            going_to_school: false,
+            school_id: school_id,
+            source_lat: source_lat,
+            source_long: source_long,
+            source: source
+        )
+        let docId = FirebaseUtil._insertDocument(_collection: "Bus", _data: UtilClass.BusToFirebaseMap(obj: busObj)){
             String in
             if(String != "success")
             {
@@ -99,44 +93,43 @@ class AddSchoolViewController: UIViewController {
             }
             else
             {
-                
-                let uialert = UIAlertController(title: "Success", message: "Scholl Added Successfully!", preferredStyle: UIAlertController.Style.alert)
+                let uialert = UIAlertController(title: "Success", message: "Bus Added Successfully!", preferredStyle: UIAlertController.Style.alert)
                 uialert.addAction(UIAlertAction(title: "Okay", style: UIAlertAction.Style.default, handler: { action in
-                    
                     self.cleanForm()
-                    self.redirectToHome()
-                    
+                    self.redirectToPrevious()
                 }
                                                ))
                 self.present(uialert, animated: true, completion: nil)
-                
             }
             
         }
-        FirebaseUtil._updateExistingFieldInDocumentWithId(_collection: "School", _docId: docId, _data: [
-            "school_id":docId
+        FirebaseUtil._updateExistingFieldInDocumentWithId(_collection: "Bus", _docId: docId, _data: [
+            "bus_id":docId
         ])
+        print("busObj",busObj)
     }
-    func redirectToHome(){
+    func redirectToPrevious(){
         self.dismiss(animated: true,completion: nil)
     }
+    func resetAddressField(){
+        addressTxtLabel.text = ADDRESS_PLACEHOLDER
+        addressTxtLabel.textColor = UtilClass.getUIColor(hex: "#D1D1D6")
+        clearAddressBtn.isHidden = true
+    }
+    
     func cleanForm(){
-        emailTxtField.text = ""
-        nameTxtField.text = ""
-        phoneNoTxtField.text = ""
         resetAddressField()
     }
     
-    
 }
-extension AddSchoolViewController: GMSAutocompleteViewControllerDelegate {
+extension AddBusViewController: GMSAutocompleteViewControllerDelegate {
     
     // Handle the user's selection.
     func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
         addressTxtLabel.textColor = UtilClass.getUIColor(hex: "#000")
         addressTxtLabel.text = place.name;
-        schoolLat = String(place.coordinate.latitude)
-        schoolLong = String(place.coordinate.longitude)
+        destLat = String(place.coordinate.latitude)
+        destLong = String(place.coordinate.longitude)
         clearAddressBtn.isHidden = false
         
         dismiss(animated: true, completion: nil)
