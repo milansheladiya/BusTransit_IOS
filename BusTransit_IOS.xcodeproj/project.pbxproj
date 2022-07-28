@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4DAAE15A2890917B00615053 /* DriverTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAAE1582890917B00615053 /* DriverTableViewCell.swift */; };
+		4DAAE15B2890917B00615053 /* DriverTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DAAE1592890917B00615053 /* DriverTableViewCell.xib */; };
+		4DAAE15D289096A100615053 /* AssignDriverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAAE15C289096A100615053 /* AssignDriverViewController.swift */; };
+		4DAAE15F2890B79500615053 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAAE15E2890B79500615053 /* Extensions.swift */; };
 		4DB925812882049700CD6F26 /* Admin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DB925802882049700CD6F26 /* Admin.storyboard */; };
 		4DB925842882050000CD6F26 /* AdminHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB925832882050000CD6F26 /* AdminHomeViewController.swift */; };
 		4DBF1B0528830EE70035FA5E /* SchoolTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBF1B0328830EE70035FA5E /* SchoolTableViewCell.swift */; };
@@ -19,6 +23,7 @@
 		4DBF1B132884D6970035FA5E /* AssignBusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBF1B122884D6970035FA5E /* AssignBusViewController.swift */; };
 		4DBF1B1528858F430035FA5E /* BusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBF1B1428858F430035FA5E /* BusModel.swift */; };
 		4DBF1B172885D6E80035FA5E /* AddBusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBF1B162885D6E80035FA5E /* AddBusViewController.swift */; };
+		4DF698322891D7040081F8CE /* DriverDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF698312891D7040081F8CE /* DriverDetailsViewController.swift */; };
 		B63D0FD428789C4400C92C6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63D0FD328789C4400C92C6B /* AppDelegate.swift */; };
 		B63D0FD628789C4400C92C6B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63D0FD528789C4400C92C6B /* SceneDelegate.swift */; };
 		B63D0FD828789C4400C92C6B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63D0FD728789C4400C92C6B /* ViewController.swift */; };
@@ -39,6 +44,10 @@
 /* Begin PBXFileReference section */
 		302F983C23E10CAD38C520D2 /* Pods-BusTransit_IOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusTransit_IOS.debug.xcconfig"; path = "Target Support Files/Pods-BusTransit_IOS/Pods-BusTransit_IOS.debug.xcconfig"; sourceTree = "<group>"; };
 		41405AC38B79B1BB0100833A /* Pods-BusTransit_IOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusTransit_IOS.release.xcconfig"; path = "Target Support Files/Pods-BusTransit_IOS/Pods-BusTransit_IOS.release.xcconfig"; sourceTree = "<group>"; };
+		4DAAE1582890917B00615053 /* DriverTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DriverTableViewCell.swift; path = BusTransit_IOS/Controller/Admin/Cell/DriverTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		4DAAE1592890917B00615053 /* DriverTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = DriverTableViewCell.xib; path = Admin/Cell/DriverTableViewCell.xib; sourceTree = SOURCE_ROOT; };
+		4DAAE15C289096A100615053 /* AssignDriverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignDriverViewController.swift; sourceTree = "<group>"; };
+		4DAAE15E2890B79500615053 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		4DB925802882049700CD6F26 /* Admin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Admin.storyboard; path = BusTransit_IOS/Admin.storyboard; sourceTree = SOURCE_ROOT; };
 		4DB925832882050000CD6F26 /* AdminHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminHomeViewController.swift; sourceTree = "<group>"; };
 		4DBF1B0328830EE70035FA5E /* SchoolTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SchoolTableViewCell.swift; path = BusTransit_IOS/Controller/Admin/Cell/SchoolTableViewCell.swift; sourceTree = SOURCE_ROOT; };
@@ -51,6 +60,7 @@
 		4DBF1B122884D6970035FA5E /* AssignBusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignBusViewController.swift; sourceTree = "<group>"; };
 		4DBF1B1428858F430035FA5E /* BusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusModel.swift; sourceTree = "<group>"; };
 		4DBF1B162885D6E80035FA5E /* AddBusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBusViewController.swift; sourceTree = "<group>"; };
+		4DF698312891D7040081F8CE /* DriverDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverDetailsViewController.swift; sourceTree = "<group>"; };
 		9102DD997EADC548258612DF /* Pods_BusTransit_IOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BusTransit_IOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B63D0FD028789C4400C92C6B /* BusTransit_IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BusTransit_IOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B63D0FD328789C4400C92C6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +101,8 @@
 				4DBF1B07288312C50035FA5E /* SchoolListViewController.swift */,
 				4DBF1B0C288347810035FA5E /* AddSchoolViewController.swift */,
 				4DBF1B162885D6E80035FA5E /* AddBusViewController.swift */,
+				4DAAE15C289096A100615053 /* AssignDriverViewController.swift */,
+				4DF698312891D7040081F8CE /* DriverDetailsViewController.swift */,
 			);
 			path = Admin;
 			sourceTree = "<group>";
@@ -100,6 +112,7 @@
 			children = (
 				4DBF1B0428830EE70035FA5E /* SchoolTableViewCell.xib */,
 				4DBF1B0F2884D0780035FA5E /* BusListTableViewCell.xib */,
+				4DAAE1592890917B00615053 /* DriverTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -108,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				4DBF1B0E2884D0780035FA5E /* BusListTableViewCell.swift */,
+				4DAAE1582890917B00615053 /* DriverTableViewCell.swift */,
 				4DBF1B0328830EE70035FA5E /* SchoolTableViewCell.swift */,
 			);
 			path = Cell;
@@ -193,6 +207,7 @@
 				B63D1003287A0F2200C92C6B /* Constants.swift */,
 				4DBF1B092883172E0035FA5E /* SchoolModel.swift */,
 				4DBF1B1428858F430035FA5E /* BusModel.swift */,
+				4DAAE15E2890B79500615053 /* Extensions.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -307,6 +322,7 @@
 				4DBF1B112884D0780035FA5E /* BusListTableViewCell.xib in Resources */,
 				B63D0FDD28789C4400C92C6B /* Assets.xcassets in Resources */,
 				B63D0FDB28789C4400C92C6B /* Main.storyboard in Resources */,
+				4DAAE15B2890917B00615053 /* DriverTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,12 +401,16 @@
 				B63D0FD428789C4400C92C6B /* AppDelegate.swift in Sources */,
 				4DBF1B1528858F430035FA5E /* BusModel.swift in Sources */,
 				B63D1004287A0F2200C92C6B /* Constants.swift in Sources */,
+				4DAAE15F2890B79500615053 /* Extensions.swift in Sources */,
 				4DBF1B0528830EE70035FA5E /* SchoolTableViewCell.swift in Sources */,
 				4DBF1B08288312C50035FA5E /* SchoolListViewController.swift in Sources */,
 				B63D0FF12878A2CF00C92C6B /* UtilClass.swift in Sources */,
 				B63D0FF52878D98900C92C6B /* LaunchScreenViewController.swift in Sources */,
+				4DAAE15D289096A100615053 /* AssignDriverViewController.swift in Sources */,
+				4DF698322891D7040081F8CE /* DriverDetailsViewController.swift in Sources */,
 				4DBF1B132884D6970035FA5E /* AssignBusViewController.swift in Sources */,
 				4DBF1B0A2883172E0035FA5E /* SchoolModel.swift in Sources */,
+				4DAAE15A2890917B00615053 /* DriverTableViewCell.swift in Sources */,
 				B63D1002287A001B00C92C6B /* UserModel.swift in Sources */,
 				B63D0FD628789C4400C92C6B /* SceneDelegate.swift in Sources */,
 				4DBF1B102884D0780035FA5E /* BusListTableViewCell.swift in Sources */,

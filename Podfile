@@ -18,7 +18,7 @@ target 'BusTransit_IOS' do
   # 4. UIMultiPicker
     pod 'UIMultiPicker'
 
-
+    pod "Kingfisher"
   # 5. For firebase
     pod "Firebase/Core"
     pod "Firebase/Auth"

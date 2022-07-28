@@ -711,11 +711,463 @@
                         <outlet property="schoolNameView" destination="KW3-If-bSb" id="Ej8-zD-ZDI"/>
                         <outlet property="schoolPhoneNoLbl" destination="Jvf-Kv-fFs" id="aYl-E1-LCI"/>
                         <segue destination="Mic-lP-Pg9" kind="presentation" identifier="goToAddBus" modalPresentationStyle="fullScreen" id="6Tt-4l-6e4"/>
+                        <segue destination="Oa7-qp-hWH" kind="presentation" identifier="goToAssignDriver" modalPresentationStyle="fullScreen" id="DLg-hM-aLr"/>
+                        <segue destination="2Vo-2L-4r6" kind="presentation" identifier="goToDriverDetails" modalPresentationStyle="fullScreen" id="YBh-jN-H5K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YrE-BB-qDU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="911.59420289855075" y="922.76785714285711"/>
+        </scene>
+        <!--Driver Details View Controller-->
+        <scene sceneID="itr-kI-l7j">
+            <objects>
+                <viewController id="2Vo-2L-4r6" customClass="DriverDetailsViewController" customModule="BusTransit_IOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Igr-YU-Yns">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ad-4P-xQ9">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <color key="barTintColor" red="1" green="0.81960784310000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <items>
+                                    <navigationItem title="Driver Info" id="m6S-fi-6RY">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" image="arrow.backward" catalog="system" id="wpf-sI-a1g">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="backHandler:" destination="2Vo-2L-4r6" id="tOE-CX-xsw"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rOP-g7-1zQ">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SBO-Zd-utn">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KoP-KD-oOM" userLabel="SchoolName">
+                                                <rect key="frame" x="16" y="16" width="382" height="51.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bus Number : 5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hn9-Di-VQo" userLabel="School Name Lbl">
+                                                        <rect key="frame" x="68" y="12" width="246" height="27.5"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.95294117649999999" green="0.95686274510000002" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstItem="hn9-Di-VQo" firstAttribute="centerY" secondItem="KoP-KD-oOM" secondAttribute="centerY" id="JMK-LA-78z"/>
+                                                    <constraint firstItem="hn9-Di-VQo" firstAttribute="centerX" secondItem="KoP-KD-oOM" secondAttribute="centerX" id="LiN-5x-tS3"/>
+                                                    <constraint firstItem="hn9-Di-VQo" firstAttribute="top" secondItem="KoP-KD-oOM" secondAttribute="top" constant="12" id="ftr-eH-7VX"/>
+                                                    <constraint firstItem="hn9-Di-VQo" firstAttribute="leading" secondItem="KoP-KD-oOM" secondAttribute="leading" constant="68" id="kqu-ZE-qLr"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d3x-xe-EZe" userLabel="SchoolDetailView">
+                                                <rect key="frame" x="16" y="83.5" width="382" height="242"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="cIO-nU-7Gj" userLabel="DetailStack">
+                                                        <rect key="frame" x="12" y="12" width="358" height="218"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="0mR-SS-OD3" userLabel="EmailStack">
+                                                                <rect key="frame" x="0.0" y="0.0" width="358" height="60"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="School Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MYW-Ue-gWl">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="358" height="31.5"/>
+                                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="school@tracker.com" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9G7-aV-Vdg">
+                                                                        <rect key="frame" x="0.0" y="39.5" width="358" height="20.5"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                                <rect key="contentStretch" x="0.29999999999999999" y="0.0" width="1" height="1"/>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="w0m-Iy-uLd" userLabel="PhoneStack">
+                                                                <rect key="frame" x="0.0" y="79" width="358" height="60"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="School Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kyg-xo-ZjF">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="181" height="31.5"/>
+                                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="school@tracker.com" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pb3-h1-5oU">
+                                                                        <rect key="frame" x="0.0" y="39.5" width="155.5" height="20.5"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="zZe-7a-XFo" userLabel="AddressStack">
+                                                                <rect key="frame" x="0.0" y="158" width="358" height="60"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terminal Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z9w-ai-Zys">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="199" height="31.5"/>
+                                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="school@tracker.com" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y2Y-61-Gei">
+                                                                        <rect key="frame" x="0.0" y="39.5" width="155.5" height="20.5"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" red="1" green="0.81960784310000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="cIO-nU-7Gj" secondAttribute="bottom" constant="12" id="4Kb-zC-f5v"/>
+                                                    <constraint firstAttribute="trailing" secondItem="cIO-nU-7Gj" secondAttribute="trailing" constant="12" id="4ke-ix-BmE"/>
+                                                    <constraint firstItem="cIO-nU-7Gj" firstAttribute="top" secondItem="d3x-xe-EZe" secondAttribute="top" constant="12" id="TVN-m5-dDw"/>
+                                                    <constraint firstItem="cIO-nU-7Gj" firstAttribute="leading" secondItem="d3x-xe-EZe" secondAttribute="leading" constant="12" id="lwc-Jj-7Ui"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cSD-V3-hb3" userLabel="DriverDetails">
+                                                <rect key="frame" x="16" y="341.5" width="382" height="318"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="lnB-UT-PUM" userLabel="BusDetailStack">
+                                                        <rect key="frame" x="12" y="12" width="358" height="237"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="p5o-jx-KTa" userLabel="DriverDetailStack">
+                                                                <rect key="frame" x="0.0" y="0.0" width="358" height="75"/>
+                                                                <subviews>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" translatesAutoresizingMaskIntoConstraints="NO" id="hZE-p2-fVd">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="75" id="a3s-Un-YTb"/>
+                                                                            <constraint firstAttribute="height" constant="75" id="vpA-4Y-FO0"/>
+                                                                        </constraints>
+                                                                    </imageView>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Doe" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GPu-gB-fIZ">
+                                                                        <rect key="frame" x="83" y="0.0" width="275" height="75"/>
+                                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                                <rect key="contentStretch" x="0.29999999999999999" y="0.0" width="1" height="1"/>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="TWG-RV-uE0" userLabel="StatusStack">
+                                                                <rect key="frame" x="0.0" y="85" width="358" height="71"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Trip Status" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tAw-wL-EZU">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="358" height="31.5"/>
+                                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="On" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HgM-LG-lxX">
+                                                                        <rect key="frame" x="0.0" y="39.5" width="358" height="31.5"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                                                        <color key="textColor" red="0.16078431369999999" green="0.58039215690000001" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                                <rect key="contentStretch" x="0.29999999999999999" y="0.0" width="1" height="1"/>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="obG-C7-kyd" userLabel="DirectionStack">
+                                                                <rect key="frame" x="0.0" y="166" width="358" height="71"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Trip Direction" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ejd-AK-Ij4">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="358" height="31.5"/>
+                                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Going to school" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngF-Kz-6C8">
+                                                                        <rect key="frame" x="0.0" y="39.5" width="358" height="31.5"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                                                        <color key="textColor" red="0.16078431369999999" green="0.58039215690000001" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                                <rect key="contentStretch" x="0.29999999999999999" y="0.0" width="1" height="1"/>
+                                                            </stackView>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ssI-ym-BN0">
+                                                        <rect key="frame" x="101" y="265" width="180" height="37"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="180" id="8iI-fr-UXg"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="filled" title="Release Driver">
+                                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="19"/>
+                                                            <color key="baseBackgroundColor" red="0.8980392157" green="0.17254901959999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="releaseDriverHandler:" destination="2Vo-2L-4r6" eventType="touchUpInside" id="OQU-ap-Trw"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.93725490196078431" green="0.91764705882352937" blue="0.84705882352941175" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstItem="lnB-UT-PUM" firstAttribute="leading" secondItem="cSD-V3-hb3" secondAttribute="leading" constant="12" id="2Rs-Xx-5QF"/>
+                                                    <constraint firstItem="lnB-UT-PUM" firstAttribute="top" secondItem="cSD-V3-hb3" secondAttribute="top" constant="12" id="OCZ-cU-Xz2"/>
+                                                    <constraint firstAttribute="bottom" secondItem="ssI-ym-BN0" secondAttribute="bottom" constant="16" id="RI2-wm-A9n"/>
+                                                    <constraint firstAttribute="trailing" secondItem="lnB-UT-PUM" secondAttribute="trailing" constant="12" id="Rqi-9R-kGd"/>
+                                                    <constraint firstItem="ssI-ym-BN0" firstAttribute="top" secondItem="lnB-UT-PUM" secondAttribute="bottom" constant="16" id="TMW-BS-QFr"/>
+                                                    <constraint firstItem="ssI-ym-BN0" firstAttribute="centerX" secondItem="cSD-V3-hb3" secondAttribute="centerX" id="oeq-mj-ueX"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="d3x-xe-EZe" firstAttribute="top" secondItem="KoP-KD-oOM" secondAttribute="bottom" constant="16" id="3bA-Rh-VPz"/>
+                                            <constraint firstItem="KoP-KD-oOM" firstAttribute="top" secondItem="SBO-Zd-utn" secondAttribute="top" constant="16" id="AZ0-q4-OBZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="KoP-KD-oOM" secondAttribute="trailing" constant="16" id="QWH-zW-bEG"/>
+                                            <constraint firstAttribute="trailing" secondItem="cSD-V3-hb3" secondAttribute="trailing" constant="16" id="WSa-zQ-eH1"/>
+                                            <constraint firstAttribute="trailing" secondItem="d3x-xe-EZe" secondAttribute="trailing" constant="16" id="XfR-RY-kCb"/>
+                                            <constraint firstItem="KoP-KD-oOM" firstAttribute="leading" secondItem="SBO-Zd-utn" secondAttribute="leading" constant="16" id="fdA-qA-xrm"/>
+                                            <constraint firstItem="d3x-xe-EZe" firstAttribute="leading" secondItem="SBO-Zd-utn" secondAttribute="leading" constant="16" id="hhz-gZ-kXC"/>
+                                            <constraint firstItem="cSD-V3-hb3" firstAttribute="top" secondItem="d3x-xe-EZe" secondAttribute="bottom" constant="16" id="nmF-dU-DwM"/>
+                                            <constraint firstItem="cSD-V3-hb3" firstAttribute="leading" secondItem="SBO-Zd-utn" secondAttribute="leading" constant="16" id="oP1-xc-cVe"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="SBO-Zd-utn" firstAttribute="bottom" secondItem="rOP-g7-1zQ" secondAttribute="bottom" id="BAB-qi-YvD"/>
+                                    <constraint firstAttribute="bottom" secondItem="SBO-Zd-utn" secondAttribute="bottom" id="EPT-bR-eed"/>
+                                    <constraint firstItem="SBO-Zd-utn" firstAttribute="centerX" secondItem="rOP-g7-1zQ" secondAttribute="centerX" id="Jeo-kH-zCV"/>
+                                    <constraint firstAttribute="trailing" secondItem="SBO-Zd-utn" secondAttribute="trailing" id="KBq-Je-dl2"/>
+                                    <constraint firstItem="SBO-Zd-utn" firstAttribute="top" secondItem="rOP-g7-1zQ" secondAttribute="top" id="MA1-np-YPF"/>
+                                    <constraint firstItem="SBO-Zd-utn" firstAttribute="leading" secondItem="rOP-g7-1zQ" secondAttribute="leading" id="NFB-Ve-h3w"/>
+                                    <constraint firstItem="SBO-Zd-utn" firstAttribute="top" secondItem="rOP-g7-1zQ" secondAttribute="top" id="VLr-1i-0Av"/>
+                                    <constraint firstAttribute="trailing" secondItem="SBO-Zd-utn" secondAttribute="trailing" id="ooI-at-jDb"/>
+                                    <constraint firstItem="SBO-Zd-utn" firstAttribute="centerY" secondItem="rOP-g7-1zQ" secondAttribute="centerY" id="waJ-0I-Ge9"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="pUc-Tj-UlM"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="rOP-g7-1zQ" firstAttribute="trailing" secondItem="pUc-Tj-UlM" secondAttribute="trailing" id="CBs-oV-itN"/>
+                            <constraint firstItem="0Ad-4P-xQ9" firstAttribute="leading" secondItem="pUc-Tj-UlM" secondAttribute="leading" id="XUL-VL-wZd"/>
+                            <constraint firstItem="rOP-g7-1zQ" firstAttribute="top" secondItem="0Ad-4P-xQ9" secondAttribute="bottom" id="aBG-hG-gx2"/>
+                            <constraint firstItem="0Ad-4P-xQ9" firstAttribute="trailing" secondItem="pUc-Tj-UlM" secondAttribute="trailing" id="fQN-nv-Kqd"/>
+                            <constraint firstItem="rOP-g7-1zQ" firstAttribute="bottom" secondItem="pUc-Tj-UlM" secondAttribute="bottom" id="gxm-S5-0cc"/>
+                            <constraint firstItem="0Ad-4P-xQ9" firstAttribute="top" secondItem="pUc-Tj-UlM" secondAttribute="top" id="wDH-cS-DUj"/>
+                            <constraint firstItem="rOP-g7-1zQ" firstAttribute="leading" secondItem="pUc-Tj-UlM" secondAttribute="leading" id="z5E-Ea-98A"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="busNumberLbl" destination="hn9-Di-VQo" id="jnc-HB-WQA"/>
+                        <outlet property="detailView" destination="d3x-xe-EZe" id="YIp-cR-lrU"/>
+                        <outlet property="driverDetailVIew" destination="cSD-V3-hb3" id="1Ig-Ch-Ugc"/>
+                        <outlet property="driverNameLbl" destination="GPu-gB-fIZ" id="Fzf-yv-BOc"/>
+                        <outlet property="driverProfileImage" destination="hZE-p2-fVd" id="MrV-iF-t1G"/>
+                        <outlet property="releaseBtn" destination="ssI-ym-BN0" id="OCr-Ch-6DB"/>
+                        <outlet property="schoolAddressLbl" destination="pb3-h1-5oU" id="g2R-sG-tWL"/>
+                        <outlet property="schoolNameLbl" destination="9G7-aV-Vdg" id="90X-fd-dsQ"/>
+                        <outlet property="schoolNameView" destination="KoP-KD-oOM" id="SDf-3D-xVz"/>
+                        <outlet property="scrollView" destination="rOP-g7-1zQ" id="g7m-lV-VFu"/>
+                        <outlet property="terminalAddressLbl" destination="y2Y-61-Gei" id="48R-PN-QcF"/>
+                        <outlet property="tripDirectionLbl" destination="ngF-Kz-6C8" id="UKQ-Ge-CZQ"/>
+                        <outlet property="tripStatusLbl" destination="HgM-LG-lxX" id="9uz-Tf-RVK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vlG-h3-3V5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-49.275362318840585" y="1695.5357142857142"/>
+        </scene>
+        <!--Assign Driver View Controller-->
+        <scene sceneID="rtU-iO-pVq">
+            <objects>
+                <viewController id="Oa7-qp-hWH" customClass="AssignDriverViewController" customModule="BusTransit_IOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="y86-Jg-cCb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fU0-Jn-sXb">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <color key="barTintColor" red="1" green="0.81960784310000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <items>
+                                    <navigationItem title="Driver" id="KiC-KM-RoA">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" image="arrow.backward" catalog="system" id="qFa-oC-WcZ">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="backButtonHandler:" destination="Oa7-qp-hWH" id="jwD-rU-dWL"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cXx-Wv-zAr">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v7Y-8t-yAs" userLabel="SchoolName">
+                                        <rect key="frame" x="16" y="16" width="382" height="51.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bus Number : 5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OHr-JF-a2p" userLabel="School Name Lbl">
+                                                <rect key="frame" x="68" y="12" width="246" height="27.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.95294117649999999" green="0.95686274510000002" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="OHr-JF-a2p" firstAttribute="leading" secondItem="v7Y-8t-yAs" secondAttribute="leading" constant="68" id="4xd-hA-Tya"/>
+                                            <constraint firstItem="OHr-JF-a2p" firstAttribute="top" secondItem="v7Y-8t-yAs" secondAttribute="top" constant="12" id="RkY-nK-xgN"/>
+                                            <constraint firstItem="OHr-JF-a2p" firstAttribute="centerX" secondItem="v7Y-8t-yAs" secondAttribute="centerX" id="UAy-82-hPV"/>
+                                            <constraint firstItem="OHr-JF-a2p" firstAttribute="centerY" secondItem="v7Y-8t-yAs" secondAttribute="centerY" id="nT7-sb-u7f"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uvd-m8-bvi" userLabel="DetailView">
+                                        <rect key="frame" x="16" y="83.5" width="382" height="242"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="Gbo-ZX-FBx" userLabel="DetailStack">
+                                                <rect key="frame" x="12" y="12" width="358" height="218"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="tNE-go-iyL" userLabel="EmailStack">
+                                                        <rect key="frame" x="0.0" y="0.0" width="358" height="60"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="School Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ppq-e9-wZj">
+                                                                <rect key="frame" x="0.0" y="0.0" width="358" height="31.5"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="school@tracker.com" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LNq-we-wtO">
+                                                                <rect key="frame" x="0.0" y="39.5" width="358" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <rect key="contentStretch" x="0.29999999999999999" y="0.0" width="1" height="1"/>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="BfU-Eg-d4p" userLabel="PhoneStack">
+                                                        <rect key="frame" x="0.0" y="79" width="358" height="60"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="School Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bex-7E-LOi">
+                                                                <rect key="frame" x="0.0" y="0.0" width="181" height="31.5"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="school@tracker.com" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lff-WZ-f3U">
+                                                                <rect key="frame" x="0.0" y="39.5" width="155.5" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="yfr-Ma-3qT" userLabel="AddressStack">
+                                                        <rect key="frame" x="0.0" y="158" width="358" height="60"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terminal Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="coT-7F-8wH">
+                                                                <rect key="frame" x="0.0" y="0.0" width="199" height="31.5"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="school@tracker.com" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="13i-TG-Hrr">
+                                                                <rect key="frame" x="0.0" y="39.5" width="155.5" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1" green="0.81960784310000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="Gbo-ZX-FBx" secondAttribute="trailing" constant="12" id="1nN-Cw-06f"/>
+                                            <constraint firstItem="Gbo-ZX-FBx" firstAttribute="top" secondItem="Uvd-m8-bvi" secondAttribute="top" constant="12" id="LFO-z7-W4R"/>
+                                            <constraint firstAttribute="bottom" secondItem="Gbo-ZX-FBx" secondAttribute="bottom" constant="12" id="UNy-v7-k56"/>
+                                            <constraint firstItem="Gbo-ZX-FBx" firstAttribute="leading" secondItem="Uvd-m8-bvi" secondAttribute="leading" constant="12" id="abn-v1-lbr"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Driver List(3)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6RA-tI-288">
+                                        <rect key="frame" x="16" y="341.5" width="382" height="23"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0Bo-3R-za8">
+                                        <rect key="frame" x="0.0" y="380.5" width="414" height="332.5"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </tableView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v8t-wD-UCN" userLabel="DeleteSchool">
+                                        <rect key="frame" x="117" y="729" width="180" height="45"/>
+                                        <color key="backgroundColor" red="0.8980392157" green="0.17254901959999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="dLI-84-cje"/>
+                                            <constraint firstAttribute="width" constant="180" id="van-80-VGx"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Delete Bus">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="deleteBusHandler:" destination="Oa7-qp-hWH" eventType="touchUpInside" id="wcQ-xj-p3c"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="v7Y-8t-yAs" firstAttribute="top" secondItem="cXx-Wv-zAr" secondAttribute="top" constant="16" id="0Bz-KO-shc"/>
+                                    <constraint firstItem="v7Y-8t-yAs" firstAttribute="leading" secondItem="cXx-Wv-zAr" secondAttribute="leading" constant="16" id="4eb-ok-zRP"/>
+                                    <constraint firstItem="v8t-wD-UCN" firstAttribute="top" secondItem="0Bo-3R-za8" secondAttribute="bottom" constant="16" id="Nii-9u-4cG"/>
+                                    <constraint firstItem="6RA-tI-288" firstAttribute="leading" secondItem="cXx-Wv-zAr" secondAttribute="leading" constant="16" id="SWe-GH-ZHt"/>
+                                    <constraint firstAttribute="trailing" secondItem="v7Y-8t-yAs" secondAttribute="trailing" constant="16" id="UTd-Mx-xmz"/>
+                                    <constraint firstItem="Uvd-m8-bvi" firstAttribute="leading" secondItem="cXx-Wv-zAr" secondAttribute="leading" constant="16" id="YdQ-aj-b8M"/>
+                                    <constraint firstItem="6RA-tI-288" firstAttribute="top" secondItem="Uvd-m8-bvi" secondAttribute="bottom" constant="16" id="Zrt-6Y-kiM"/>
+                                    <constraint firstItem="v8t-wD-UCN" firstAttribute="centerX" secondItem="cXx-Wv-zAr" secondAttribute="centerX" id="e7Z-2n-Wtt"/>
+                                    <constraint firstItem="0Bo-3R-za8" firstAttribute="top" secondItem="6RA-tI-288" secondAttribute="bottom" constant="16" id="egf-Hf-kl5"/>
+                                    <constraint firstItem="Uvd-m8-bvi" firstAttribute="top" secondItem="v7Y-8t-yAs" secondAttribute="bottom" constant="16" id="krI-Vq-95C"/>
+                                    <constraint firstItem="0Bo-3R-za8" firstAttribute="leading" secondItem="cXx-Wv-zAr" secondAttribute="leading" id="rQK-LN-yfd"/>
+                                    <constraint firstAttribute="trailing" secondItem="6RA-tI-288" secondAttribute="trailing" constant="16" id="rVl-gI-zJR"/>
+                                    <constraint firstAttribute="trailing" secondItem="Uvd-m8-bvi" secondAttribute="trailing" constant="16" id="tix-w4-FDW"/>
+                                    <constraint firstAttribute="trailing" secondItem="0Bo-3R-za8" secondAttribute="trailing" id="u0q-sI-qJX"/>
+                                    <constraint firstAttribute="bottom" secondItem="v8t-wD-UCN" secondAttribute="bottom" id="wsk-sr-26A"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="eTd-4p-sgB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fU0-Jn-sXb" firstAttribute="trailing" secondItem="eTd-4p-sgB" secondAttribute="trailing" id="1NN-dW-Ruk"/>
+                            <constraint firstItem="fU0-Jn-sXb" firstAttribute="leading" secondItem="eTd-4p-sgB" secondAttribute="leading" id="AWZ-yW-foo"/>
+                            <constraint firstItem="eTd-4p-sgB" firstAttribute="trailing" secondItem="cXx-Wv-zAr" secondAttribute="trailing" id="BxV-oD-OgK"/>
+                            <constraint firstItem="fU0-Jn-sXb" firstAttribute="top" secondItem="eTd-4p-sgB" secondAttribute="top" id="P9P-tN-86U"/>
+                            <constraint firstItem="cXx-Wv-zAr" firstAttribute="leading" secondItem="eTd-4p-sgB" secondAttribute="leading" id="RsK-Yo-qtp"/>
+                            <constraint firstItem="cXx-Wv-zAr" firstAttribute="top" secondItem="fU0-Jn-sXb" secondAttribute="bottom" id="kpJ-Xd-BIk"/>
+                            <constraint firstItem="eTd-4p-sgB" firstAttribute="bottom" secondItem="cXx-Wv-zAr" secondAttribute="bottom" id="vxT-XM-ck3"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="busNumberLbl" destination="OHr-JF-a2p" id="lX3-xz-YRe"/>
+                        <outlet property="deleteBusBtn" destination="v8t-wD-UCN" id="FGR-ke-Nfd"/>
+                        <outlet property="detailView" destination="Uvd-m8-bvi" id="tPQ-S9-HG8"/>
+                        <outlet property="driverCountLbl" destination="6RA-tI-288" id="jDF-cz-Ixx"/>
+                        <outlet property="driverListTableView" destination="0Bo-3R-za8" id="ET9-jJ-kex"/>
+                        <outlet property="schoolAddressLbl" destination="lff-WZ-f3U" id="nfS-Y2-vet"/>
+                        <outlet property="schoolNameLbl" destination="LNq-we-wtO" id="Ta5-mn-rCq"/>
+                        <outlet property="schoolNameView" destination="v7Y-8t-yAs" id="5an-3m-BON"/>
+                        <outlet property="terminalAddressLbl" destination="13i-TG-Hrr" id="687-fn-PPo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AFs-cy-wCY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-49.275362318840585" y="922.76785714285711"/>
         </scene>
         <!--Add Bus View Controller-->
         <scene sceneID="JKe-ap-Efx">
@@ -875,6 +1327,7 @@
         <image name="clear" catalog="system" width="128" height="114"/>
         <image name="icons8-location-48" width="96" height="96"/>
         <image name="image 1" width="60" height="57"/>
+        <image name="person" width="313" height="314"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="plus.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">

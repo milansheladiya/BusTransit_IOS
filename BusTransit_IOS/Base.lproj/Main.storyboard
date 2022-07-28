@@ -44,7 +44,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="example@gmail.com" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DId-rd-dQL">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="admin" placeholder="example@gmail.com" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DId-rd-dQL">
                                         <rect key="frame" x="0.0" y="37" width="333" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="nSa-Hv-Kfo"/>
@@ -69,7 +69,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8pr-Kf-2RV">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="admin" placeholder="password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8pr-Kf-2RV">
                                         <rect key="frame" x="0.0" y="37" width="333" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="333" id="bln-Fz-IZG"/>

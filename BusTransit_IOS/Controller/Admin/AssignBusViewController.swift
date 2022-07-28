@@ -16,7 +16,7 @@ class AssignBusViewController: UIViewController {
     var schoolId = ""
     var school_lat = ""
     var school_long = ""
-    
+    var driver:User?
     @IBOutlet weak var schoolNameLbl: UILabel!
     @IBOutlet weak var schoolEmailLbl: UILabel!
     @IBOutlet weak var schoolAddressLbl: UILabel!
@@ -31,14 +31,14 @@ class AssignBusViewController: UIViewController {
     @IBOutlet weak var busListTableView: UITableView!
     
     let fb = FirebaseUtil()
-    
+    var bus:Bus? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
         busListTableView.register(UINib(nibName: BusListTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: BusListTableViewCell.identifier)
         busListTableView.dataSource = self
         busListTableView.delegate = self
         setup()
-  }
+    }
     override func viewWillAppear(_ animated: Bool) {
         loadData()
     }
@@ -50,6 +50,25 @@ class AssignBusViewController: UIViewController {
             destinationVC.source_long = school_long
             destinationVC.school_id = schoolId
         }
+        if segue.identifier == "goToAssignDriver"{
+            let destinationVC = segue.destination as! AssignDriverViewController
+            destinationVC.schoolName = name 
+            destinationVC.address = address 
+            destinationVC.busId = bus?.bus_id ?? ""
+            destinationVC.destinationAddress = bus?.destination ?? ""
+            destinationVC.busNumber = bus?.bus_number ?? 0
+            destinationVC.driver = driver
+        }
+        if segue.identifier == "goToDriverDetails"{
+            let destinationVC = segue.destination as! DriverDetailsViewController
+            destinationVC.schoolName = name
+            destinationVC.address = address
+            destinationVC.busDetails = bus
+            destinationVC.destinationAddress = bus?.destination ?? ""
+            destinationVC.busNumber = bus?.bus_number ?? 0
+            destinationVC.driver = driver
+        }
+
     }
     @IBAction func backHandler(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true,completion: nil)
@@ -57,6 +76,7 @@ class AssignBusViewController: UIViewController {
     @IBAction func addBusHandler(_ sender: UIBarButtonItem) {
         self.performSegue(withIdentifier: "goToAddBus", sender: self)
     }
+    
     func setup(){
         schoolNameLbl.text = name
         schoolEmailLbl.text = email
@@ -114,5 +134,38 @@ extension AssignBusViewController: UITableViewDelegate,UITableViewDataSource {
         cell.setUp(bus: BusList.BusListCollection[indexPath.row])
         return cell
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        bus = BusList.BusListCollection[indexPath.row]
+        self.driver = nil
     
+        FirebaseUtil._db.collection("User")
+            .whereField("user_type", isEqualTo: Constants.DRIVER)
+            .whereField("bus_id", isEqualTo: bus?.bus_id as Any)
+            .getDocuments() { (querySnapshot, err) in
+            
+                if((querySnapshot?.documents.count)! > 0){
+                    let document = querySnapshot?.documents[0]
+                    
+                    self.driver = User(
+                        user_id: document?.data()["user_id"] as! String,
+                        bus_id: document?.data()["bus_id"] as! String,
+                        email_id: document?.data()["email_id"] as! String,
+                        fullName: document?.data()["fullName"] as! String,
+                        gender: document?.data()["gender"] as! String,
+                        phone_no: document?.data()["phone_no"] as! String,
+                        address: document?.data()["address"] as! String,
+                        user_lat: document?.data()["user_lat"] as! String,
+                        user_long: document?.data()["user_long"] as! String,
+                        photo_url: document?.data()["photo_url"] as! String,
+                        user_type: document?.data()["user_type"] as! String,
+                        school_id: document?.data()["school_id"] as! [String]
+                    )
+                }
+                if(self.driver == nil){
+                    self.performSegue(withIdentifier: "goToAssignDriver", sender: self)
+                }else{
+                    self.performSegue(withIdentifier: "goToDriverDetails", sender: self)
+                }
+        }
+    }
 }
