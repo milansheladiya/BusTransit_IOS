@@ -19,3 +19,4 @@ class Constants{
     static let INVALID_EMAIL_MSG = "wrong email format!"
     static let INVALID_PHONE_NO = "wrong phone number format! (514-134-1128)"
 }
+

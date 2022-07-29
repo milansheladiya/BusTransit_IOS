@@ -44,7 +44,7 @@ class FirebaseUtil{
     static func signIn(email: String, pass: String, completionBlock: @escaping (_ success: String) -> Void) {
         
         Auth.auth().signIn(withEmail: email, password: pass) { (result, error) in
-            if let error = error, let _ = AuthErrorCode(rawValue: error._code) {
+            if let error = error {
                 completionBlock(error.localizedDescription)
             } else {
                 completionBlock("")
@@ -89,6 +89,21 @@ class FirebaseUtil{
             
             }
     }
+    func _readAllDocumentsWithField(_collection:String,_field:String, _value:String, callback: @escaping(QuerySnapshot) -> Void) {
+            
+        FirebaseUtil._db.collection(_collection).whereField(_field, isEqualTo: _value).getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                        print("Error getting documents: \(err)")
+                    } else {
+//                        for document in querySnapshot!.documents {
+//                            print("\(document.documentID) => \(document.data())")
+//                        }
+                    }
+                callback(querySnapshot!)
+                
+            }
+
+    }
     func _readAllDocuments(_collection:String, callback: @escaping(QuerySnapshot) -> Void) {
             
         FirebaseUtil._db.collection(_collection).getDocuments() { (querySnapshot, err) in
@@ -100,7 +115,17 @@ class FirebaseUtil{
             }
 
     }
-    
+    static func _deleteDocumentWithId(_collection:String,_docId: String){
+        
+        _db.collection(_collection).document(_docId).delete() { err in
+            if let err = err {
+                print("Error removing document: \(err)")
+            } else {
+                print("Document successfully removed!")
+            }
+        }
+        
+    }
     static func _updateExistingFieldInDocumentWithId(_collection:String,_docId: String, _data:[String:Any?]){
         
         let firebaseRef = FirebaseUtil._db.collection(_collection).document(_docId)

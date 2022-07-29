@@ -24,7 +24,6 @@ struct User{
 
 class UserList{
     static var UserListCollection:[User] = [
-    
         User(user_id: "1", bus_id: "5055 roslyn", email_id: "abc", fullName: "bus@gmail.com", gender: "bus bus", phone_no: "Male", address: "514-879-9876", user_lat:"202.222", user_long:"202.22" , photo_url: "https:urs/", user_type: "Driver", school_id: [])
     
     ]

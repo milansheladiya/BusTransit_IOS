@@ -42,8 +42,8 @@ class ViewController: UIViewController {
         
     }
     @IBAction func tabLogin(_ sender: UIButton) {
-        let emailFromUI = (txtEmail.text != nil) ? txtEmail.text : ""
-        let passwordFromUI = (txtPassword.text != nil) ? txtPassword.text : ""
+        let emailFromUI = (txtEmail.text != nil) ? txtEmail.text : "admin"
+        let passwordFromUI = (txtPassword.text != nil) ? txtPassword.text : "admin"
         
         
 //        if (!UtilClass.isValidEmail(txtEmail.text!))
@@ -54,6 +54,7 @@ class ViewController: UIViewController {
         
         if emailFromUI == "admin" && passwordFromUI == "admin"
         {
+            print("Call")
             self.performSegue(withIdentifier: "goToAdmin", sender: self)
         }else{
             loginWithFirebase(email: emailFromUI ?? "",password: passwordFromUI ?? "")
