@@ -38,6 +38,10 @@
 		B63D10002879FCB400C92C6B /* SignUp_Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63D0FFF2879FCB400C92C6B /* SignUp_Controller.swift */; };
 		B63D1002287A001B00C92C6B /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63D1001287A001B00C92C6B /* UserModel.swift */; };
 		B63D1004287A0F2200C92C6B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63D1003287A0F2200C92C6B /* Constants.swift */; };
+		DA42B8C1289449BA008E2FD1 /* DriverStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA42B8C0289449BA008E2FD1 /* DriverStoryboard.storyboard */; };
+		DA42B8C52896011C008E2FD1 /* DriverProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42B8C42896011C008E2FD1 /* DriverProfileController.swift */; };
+		DADB11D42897538D00171B17 /* ParentStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DADB11D32897538D00171B17 /* ParentStoryBoard.storyboard */; };
+		DADB11D62897550E00171B17 /* ParentProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADB11D52897550E00171B17 /* ParentProfileController.swift */; };
 		FB54ACC45033BBCFB6A039EE /* Pods_BusTransit_IOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9102DD997EADC548258612DF /* Pods_BusTransit_IOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +82,10 @@
 		B63D0FFF2879FCB400C92C6B /* SignUp_Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp_Controller.swift; sourceTree = "<group>"; };
 		B63D1001287A001B00C92C6B /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		B63D1003287A0F2200C92C6B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		DA42B8C0289449BA008E2FD1 /* DriverStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = DriverStoryboard.storyboard; path = Driver/DriverStoryboard.storyboard; sourceTree = SOURCE_ROOT; };
+		DA42B8C42896011C008E2FD1 /* DriverProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverProfileController.swift; sourceTree = "<group>"; };
+		DADB11D32897538D00171B17 /* ParentStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ParentStoryBoard.storyboard; path = BusTransit_IOS/Controller/Driver/ParentStoryBoard.storyboard; sourceTree = SOURCE_ROOT; };
+		DADB11D52897550E00171B17 /* ParentProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentProfileController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +197,7 @@
 		B63D0FE92878A0C200C92C6B /* Driver */ = {
 			isa = PBXGroup;
 			children = (
+				DA42B8C0289449BA008E2FD1 /* DriverStoryboard.storyboard */,
 			);
 			path = Driver;
 			sourceTree = "<group>";
@@ -196,6 +205,7 @@
 		B63D0FEA2878A0CB00C92C6B /* Parent */ = {
 			isa = PBXGroup;
 			children = (
+				DADB11D32897538D00171B17 /* ParentStoryBoard.storyboard */,
 			);
 			path = Parent;
 			sourceTree = "<group>";
@@ -215,6 +225,8 @@
 		B63D0FEC2878A0EE00C92C6B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				DA42B8C32895F1B6008E2FD1 /* Parent */,
+				DA42B8C22895F1A7008E2FD1 /* Driver */,
 				4DB92582288204F100CD6F26 /* Admin */,
 				B63D0FFF2879FCB400C92C6B /* SignUp_Controller.swift */,
 			);
@@ -243,6 +255,22 @@
 				9102DD997EADC548258612DF /* Pods_BusTransit_IOS.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DA42B8C22895F1A7008E2FD1 /* Driver */ = {
+			isa = PBXGroup;
+			children = (
+				DA42B8C42896011C008E2FD1 /* DriverProfileController.swift */,
+			);
+			path = Driver;
+			sourceTree = "<group>";
+		};
+		DA42B8C32895F1B6008E2FD1 /* Parent */ = {
+			isa = PBXGroup;
+			children = (
+				DADB11D52897550E00171B17 /* ParentProfileController.swift */,
+			);
+			path = Parent;
 			sourceTree = "<group>";
 		};
 		EEA3DEA9EA3B249AD9B972A9 /* Pods */ = {
@@ -318,11 +346,13 @@
 				B63D0FE028789C4400C92C6B /* LaunchScreen.storyboard in Resources */,
 				4DBF1B0628830EE70035FA5E /* SchoolTableViewCell.xib in Resources */,
 				4DB925812882049700CD6F26 /* Admin.storyboard in Resources */,
+				DADB11D42897538D00171B17 /* ParentStoryBoard.storyboard in Resources */,
 				B63D0FFB2879F8D000C92C6B /* GoogleService-Info.plist in Resources */,
 				4DBF1B112884D0780035FA5E /* BusListTableViewCell.xib in Resources */,
 				B63D0FDD28789C4400C92C6B /* Assets.xcassets in Resources */,
 				B63D0FDB28789C4400C92C6B /* Main.storyboard in Resources */,
 				4DAAE15B2890917B00615053 /* DriverTableViewCell.xib in Resources */,
+				DA42B8C1289449BA008E2FD1 /* DriverStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,6 +422,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DADB11D62897550E00171B17 /* ParentProfileController.swift in Sources */,
 				B63D0FFE2879FA1800C92C6B /* Firebase.swift in Sources */,
 				B63D0FF92878F13200C92C6B /* SignupViewController.swift in Sources */,
 				4DBF1B172885D6E80035FA5E /* AddBusViewController.swift in Sources */,
@@ -401,6 +432,7 @@
 				B63D0FD428789C4400C92C6B /* AppDelegate.swift in Sources */,
 				4DBF1B1528858F430035FA5E /* BusModel.swift in Sources */,
 				B63D1004287A0F2200C92C6B /* Constants.swift in Sources */,
+				DA42B8C52896011C008E2FD1 /* DriverProfileController.swift in Sources */,
 				4DAAE15F2890B79500615053 /* Extensions.swift in Sources */,
 				4DBF1B0528830EE70035FA5E /* SchoolTableViewCell.swift in Sources */,
 				4DBF1B08288312C50035FA5E /* SchoolListViewController.swift in Sources */,

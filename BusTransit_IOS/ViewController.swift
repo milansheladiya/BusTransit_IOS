@@ -65,10 +65,14 @@ class ViewController: UIViewController {
     
     @IBAction func tabSignUp(_ sender: UIButton) {
         
-        self.performSegue(withIdentifier: "goToSignup", sender: self)
+//        self.performSegue(withIdentifier: "goToSignup", sender: self)
         
+        self.performSegue(withIdentifier: "goToParentStory", sender: self)
         
     }
+    
+    
+    
     func loginWithFirebase(email: String , password: String){
         FirebaseUtil.signIn(email: email, pass: password) {
             [weak self] (success) in
@@ -84,6 +88,8 @@ class ViewController: UIViewController {
         }
 
     }
-
+    
+    
+   
 }
 

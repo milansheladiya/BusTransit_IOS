@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pEb-sE-5zX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -170,11 +170,22 @@
                         <outlet property="txtPassword" destination="8pr-Kf-2RV" id="o2g-2D-Vef"/>
                         <segue destination="IIh-bh-0y9" kind="presentation" identifier="goToSignup" modalPresentationStyle="fullScreen" id="XiK-k9-pug"/>
                         <segue destination="1O0-xf-0ta" kind="presentation" identifier="goToAdmin" id="7DW-8i-SKA"/>
+                        <segue destination="5yj-92-qo4" kind="presentation" identifier="goToParentStory" modalPresentationStyle="fullScreen" id="BM1-tg-FRH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="510" y="84"/>
+        </scene>
+        <!--VCParent-->
+        <scene sceneID="V2A-AX-j6g">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="VCParentNotification" storyboardName="ParentStoryBoard" referencedIdentifier="VCParent" id="5yj-92-qo4" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Nhg-qT-qEI"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F6d-l8-UhA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="105" y="566"/>
         </scene>
         <!--VCAdminHome-->
         <scene sceneID="o2f-ms-oBx">
@@ -539,6 +550,14 @@
             </objects>
             <point key="canvasLocation" x="1756.521739130435" y="50.892857142857139"/>
         </scene>
+        <!--Storyboard Reference-->
+        <scene sceneID="SS5-Td-x1Y">
+            <objects>
+                <viewControllerPlaceholder id="h8F-sg-GHa" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="41G-cn-ywK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2785" y="-38"/>
+        </scene>
         <!--Launch Screen View Controller-->
         <scene sceneID="LmX-dD-Vrq">
             <objects>
@@ -573,7 +592,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="XiK-k9-pug"/>
         <segue reference="FOT-A9-JKo"/>
     </inferredMetricsTieBreakers>
     <resources>
