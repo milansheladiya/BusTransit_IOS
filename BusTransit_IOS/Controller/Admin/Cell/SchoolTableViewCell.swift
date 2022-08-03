@@ -17,7 +17,7 @@ class SchoolTableViewCell: UITableViewCell {
         // Initialization code
         cellView.layer.cornerRadius = 10
     }
-    func setUp(school: School){
+    func setUp(school:School){
         schoolName.text = school.name
         self.selectionStyle = UITableViewCell.SelectionStyle.none
     }
