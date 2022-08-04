@@ -24,7 +24,7 @@
 		4DBF1B1528858F430035FA5E /* BusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBF1B1428858F430035FA5E /* BusModel.swift */; };
 		4DBF1B172885D6E80035FA5E /* AddBusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBF1B162885D6E80035FA5E /* AddBusViewController.swift */; };
 		4DF698322891D7040081F8CE /* DriverDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF698312891D7040081F8CE /* DriverDetailsViewController.swift */; };
-		B54B6F5C2899E38300D3F88E /* DriverInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54B6F5B2899E38300D3F88E /* DriverInfoViewController.swift */; };
+		B54B6F5C2899E38300D3F88E /* NotificationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54B6F5B2899E38300D3F88E /* NotificationListViewController.swift */; };
 		B54B6F612899E8C100D3F88E /* NotificationListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54B6F5F2899E8C100D3F88E /* NotificationListTableViewCell.swift */; };
 		B54B6F622899E8C100D3F88E /* NotificationListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B54B6F602899E8C100D3F88E /* NotificationListTableViewCell.xib */; };
 		B54B6F642899F4D500D3F88E /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54B6F632899F4D500D3F88E /* NotificationModel.swift */; };
@@ -70,7 +70,7 @@
 		4DBF1B162885D6E80035FA5E /* AddBusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBusViewController.swift; sourceTree = "<group>"; };
 		4DF698312891D7040081F8CE /* DriverDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverDetailsViewController.swift; sourceTree = "<group>"; };
 		9102DD997EADC548258612DF /* Pods_BusTransit_IOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BusTransit_IOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B54B6F5B2899E38300D3F88E /* DriverInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverInfoViewController.swift; sourceTree = "<group>"; };
+		B54B6F5B2899E38300D3F88E /* NotificationListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListViewController.swift; sourceTree = "<group>"; };
 		B54B6F5F2899E8C100D3F88E /* NotificationListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotificationListTableViewCell.swift; path = Parent/Cell/NotificationListTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		B54B6F602899E8C100D3F88E /* NotificationListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = NotificationListTableViewCell.xib; path = Parent/Cell/NotificationListTableViewCell.xib; sourceTree = SOURCE_ROOT; };
 		B54B6F632899F4D500D3F88E /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
@@ -296,7 +296,7 @@
 			children = (
 				B54B6F5D2899E71200D3F88E /* cell */,
 				DADB11D52897550E00171B17 /* ParentProfileController.swift */,
-				B54B6F5B2899E38300D3F88E /* DriverInfoViewController.swift */,
+				B54B6F5B2899E38300D3F88E /* NotificationListViewController.swift */,
 			);
 			path = Parent;
 			sourceTree = "<group>";
@@ -455,7 +455,7 @@
 				B63D0FFE2879FA1800C92C6B /* Firebase.swift in Sources */,
 				B63D0FF92878F13200C92C6B /* SignupViewController.swift in Sources */,
 				4DBF1B172885D6E80035FA5E /* AddBusViewController.swift in Sources */,
-				B54B6F5C2899E38300D3F88E /* DriverInfoViewController.swift in Sources */,
+				B54B6F5C2899E38300D3F88E /* NotificationListViewController.swift in Sources */,
 				B63D0FD828789C4400C92C6B /* ViewController.swift in Sources */,
 				B54B6F612899E8C100D3F88E /* NotificationListTableViewCell.swift in Sources */,
 				B63D10002879FCB400C92C6B /* SignUp_Controller.swift in Sources */,

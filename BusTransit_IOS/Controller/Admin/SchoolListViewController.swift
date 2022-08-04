@@ -14,9 +14,12 @@ class SchoolListViewController: UIViewController,UITableViewDataSource,UITableVi
     @IBOutlet weak var schoolListView: UITableView!
     
     var filteredArr = [School]()
+    
     var school:School? = nil
+   
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         schoolListView.register(UINib(nibName: SchoolTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: SchoolTableViewCell.identifier)
         schoolListView.dataSource = self
         schoolListView.delegate = self
@@ -40,6 +43,7 @@ class SchoolListViewController: UIViewController,UITableViewDataSource,UITableVi
         
         loadData()
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToAssignBus"{
             let destinationVC = segue.destination as! AssignBusViewController
