@@ -32,7 +32,10 @@ class UtilClass
             alpha: CGFloat(1.0)
         )
     }
-    
+    static func getDate(date:Date) -> String{
+        return date.toString(dateFormat: "dd-MM")
+    }
+
     
     // return all list textfield that have in passed view
     static func getTextfield(view: UIView) -> [UITextField] {

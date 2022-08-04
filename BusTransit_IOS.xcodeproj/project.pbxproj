@@ -24,6 +24,10 @@
 		4DBF1B1528858F430035FA5E /* BusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBF1B1428858F430035FA5E /* BusModel.swift */; };
 		4DBF1B172885D6E80035FA5E /* AddBusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBF1B162885D6E80035FA5E /* AddBusViewController.swift */; };
 		4DF698322891D7040081F8CE /* DriverDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF698312891D7040081F8CE /* DriverDetailsViewController.swift */; };
+		B54B6F5C2899E38300D3F88E /* NotificationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54B6F5B2899E38300D3F88E /* NotificationListViewController.swift */; };
+		B54B6F612899E8C100D3F88E /* NotificationListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54B6F5F2899E8C100D3F88E /* NotificationListTableViewCell.swift */; };
+		B54B6F622899E8C100D3F88E /* NotificationListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B54B6F602899E8C100D3F88E /* NotificationListTableViewCell.xib */; };
+		B54B6F642899F4D500D3F88E /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54B6F632899F4D500D3F88E /* NotificationModel.swift */; };
 		B63D0FD428789C4400C92C6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63D0FD328789C4400C92C6B /* AppDelegate.swift */; };
 		B63D0FD628789C4400C92C6B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63D0FD528789C4400C92C6B /* SceneDelegate.swift */; };
 		B63D0FD828789C4400C92C6B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63D0FD728789C4400C92C6B /* ViewController.swift */; };
@@ -66,6 +70,10 @@
 		4DBF1B162885D6E80035FA5E /* AddBusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBusViewController.swift; sourceTree = "<group>"; };
 		4DF698312891D7040081F8CE /* DriverDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverDetailsViewController.swift; sourceTree = "<group>"; };
 		9102DD997EADC548258612DF /* Pods_BusTransit_IOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BusTransit_IOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B54B6F5B2899E38300D3F88E /* NotificationListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListViewController.swift; sourceTree = "<group>"; };
+		B54B6F5F2899E8C100D3F88E /* NotificationListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotificationListTableViewCell.swift; path = Parent/Cell/NotificationListTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		B54B6F602899E8C100D3F88E /* NotificationListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = NotificationListTableViewCell.xib; path = Parent/Cell/NotificationListTableViewCell.xib; sourceTree = SOURCE_ROOT; };
+		B54B6F632899F4D500D3F88E /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
 		B63D0FD028789C4400C92C6B /* BusTransit_IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BusTransit_IOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B63D0FD328789C4400C92C6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B63D0FD528789C4400C92C6B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +139,22 @@
 				4DBF1B0E2884D0780035FA5E /* BusListTableViewCell.swift */,
 				4DAAE1582890917B00615053 /* DriverTableViewCell.swift */,
 				4DBF1B0328830EE70035FA5E /* SchoolTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		B54B6F5D2899E71200D3F88E /* cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		B54B6F5E2899E88E00D3F88E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B54B6F5F2899E8C100D3F88E /* NotificationListTableViewCell.swift */,
+				B54B6F602899E8C100D3F88E /* NotificationListTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -205,6 +229,7 @@
 		B63D0FEA2878A0CB00C92C6B /* Parent */ = {
 			isa = PBXGroup;
 			children = (
+				B54B6F5E2899E88E00D3F88E /* Cell */,
 				DADB11D32897538D00171B17 /* ParentStoryBoard.storyboard */,
 			);
 			path = Parent;
@@ -218,6 +243,7 @@
 				4DBF1B092883172E0035FA5E /* SchoolModel.swift */,
 				4DBF1B1428858F430035FA5E /* BusModel.swift */,
 				4DAAE15E2890B79500615053 /* Extensions.swift */,
+				B54B6F632899F4D500D3F88E /* NotificationModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -268,7 +294,9 @@
 		DA42B8C32895F1B6008E2FD1 /* Parent */ = {
 			isa = PBXGroup;
 			children = (
+				B54B6F5D2899E71200D3F88E /* cell */,
 				DADB11D52897550E00171B17 /* ParentProfileController.swift */,
+				B54B6F5B2899E38300D3F88E /* NotificationListViewController.swift */,
 			);
 			path = Parent;
 			sourceTree = "<group>";
@@ -351,6 +379,7 @@
 				4DBF1B112884D0780035FA5E /* BusListTableViewCell.xib in Resources */,
 				B63D0FDD28789C4400C92C6B /* Assets.xcassets in Resources */,
 				B63D0FDB28789C4400C92C6B /* Main.storyboard in Resources */,
+				B54B6F622899E8C100D3F88E /* NotificationListTableViewCell.xib in Resources */,
 				4DAAE15B2890917B00615053 /* DriverTableViewCell.xib in Resources */,
 				DA42B8C1289449BA008E2FD1 /* DriverStoryboard.storyboard in Resources */,
 			);
@@ -426,7 +455,9 @@
 				B63D0FFE2879FA1800C92C6B /* Firebase.swift in Sources */,
 				B63D0FF92878F13200C92C6B /* SignupViewController.swift in Sources */,
 				4DBF1B172885D6E80035FA5E /* AddBusViewController.swift in Sources */,
+				B54B6F5C2899E38300D3F88E /* NotificationListViewController.swift in Sources */,
 				B63D0FD828789C4400C92C6B /* ViewController.swift in Sources */,
+				B54B6F612899E8C100D3F88E /* NotificationListTableViewCell.swift in Sources */,
 				B63D10002879FCB400C92C6B /* SignUp_Controller.swift in Sources */,
 				4DB925842882050000CD6F26 /* AdminHomeViewController.swift in Sources */,
 				B63D0FD428789C4400C92C6B /* AppDelegate.swift in Sources */,
@@ -434,6 +465,7 @@
 				B63D1004287A0F2200C92C6B /* Constants.swift in Sources */,
 				DA42B8C52896011C008E2FD1 /* DriverProfileController.swift in Sources */,
 				4DAAE15F2890B79500615053 /* Extensions.swift in Sources */,
+				B54B6F642899F4D500D3F88E /* NotificationModel.swift in Sources */,
 				4DBF1B0528830EE70035FA5E /* SchoolTableViewCell.swift in Sources */,
 				4DBF1B08288312C50035FA5E /* SchoolListViewController.swift in Sources */,
 				B63D0FF12878A2CF00C92C6B /* UtilClass.swift in Sources */,
