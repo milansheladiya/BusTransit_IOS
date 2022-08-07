@@ -83,6 +83,8 @@ class ViewController: UIViewController {
             else
             {
                 UtilClass._Alert(self!, "Success", "Login successed \(FirebaseUtil.auth.currentUser?.uid ?? "M2ND")")
+//                UserList.GlobleUser =
+                
             }
         
         }

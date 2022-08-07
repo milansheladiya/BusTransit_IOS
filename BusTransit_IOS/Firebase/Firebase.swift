@@ -89,6 +89,14 @@ class FirebaseUtil{
             
             }
     }
+    func _readDocumentsWithMultipleFieldValues(_collection:String,_field:String, _value:[String], callback: @escaping(QuerySnapshot) -> Void){
+        FirebaseUtil._db.collection(_collection).whereField(_field, in: _value).getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                        print("Error getting documents: \(err)")
+                }
+                callback(querySnapshot!)
+        }
+    }
     func _readAllDocumentsWithField(_collection:String,_field:String, _value:String, callback: @escaping(QuerySnapshot) -> Void) {
             
         FirebaseUtil._db.collection(_collection).whereField(_field, isEqualTo: _value).getDocuments() { (querySnapshot, err) in
