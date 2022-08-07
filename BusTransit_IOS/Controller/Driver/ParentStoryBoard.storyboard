@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="N8Z-xt-msc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="evb-EO-7hg">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -242,7 +242,69 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="34.782608695652179" y="98.4375"/>
+            <point key="canvasLocation" x="1970" y="-337"/>
+        </scene>
+        <!--Parent Bus List View Controller-->
+        <scene sceneID="xMC-Ln-aLI">
+            <objects>
+                <viewController id="evb-EO-7hg" customClass="ParentBusListViewController" customModule="BusTransit_IOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3LO-i0-01c">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XEJ-EJ-zhZ">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <color key="barTintColor" red="1" green="0.81960784313725488" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <items>
+                                    <navigationItem title="Welcome John" id="fQ7-ly-g7O"/>
+                                </items>
+                            </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uao-3H-r0J">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="List of All Bus Of Your Kid's School" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SdQ-CT-rYd">
+                                        <rect key="frame" x="0.0" y="16" width="414" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="5KH-cM-284">
+                                        <rect key="frame" x="0.0" y="55" width="414" height="719"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="5KH-cM-284" firstAttribute="top" secondItem="SdQ-CT-rYd" secondAttribute="bottom" constant="10" id="4hl-Sq-Tya"/>
+                                    <constraint firstItem="SdQ-CT-rYd" firstAttribute="leading" secondItem="Uao-3H-r0J" secondAttribute="leading" id="Njf-mF-7Tc"/>
+                                    <constraint firstItem="SdQ-CT-rYd" firstAttribute="top" secondItem="Uao-3H-r0J" secondAttribute="top" constant="16" id="PdJ-54-IsW"/>
+                                    <constraint firstAttribute="bottom" secondItem="5KH-cM-284" secondAttribute="bottom" id="U95-Nl-Bwc"/>
+                                    <constraint firstItem="5KH-cM-284" firstAttribute="leading" secondItem="Uao-3H-r0J" secondAttribute="leading" id="fW5-3Y-uQX"/>
+                                    <constraint firstAttribute="trailing" secondItem="5KH-cM-284" secondAttribute="trailing" id="hse-Yw-r9V"/>
+                                    <constraint firstAttribute="trailing" secondItem="SdQ-CT-rYd" secondAttribute="trailing" id="nJt-af-twf"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="uq8-B2-Ovt"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="uq8-B2-Ovt" firstAttribute="bottom" secondItem="Uao-3H-r0J" secondAttribute="bottom" id="05j-hY-0yc"/>
+                            <constraint firstItem="Uao-3H-r0J" firstAttribute="leading" secondItem="uq8-B2-Ovt" secondAttribute="leading" id="2T1-B3-Hqb"/>
+                            <constraint firstItem="uq8-B2-Ovt" firstAttribute="trailing" secondItem="Uao-3H-r0J" secondAttribute="trailing" id="Gna-oR-MxJ"/>
+                            <constraint firstItem="XEJ-EJ-zhZ" firstAttribute="top" secondItem="uq8-B2-Ovt" secondAttribute="top" id="OjN-Ia-VPP"/>
+                            <constraint firstItem="XEJ-EJ-zhZ" firstAttribute="leading" secondItem="uq8-B2-Ovt" secondAttribute="leading" id="q0r-Bz-h2S"/>
+                            <constraint firstItem="Uao-3H-r0J" firstAttribute="top" secondItem="XEJ-EJ-zhZ" secondAttribute="bottom" id="sAV-p0-xgr"/>
+                            <constraint firstItem="XEJ-EJ-zhZ" firstAttribute="trailing" secondItem="uq8-B2-Ovt" secondAttribute="trailing" id="x6o-HO-4qn"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="busListTableView" destination="5KH-cM-284" id="Nd3-yG-vnG"/>
+                        <outlet property="navigationBarTitle" destination="fQ7-ly-g7O" id="5RE-pX-D40"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f5y-mO-qk1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-848" y="98"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="RU1-ah-K8d">
@@ -345,7 +407,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z1m-Rp-fH0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="868.11594202898561" y="252.45535714285714"/>
+            <point key="canvasLocation" x="39" y="98"/>
         </scene>
         <!--Notification List View Controller-->
         <scene sceneID="26m-hJ-Ueq">
@@ -521,7 +583,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1KB-xi-1JV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2568" y="542"/>
+            <point key="canvasLocation" x="823" y="98"/>
         </scene>
     </scenes>
     <resources>

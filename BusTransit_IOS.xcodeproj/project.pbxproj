@@ -28,6 +28,9 @@
 		B54B6F612899E8C100D3F88E /* NotificationListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54B6F5F2899E8C100D3F88E /* NotificationListTableViewCell.swift */; };
 		B54B6F622899E8C100D3F88E /* NotificationListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B54B6F602899E8C100D3F88E /* NotificationListTableViewCell.xib */; };
 		B54B6F642899F4D500D3F88E /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54B6F632899F4D500D3F88E /* NotificationModel.swift */; };
+		B5F7977A289C7F860089EBDE /* ParentBusListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F79779289C7F860089EBDE /* ParentBusListViewController.swift */; };
+		B5F7977D289C80560089EBDE /* ParentBusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F7977B289C80560089EBDE /* ParentBusTableViewCell.swift */; };
+		B5F7977E289C80560089EBDE /* ParentBusTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5F7977C289C80560089EBDE /* ParentBusTableViewCell.xib */; };
 		B63D0FD428789C4400C92C6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63D0FD328789C4400C92C6B /* AppDelegate.swift */; };
 		B63D0FD628789C4400C92C6B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63D0FD528789C4400C92C6B /* SceneDelegate.swift */; };
 		B63D0FD828789C4400C92C6B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63D0FD728789C4400C92C6B /* ViewController.swift */; };
@@ -74,6 +77,9 @@
 		B54B6F5F2899E8C100D3F88E /* NotificationListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotificationListTableViewCell.swift; path = Parent/Cell/NotificationListTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		B54B6F602899E8C100D3F88E /* NotificationListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = NotificationListTableViewCell.xib; path = Parent/Cell/NotificationListTableViewCell.xib; sourceTree = SOURCE_ROOT; };
 		B54B6F632899F4D500D3F88E /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
+		B5F79779289C7F860089EBDE /* ParentBusListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentBusListViewController.swift; sourceTree = "<group>"; };
+		B5F7977B289C80560089EBDE /* ParentBusTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ParentBusTableViewCell.swift; path = Parent/Cell/ParentBusTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		B5F7977C289C80560089EBDE /* ParentBusTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ParentBusTableViewCell.xib; path = Parent/Cell/ParentBusTableViewCell.xib; sourceTree = SOURCE_ROOT; };
 		B63D0FD028789C4400C92C6B /* BusTransit_IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BusTransit_IOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B63D0FD328789C4400C92C6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B63D0FD528789C4400C92C6B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -155,6 +161,8 @@
 			children = (
 				B54B6F5F2899E8C100D3F88E /* NotificationListTableViewCell.swift */,
 				B54B6F602899E8C100D3F88E /* NotificationListTableViewCell.xib */,
+				B5F7977B289C80560089EBDE /* ParentBusTableViewCell.swift */,
+				B5F7977C289C80560089EBDE /* ParentBusTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -297,6 +305,7 @@
 				B54B6F5D2899E71200D3F88E /* cell */,
 				DADB11D52897550E00171B17 /* ParentProfileController.swift */,
 				B54B6F5B2899E38300D3F88E /* NotificationListViewController.swift */,
+				B5F79779289C7F860089EBDE /* ParentBusListViewController.swift */,
 			);
 			path = Parent;
 			sourceTree = "<group>";
@@ -373,6 +382,7 @@
 			files = (
 				B63D0FE028789C4400C92C6B /* LaunchScreen.storyboard in Resources */,
 				4DBF1B0628830EE70035FA5E /* SchoolTableViewCell.xib in Resources */,
+				B5F7977E289C80560089EBDE /* ParentBusTableViewCell.xib in Resources */,
 				4DB925812882049700CD6F26 /* Admin.storyboard in Resources */,
 				DADB11D42897538D00171B17 /* ParentStoryBoard.storyboard in Resources */,
 				B63D0FFB2879F8D000C92C6B /* GoogleService-Info.plist in Resources */,
@@ -467,6 +477,7 @@
 				4DAAE15F2890B79500615053 /* Extensions.swift in Sources */,
 				B54B6F642899F4D500D3F88E /* NotificationModel.swift in Sources */,
 				4DBF1B0528830EE70035FA5E /* SchoolTableViewCell.swift in Sources */,
+				B5F7977A289C7F860089EBDE /* ParentBusListViewController.swift in Sources */,
 				4DBF1B08288312C50035FA5E /* SchoolListViewController.swift in Sources */,
 				B63D0FF12878A2CF00C92C6B /* UtilClass.swift in Sources */,
 				B63D0FF52878D98900C92C6B /* LaunchScreenViewController.swift in Sources */,
@@ -476,6 +487,7 @@
 				4DBF1B0A2883172E0035FA5E /* SchoolModel.swift in Sources */,
 				4DAAE15A2890917B00615053 /* DriverTableViewCell.swift in Sources */,
 				B63D1002287A001B00C92C6B /* UserModel.swift in Sources */,
+				B5F7977D289C80560089EBDE /* ParentBusTableViewCell.swift in Sources */,
 				B63D0FD628789C4400C92C6B /* SceneDelegate.swift in Sources */,
 				4DBF1B102884D0780035FA5E /* BusListTableViewCell.swift in Sources */,
 				4DBF1B0D288347810035FA5E /* AddSchoolViewController.swift in Sources */,
