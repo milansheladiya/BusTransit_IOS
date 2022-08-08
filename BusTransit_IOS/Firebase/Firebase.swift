@@ -52,10 +52,9 @@ class FirebaseUtil{
         }
     }
     
-    
-    
-    
-    
+    static func logout(){
+        try! auth.signOut()
+    }
     //------------------ Input ------------------------
     static func _insertDocument(_collection:String, _data:[String:Any?], callback: @escaping(String) -> Void) -> String {
             
