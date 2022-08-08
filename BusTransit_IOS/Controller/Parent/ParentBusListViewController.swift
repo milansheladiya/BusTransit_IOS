@@ -12,6 +12,7 @@ class ParentBusListViewController: UIViewController {
     @IBOutlet weak var navigationBarTitle: UINavigationItem!
     @IBOutlet weak var busListTableView: UITableView!
     let fb = FirebaseUtil()
+    var busDetails:BusToDriverModel?
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationBarTitle.title = UserList.GlobleUser.fullName
@@ -23,6 +24,12 @@ class ParentBusListViewController: UIViewController {
     @IBAction func logout(_ sender: UIBarButtonItem) {
         FirebaseUtil.logout()
         self.dismiss(animated: true)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToBusLocationDetails"{
+            let destinationVC = segue.destination as! BusLocationDetailsViewController
+            destinationVC.busDetails = busDetails
+        }
     }
     func loadData(){
         var schoolId:[String] = []
@@ -80,6 +87,8 @@ class ParentBusListViewController: UIViewController {
                                     fullName: document.data()["fullName"] as! String,
                                     phone_no: document.data()["phone_no"] as! String,
                                     photo_url: document.data()["photo_url"] as! String,
+                                    gender: document.data()["gender"] as! String,
+                                    address: document.data()["address"] as! String,
                                     school_id_list: document.data()["school_id"] as! [String]
                                 )
                                 ParentBusList.BusListCollection.append(parentBus)
@@ -101,6 +110,9 @@ extension ParentBusListViewController: UITableViewDelegate,UITableViewDataSource
         cell.setup(bus: ParentBusList.BusListCollection[indexPath.row])
         return cell
     }
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        busDetails = ParentBusList.BusListCollection[indexPath.row]
+        self.performSegue(withIdentifier: "goToBusLocationDetails", sender: self)
+    }
     
 }

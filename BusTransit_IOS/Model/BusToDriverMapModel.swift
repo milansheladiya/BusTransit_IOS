@@ -26,6 +26,8 @@ struct BusToDriverModel {
     let fullName: String
     let phone_no: String
     let photo_url: String
+    let gender: String
+    let address: String
     let school_id_list: [String]
 
 }

@@ -137,12 +137,10 @@ extension AssignBusViewController: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         bus = BusList.BusListCollection[indexPath.row]
         self.driver = nil
-    
         FirebaseUtil._db.collection("User")
             .whereField("user_type", isEqualTo: Constants.DRIVER)
             .whereField("bus_id", isEqualTo: bus?.bus_id as Any)
             .getDocuments() { (querySnapshot, err) in
-            
                 if((querySnapshot?.documents.count)! > 0){
                     let document = querySnapshot?.documents[0]
                     
