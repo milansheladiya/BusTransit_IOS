@@ -44,7 +44,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="admin" placeholder="example@gmail.com" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DId-rd-dQL">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="abc12@gmail.com" placeholder="example@gmail.com" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DId-rd-dQL">
                                         <rect key="frame" x="0.0" y="37" width="333" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="nSa-Hv-Kfo"/>
@@ -69,7 +69,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="admin" placeholder="password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8pr-Kf-2RV">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Admin@123" placeholder="password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8pr-Kf-2RV">
                                         <rect key="frame" x="0.0" y="37" width="333" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="333" id="bln-Fz-IZG"/>
@@ -170,17 +170,18 @@
                         <outlet property="txtPassword" destination="8pr-Kf-2RV" id="o2g-2D-Vef"/>
                         <segue destination="IIh-bh-0y9" kind="presentation" identifier="goToSignup" modalPresentationStyle="fullScreen" id="XiK-k9-pug"/>
                         <segue destination="1O0-xf-0ta" kind="presentation" identifier="goToAdmin" id="7DW-8i-SKA"/>
-                        <segue destination="5yj-92-qo4" kind="presentation" identifier="goToParentStory" modalPresentationStyle="fullScreen" id="BM1-tg-FRH"/>
+                        <segue destination="5yj-92-qo4" kind="presentation" identifier="goToParent" modalPresentationStyle="fullScreen" id="BM1-tg-FRH"/>
+                        <segue destination="h8U-x3-uIq" kind="presentation" identifier="goToDriver" modalPresentationStyle="fullScreen" id="4yv-sS-wZF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="510" y="84"/>
         </scene>
-        <!--VCNotificationList-->
+        <!--VCParentHome-->
         <scene sceneID="V2A-AX-j6g">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="VCParentNotification" storyboardName="ParentStoryBoard" referencedIdentifier="VCNotificationList" id="5yj-92-qo4" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="ParentStoryBoard" referencedIdentifier="VCParentHome" id="5yj-92-qo4" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="Nhg-qT-qEI"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F6d-l8-UhA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -196,6 +197,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wfu-Ll-2HE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="509" y="563"/>
+        </scene>
+        <!--VCDriverHome-->
+        <scene sceneID="JEA-m4-MGi">
+            <objects>
+                <viewControllerPlaceholder storyboardName="DriverStoryboard" referencedIdentifier="VCDriverHome" id="h8U-x3-uIq" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6rN-6B-odz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="794" y="561"/>
         </scene>
         <!--Signup View Controller-->
         <scene sceneID="Jze-JG-eEC">

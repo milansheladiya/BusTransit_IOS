@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-
+import Firebase
 class UtilClass
 {
     
@@ -109,6 +109,48 @@ class UtilClass
         
         
         return newUser
+    }
+    static func FirebaseToUserMap(doc: QueryDocumentSnapshot) -> User{
+        let user:User = User(
+                    user_id: doc.data()["user_id"] as! String,
+                    bus_id: doc.data()["bus_id"] as! String,
+                    email_id: doc.data()["email_id"] as! String,
+                    fullName: doc.data()["fullName"] as! String,
+                    gender: doc.data()["gender"] as! String,
+                    phone_no: doc.data()["phone_no"] as! String,
+                    address: doc.data()["address"] as! String,
+                    user_lat: doc.data()["user_lat"] as! String,
+                    user_long: doc.data()["user_long"] as! String,
+                    photo_url: doc.data()["photo_url"] as! String,
+                    user_type: doc.data()["user_type"] as! String,
+                    school_id: doc.data()["school_id"] as! [String]
+                )
+        return user
+    }
+    static func FirebaseToParentBusMap(doc: QueryDocumentSnapshot) -> BusToDriverModel{
+        let parentBus:BusToDriverModel = BusToDriverModel(
+            bus_id:  doc.data()["bus_id"] as! String,
+            bus_number:  doc.data()["bus_number"] as! Int,
+            active_sharing:  doc.data()["active_sharing"] as! Bool,
+            current_lat:  doc.data()["current_lat"] as! String,
+            current_long:  doc.data()["current_long"] as! String,
+            destination_lat:  doc.data()["destination_lat"] as! String,
+            destination_long:  doc.data()["destination_long"] as! String,
+            destination: doc.data()["destination"] as! String,
+            going_to_school:  doc.data()["going_to_school"] as! Bool,
+            school_id:  doc.data()["school_id"] as! String,
+            source_lat:  doc.data()["source_lat"] as! String,
+            source_long:  doc.data()["source_long"] as! String,
+            source:  doc.data()["source"] as! String,
+            user_id: doc.data()["user_id"] as! String,
+            email_id: doc.data()["email_id"] as! String,
+            fullName: doc.data()["fullName"] as! String,
+            phone_no: doc.data()["phone_no"] as! String,
+            photo_url: doc.data()["photo_url"] as! String,
+            school_id_list: doc.data()["school_id"] as! [String]
+        )
+        
+        return parentBus
     }
     static func SchoolToFirebaseMap(obj: School) -> [String:Any]
     {

@@ -18,6 +18,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var imgLoginWithApple: UIImageView!
     
+    let fb = FirebaseUtil()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -65,14 +67,16 @@ class ViewController: UIViewController {
     
     @IBAction func tabSignUp(_ sender: UIButton) {
         
-//        self.performSegue(withIdentifier: "goToSignup", sender: self)
+        self.performSegue(withIdentifier: "goToSignup", sender: self)
         
-        self.performSegue(withIdentifier: "goToParentStory", sender: self)
+//        self.performSegue(withIdentifier: "goToParentStory", sender: self)
         
     }
     
     
-    
+    func navigateToScreen(screenId: String){
+        self.performSegue(withIdentifier: screenId, sender: self)
+    }
     func loginWithFirebase(email: String , password: String){
         FirebaseUtil.signIn(email: email, pass: password) {
             [weak self] (success) in
@@ -80,13 +84,29 @@ class ViewController: UIViewController {
                     UtilClass._Alert(self!, "Error", success)
                     return
                 }
-            else
-            {
-                UtilClass._Alert(self!, "Success", "Login successed \(FirebaseUtil.auth.currentUser?.uid ?? "M2ND")")
-//                UserList.GlobleUser =
-                
+            FirebaseUtil._db.collection("User").document(FirebaseUtil.auth.currentUser!.uid).getDocument { (docSnapshot, error) in
+                if let doc = docSnapshot {
+                    let userType = doc.get("user_type") as! String
+                    UserList.GlobleUser = User(
+                        user_id: doc.get("user_id") as! String,
+                        bus_id: doc.get("bus_id") as! String,
+                        email_id: doc.get("email_id") as! String,
+                        fullName: doc.get("fullName") as! String,
+                        gender: doc.get("gender") as! String,
+                        phone_no: doc.get("phone_no") as! String,
+                        address: doc.get("address") as! String,
+                        user_lat: doc.get("user_lat") as! String,
+                        user_long: doc.get("user_long") as! String,
+                        photo_url: doc.get("photo_url") as! String,
+                        user_type: doc.get("user_type") as! String,
+                        school_id: doc.get("school_id") as! [String])
+                    if(userType == Constants.DRIVER){
+                        self?.navigateToScreen(screenId: "goToDriver")
+                    }else{
+                        self?.navigateToScreen(screenId: "goToParent")
+                    }
+                }
             }
-        
         }
 
     }

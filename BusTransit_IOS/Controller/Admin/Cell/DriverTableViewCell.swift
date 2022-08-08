@@ -39,7 +39,6 @@ class DriverTableViewCell: UITableViewCell {
     @IBAction func allocateDriverHandler(_ sender: UIButton) {
         
         delegate?.allocateDriver(driver: currentDriver!, busId: bus_id!)
-        print(":Call")
     }
     @IBAction func callHandler(_ sender: UIButton) {
     }

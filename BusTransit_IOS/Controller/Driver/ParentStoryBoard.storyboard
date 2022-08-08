@@ -247,7 +247,7 @@
         <!--Parent Bus List View Controller-->
         <scene sceneID="xMC-Ln-aLI">
             <objects>
-                <viewController id="evb-EO-7hg" customClass="ParentBusListViewController" customModule="BusTransit_IOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VCParentHome" id="evb-EO-7hg" customClass="ParentBusListViewController" customModule="BusTransit_IOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3LO-i0-01c">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -256,7 +256,14 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <color key="barTintColor" red="1" green="0.81960784313725488" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
-                                    <navigationItem title="Welcome John" id="fQ7-ly-g7O"/>
+                                    <navigationItem title="Welcome John" id="fQ7-ly-g7O">
+                                        <barButtonItem key="rightBarButtonItem" title="Item" image="rectangle.portrait.and.arrow.right" catalog="system" id="cvR-HP-hx1">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="logout:" destination="evb-EO-7hg" id="ACM-We-AAY"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uao-3H-r0J">
@@ -268,7 +275,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="5KH-cM-284">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="5KH-cM-284">
                                         <rect key="frame" x="0.0" y="55" width="414" height="719"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </tableView>
@@ -300,6 +307,7 @@
                     <connections>
                         <outlet property="busListTableView" destination="5KH-cM-284" id="Nd3-yG-vnG"/>
                         <outlet property="navigationBarTitle" destination="fQ7-ly-g7O" id="5RE-pX-D40"/>
+                        <segue destination="j5F-99-lmV" kind="presentation" modalPresentationStyle="fullScreen" id="5Lg-vl-LOE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f5y-mO-qk1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -412,7 +420,7 @@
         <!--Notification List View Controller-->
         <scene sceneID="26m-hJ-Ueq">
             <objects>
-                <viewController storyboardIdentifier="VCNotificationList" id="N8Z-xt-msc" customClass="NotificationListViewController" customModule="BusTransit_IOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="N8Z-xt-msc" customClass="NotificationListViewController" customModule="BusTransit_IOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VD3-Bo-zub">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -588,6 +596,7 @@
     </scenes>
     <resources>
         <image name="person" width="313" height="314"/>
+        <image name="rectangle.portrait.and.arrow.right" catalog="system" width="128" height="108"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
