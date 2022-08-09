@@ -48,6 +48,7 @@
 		B63D10002879FCB400C92C6B /* SignUp_Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63D0FFF2879FCB400C92C6B /* SignUp_Controller.swift */; };
 		B63D1002287A001B00C92C6B /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63D1001287A001B00C92C6B /* UserModel.swift */; };
 		B63D1004287A0F2200C92C6B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63D1003287A0F2200C92C6B /* Constants.swift */; };
+		B6E04D4228A216BA0068BF30 /* Artwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E04D4128A216BA0068BF30 /* Artwork.swift */; };
 		DA42B8C1289449BA008E2FD1 /* DriverStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA42B8C0289449BA008E2FD1 /* DriverStoryboard.storyboard */; };
 		DA42B8C52896011C008E2FD1 /* DriverProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42B8C42896011C008E2FD1 /* DriverProfileController.swift */; };
 		DADB11D42897538D00171B17 /* ParentStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DADB11D32897538D00171B17 /* ParentStoryBoard.storyboard */; };
@@ -101,6 +102,7 @@
 		B63D0FFF2879FCB400C92C6B /* SignUp_Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp_Controller.swift; sourceTree = "<group>"; };
 		B63D1001287A001B00C92C6B /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		B63D1003287A0F2200C92C6B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B6E04D4128A216BA0068BF30 /* Artwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artwork.swift; sourceTree = "<group>"; };
 		DA42B8C0289449BA008E2FD1 /* DriverStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = DriverStoryboard.storyboard; path = Driver/DriverStoryboard.storyboard; sourceTree = SOURCE_ROOT; };
 		DA42B8C42896011C008E2FD1 /* DriverProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverProfileController.swift; sourceTree = "<group>"; };
 		DADB11D32897538D00171B17 /* ParentStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ParentStoryBoard.storyboard; path = BusTransit_IOS/Controller/Driver/ParentStoryBoard.storyboard; sourceTree = SOURCE_ROOT; };
@@ -192,6 +194,7 @@
 		B63D0FD228789C4400C92C6B /* BusTransit_IOS */ = {
 			isa = PBXGroup;
 			children = (
+				B6E04D4028A216A50068BF30 /* Map */,
 				B63D0FED2878A1D100C92C6B /* Utilities */,
 				B63D0FFC2879FA0600C92C6B /* Firebase */,
 				B63D0FFA2879F8D000C92C6B /* GoogleService-Info.plist */,
@@ -286,6 +289,14 @@
 				B63D0FFD2879FA1800C92C6B /* Firebase.swift */,
 			);
 			path = Firebase;
+			sourceTree = "<group>";
+		};
+		B6E04D4028A216A50068BF30 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				B6E04D4128A216BA0068BF30 /* Artwork.swift */,
+			);
+			path = Map;
 			sourceTree = "<group>";
 		};
 		CB3A4673D61A0F4252FF4497 /* Frameworks */ = {
@@ -468,6 +479,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B63D0FFE2879FA1800C92C6B /* Firebase.swift in Sources */,
+				B6E04D4228A216BA0068BF30 /* Artwork.swift in Sources */,
 				B63D0FF92878F13200C92C6B /* SignupViewController.swift in Sources */,
 				4DBF1B172885D6E80035FA5E /* AddBusViewController.swift in Sources */,
 				B54B6F5C2899E38300D3F88E /* NotificationListViewController.swift in Sources */,

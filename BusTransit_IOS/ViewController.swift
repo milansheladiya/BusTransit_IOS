@@ -77,6 +77,8 @@ class ViewController: UIViewController {
     func navigateToScreen(screenId: String){
         self.performSegue(withIdentifier: screenId, sender: self)
     }
+    
+    
     func loginWithFirebase(email: String , password: String){
         FirebaseUtil.signIn(email: email, pass: password) {
             [weak self] (success) in

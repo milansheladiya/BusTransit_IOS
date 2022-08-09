@@ -178,10 +178,10 @@
             </objects>
             <point key="canvasLocation" x="510" y="84"/>
         </scene>
-        <!--VCParentHome-->
+        <!--VCParentTabBar-->
         <scene sceneID="V2A-AX-j6g">
             <objects>
-                <viewControllerPlaceholder storyboardName="ParentStoryBoard" referencedIdentifier="VCParentHome" id="5yj-92-qo4" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="ParentStoryBoard" referencedIdentifier="VCParentTabBar" id="5yj-92-qo4" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="Nhg-qT-qEI"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F6d-l8-UhA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
