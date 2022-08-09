@@ -18,5 +18,6 @@ class Constants{
     static let DEFAULT_SCHOOL_ID = "no_school_id"
     static let INVALID_EMAIL_MSG = "wrong email format!"
     static let INVALID_PHONE_NO = "wrong phone number format! (514-134-1128)"
+    
 }
 

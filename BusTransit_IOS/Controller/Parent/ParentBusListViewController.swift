@@ -105,11 +105,13 @@ extension ParentBusListViewController: UITableViewDelegate,UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ParentBusList.BusListCollection.count
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ParentBusTableViewCell.identifier, for: indexPath) as! ParentBusTableViewCell
         cell.setup(bus: ParentBusList.BusListCollection[indexPath.row])
         return cell
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         busDetails = ParentBusList.BusListCollection[indexPath.row]
         self.performSegue(withIdentifier: "goToBusLocationDetails", sender: self)

@@ -96,6 +96,8 @@ class FirebaseUtil{
                 callback(querySnapshot!)
         }
     }
+    
+    
     func _readAllDocumentsWithField(_collection:String,_field:String, _value:String, callback: @escaping(QuerySnapshot) -> Void) {
             
         FirebaseUtil._db.collection(_collection).whereField(_field, isEqualTo: _value).getDocuments() { (querySnapshot, err) in
@@ -111,6 +113,24 @@ class FirebaseUtil{
             }
 
     }
+    
+    
+    func _readLiveDocumentsWithField(_collection:String,_doc_id:String, callback: @escaping(DocumentSnapshot) -> Void)
+    {
+        FirebaseUtil._db.collection("Bus").document("5klM2WfZ3BhvDxuzJs5s")
+            .addSnapshotListener { documentSnapshot, error in
+              guard let document = documentSnapshot else {
+                print("Error fetching Live document: \(error!)")
+                return
+              }
+                
+                callback(documentSnapshot!)
+            }
+
+    }
+    
+    
+    
     func _readAllDocuments(_collection:String, callback: @escaping(QuerySnapshot) -> Void) {
             
         FirebaseUtil._db.collection(_collection).getDocuments() { (querySnapshot, err) in
@@ -122,6 +142,9 @@ class FirebaseUtil{
             }
 
     }
+    
+    
+    
     static func _deleteDocumentWithId(_collection:String,_docId: String){
         
         _db.collection(_collection).document(_docId).delete() { err in

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="evb-EO-7hg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jUU-9A-guH">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Profile-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController storyboardIdentifier="VCParentProfile" id="Y6W-OH-hqX" sceneMemberID="viewController">
@@ -25,7 +25,7 @@
                                 </items>
                             </navigationBar>
                             <scrollView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7yf-Ay-glr">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="DYM-Lt-Sbv">
                                         <rect key="frame" x="32" y="115" width="350" height="542.5"/>
@@ -123,9 +123,6 @@
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <color key="titleShadowColor" systemColor="systemBackgroundColor"/>
                                                         </state>
-                                                        <connections>
-                                                            <action selector="tapSelectedGender:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="zhd-5h-iVZ"/>
-                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -151,9 +148,6 @@
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <color key="titleShadowColor" systemColor="systemYellowColor"/>
                                                         </state>
-                                                        <connections>
-                                                            <action selector="tapSelectUser:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="fdL-g8-Wzf"/>
-                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -174,9 +168,6 @@
                                                         <state key="normal" title="search your school">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
-                                                        <connections>
-                                                            <action selector="schoolSelection:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="UeU-7F-leC"/>
-                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -188,9 +179,6 @@
                                                 <state key="normal" title="Save">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
-                                                <connections>
-                                                    <action selector="SavePressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Gw1-UF-1fv"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -229,22 +217,13 @@
                             <constraint firstItem="7yf-Ay-glr" firstAttribute="top" secondItem="Ca2-K8-Yt8" secondAttribute="bottom" id="hI6-EV-fN7"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="btnAddress" destination="bcu-yW-dAL" id="svp-ji-DdK"/>
-                        <outlet property="btnGender" destination="Slc-c9-V5l" id="QBh-rb-j7x"/>
-                        <outlet property="btnSchool" destination="MnT-28-21k" id="0Po-lX-nos"/>
-                        <outlet property="btnSelectUser" destination="s04-U7-Q0N" id="d4w-Ml-XmI"/>
-                        <outlet property="imgPerson" destination="LMf-zH-jtj" id="Q0r-Ba-MEI"/>
-                        <outlet property="txtContact" destination="YDq-W0-MUX" id="FNy-iY-hRL"/>
-                        <outlet property="txtEmail" destination="0PT-fV-MFs" id="qxw-BQ-O0O"/>
-                        <outlet property="txtFullName" destination="Tva-Ou-OUJ" id="hUw-hi-oQX"/>
-                    </connections>
+                    <tabBarItem key="tabBarItem" title="Profile" image="person" catalog="system" id="suW-rF-7x4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1970" y="-337"/>
+            <point key="canvasLocation" x="-759" y="658"/>
         </scene>
-        <!--Parent Bus List View Controller-->
+        <!--Home-->
         <scene sceneID="xMC-Ln-aLI">
             <objects>
                 <viewController storyboardIdentifier="VCParentHome" id="evb-EO-7hg" customClass="ParentBusListViewController" customModule="BusTransit_IOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -267,7 +246,7 @@
                                 </items>
                             </navigationBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uao-3H-r0J">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="List of All Bus Of Your Kid's School" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SdQ-CT-rYd">
                                         <rect key="frame" x="0.0" y="16" width="414" height="29"/>
@@ -276,7 +255,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="5KH-cM-284">
-                                        <rect key="frame" x="0.0" y="55" width="414" height="719"/>
+                                        <rect key="frame" x="0.0" y="55" width="414" height="670"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </tableView>
                                 </subviews>
@@ -304,6 +283,7 @@
                             <constraint firstItem="XEJ-EJ-zhZ" firstAttribute="trailing" secondItem="uq8-B2-Ovt" secondAttribute="trailing" id="x6o-HO-4qn"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="Kaf-Dw-DK9"/>
                     <connections>
                         <outlet property="busListTableView" destination="5KH-cM-284" id="Nd3-yG-vnG"/>
                         <outlet property="navigationBarTitle" destination="fQ7-ly-g7O" id="5RE-pX-D40"/>
@@ -312,7 +292,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f5y-mO-qk1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-848" y="98"/>
+            <point key="canvasLocation" x="60.869565217391312" y="97.767857142857139"/>
         </scene>
         <!--Bus Location Details View Controller-->
         <scene sceneID="RU1-ah-K8d">
@@ -345,7 +325,18 @@
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GpU-Su-AO6">
                                 <rect key="frame" x="32" y="161" width="352.5" height="420"/>
+                                <subviews>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="z6N-X3-IJt">
+                                        <rect key="frame" x="0.0" y="0.0" width="352.5" height="420"/>
+                                    </mapView>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="z6N-X3-IJt" firstAttribute="leading" secondItem="GpU-Su-AO6" secondAttribute="leading" id="Cfe-a0-plF"/>
+                                    <constraint firstAttribute="bottom" secondItem="z6N-X3-IJt" secondAttribute="bottom" id="W2A-gG-ztW"/>
+                                    <constraint firstAttribute="trailing" secondItem="z6N-X3-IJt" secondAttribute="trailing" id="evh-bL-OYy"/>
+                                    <constraint firstItem="z6N-X3-IJt" firstAttribute="top" secondItem="GpU-Su-AO6" secondAttribute="top" id="qHI-xw-4al"/>
+                                </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Deq-yt-e8x">
                                 <rect key="frame" x="32" y="592" width="347.5" height="145"/>
@@ -424,14 +415,15 @@
                     </view>
                     <connections>
                         <outlet property="driverName" destination="E6T-2b-fqN" id="2WT-Fi-YHd"/>
+                        <outlet property="mapView" destination="z6N-X3-IJt" id="X7q-zr-tqv"/>
                         <segue destination="1JA-bX-Vbi" kind="presentation" identifier="goToDriverProfile" modalPresentationStyle="fullScreen" id="d9y-IX-ew0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z1m-Rp-fH0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="39" y="98"/>
+            <point key="canvasLocation" x="947.82608695652186" y="97.767857142857139"/>
         </scene>
-        <!--Notification List View Controller-->
+        <!--Alert-->
         <scene sceneID="26m-hJ-Ueq">
             <objects>
                 <viewController id="N8Z-xt-msc" customClass="NotificationListViewController" customModule="BusTransit_IOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -457,13 +449,14 @@
                         <viewLayoutGuide key="safeArea" id="yMW-0P-I8k"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Alert" image="bell" catalog="system" id="6cx-zp-iMV"/>
                     <connections>
                         <outlet property="notificationListView" destination="IhV-2w-6GI" id="aBR-F5-cbJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xpE-ay-Qg8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1678.2608695652175" y="364.95535714285711"/>
+            <point key="canvasLocation" x="-2391" y="302"/>
         </scene>
         <!--Driver Profile View Controller-->
         <scene sceneID="35Y-k6-c9H">
@@ -612,11 +605,36 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1KB-xi-1JV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="936" y="98"/>
+            <point key="canvasLocation" x="1844.9275362318842" y="97.767857142857139"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="oj4-zf-O3c">
+            <objects>
+                <tabBarController storyboardIdentifier="VCParentTabBar" automaticallyAdjustsScrollViewInsets="NO" id="jUU-9A-guH" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ulD-ld-ch4">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="N8Z-xt-msc" kind="relationship" relationship="viewControllers" id="Bis-de-w5m"/>
+                        <segue destination="evb-EO-7hg" kind="relationship" relationship="viewControllers" id="YKN-jS-gmw"/>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="viewControllers" id="0nT-xa-XPs"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Flr-JS-7n6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-988" y="-208"/>
         </scene>
     </scenes>
     <resources>
         <image name="arrow.backward" catalog="system" width="128" height="98"/>
+        <image name="bell" catalog="system" width="128" height="124"/>
+        <image name="house" catalog="system" width="128" height="106"/>
+        <image name="person" catalog="system" width="128" height="117"/>
         <image name="person" width="313" height="314"/>
         <image name="rectangle.portrait.and.arrow.right" catalog="system" width="128" height="108"/>
         <systemColor name="systemBackgroundColor">
