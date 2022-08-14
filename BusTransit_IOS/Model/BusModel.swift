@@ -25,4 +25,22 @@ struct Bus{
 
 class BusList{
     static var BusListCollection:[Bus] = []
+    
+    static func ObjectConvert(data: [String : Any])-> Bus
+    {
+        return Bus(bus_id: data["bus_id"] as? String ?? "bus_id",
+                   bus_number: data["bus_number"] as? Int ?? 110,
+                   active_sharing: data["active_sharing"] as? Bool ?? false,
+                   current_lat: data["current_lat"] as? String ?? "",
+                   current_long: data["current_long"] as? String ?? "",
+                   destination_lat: data["destination_lat"] as? String ?? "",
+                   destination_long: data["destination_long"] as? String ?? "",
+                   destination: data["destination"] as? String ?? "",
+                   going_to_school: data["going_to_school"] as? Bool ?? false,
+                   school_id: data["school_id"] as? String ?? "",
+                   source_lat: data["source_lat"] as? String ?? "",
+                   source_long: data["source_long"] as? String ?? "",
+                   source: data["source"] as? String ?? "")
+    }
+    
 }

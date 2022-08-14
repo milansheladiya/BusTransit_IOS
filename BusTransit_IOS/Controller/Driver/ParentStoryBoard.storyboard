@@ -398,24 +398,80 @@
                                     <constraint firstItem="93o-sf-wOD" firstAttribute="top" secondItem="Deq-yt-e8x" secondAttribute="top" constant="87" id="sLi-RI-WGO"/>
                                 </constraints>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="dMm-ug-kZz">
+                                <rect key="frame" x="32" y="747" width="348" height="54"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remaining Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vRZ-Do-DVU">
+                                        <rect key="frame" x="0.0" y="0.0" width="348" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="348" id="wDZ-FB-cKD"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12 km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X2y-Vr-HEH">
+                                        <rect key="frame" x="0.0" y="30" width="348" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="348" id="XfM-yj-p1M"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="glR-W8-m4p">
+                                <rect key="frame" x="32" y="809" width="348" height="56"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Driver Route Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Olb-11-kLR">
+                                        <rect key="frame" x="0.0" y="0.0" width="348" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="348" id="PI0-vR-19g"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Decarre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bF1-PR-sbt">
+                                        <rect key="frame" x="0.0" y="32" width="348" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="348" id="xN5-pM-kza"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Xsi-Dh-lx3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="GpU-Su-AO6" firstAttribute="top" secondItem="JF9-kr-DxG" secondAttribute="bottom" constant="15" id="2Uq-JW-ruI"/>
+                            <constraint firstItem="Xsi-Dh-lx3" firstAttribute="trailing" secondItem="dMm-ug-kZz" secondAttribute="trailing" constant="34" id="Kg0-ui-W6Y"/>
                             <constraint firstItem="Deq-yt-e8x" firstAttribute="leading" secondItem="JF9-kr-DxG" secondAttribute="leading" id="Ko3-iM-fbQ"/>
                             <constraint firstItem="Deq-yt-e8x" firstAttribute="leading" secondItem="GpU-Su-AO6" secondAttribute="leading" id="NlW-j2-fca"/>
+                            <constraint firstItem="dMm-ug-kZz" firstAttribute="leading" secondItem="Xsi-Dh-lx3" secondAttribute="leading" constant="32" id="PMt-YX-8iG"/>
                             <constraint firstItem="Deq-yt-e8x" firstAttribute="top" secondItem="GpU-Su-AO6" secondAttribute="bottom" constant="11" id="Tx6-Ic-oDX"/>
                             <constraint firstItem="Xsi-Dh-lx3" firstAttribute="bottom" secondItem="Deq-yt-e8x" secondAttribute="bottom" constant="125" id="UeB-P5-ecW"/>
+                            <constraint firstItem="dMm-ug-kZz" firstAttribute="top" secondItem="Deq-yt-e8x" secondAttribute="bottom" constant="10" id="aL7-Gm-0l7"/>
                             <constraint firstItem="GpU-Su-AO6" firstAttribute="top" secondItem="vlT-3q-KHQ" secondAttribute="top" constant="161" id="d7m-QP-o4o"/>
                             <constraint firstItem="Deq-yt-e8x" firstAttribute="leading" secondItem="Xsi-Dh-lx3" secondAttribute="leading" constant="32" id="dlS-oA-qfh"/>
+                            <constraint firstItem="glR-W8-m4p" firstAttribute="leading" secondItem="Xsi-Dh-lx3" secondAttribute="leading" constant="32" id="hNm-Ko-AOZ"/>
+                            <constraint firstItem="glR-W8-m4p" firstAttribute="top" secondItem="dMm-ug-kZz" secondAttribute="bottom" constant="8" id="mkM-s8-F9m"/>
                             <constraint firstItem="Xsi-Dh-lx3" firstAttribute="trailing" secondItem="GpU-Su-AO6" secondAttribute="trailing" constant="29.5" id="nFH-Vt-2l1"/>
                             <constraint firstItem="GpU-Su-AO6" firstAttribute="centerX" secondItem="JF9-kr-DxG" secondAttribute="centerX" id="uKw-MH-qKc"/>
+                            <constraint firstItem="Xsi-Dh-lx3" firstAttribute="trailing" secondItem="glR-W8-m4p" secondAttribute="trailing" constant="34" id="wxe-sT-NmX"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="EstimatedTime" destination="uvG-Ax-s8m" id="djC-13-uZD"/>
+                        <outlet property="RemainingDistance" destination="X2y-Vr-HEH" id="d7G-Qx-jeT"/>
+                        <outlet property="RouteName" destination="bF1-PR-sbt" id="Ejn-vN-Gwd"/>
                         <outlet property="driverName" destination="E6T-2b-fqN" id="2WT-Fi-YHd"/>
                         <outlet property="mapView" destination="z6N-X3-IJt" id="X7q-zr-tqv"/>
+                        <outlet property="titleInfo" destination="JF9-kr-DxG" id="5KS-i9-pm8"/>
                         <segue destination="1JA-bX-Vbi" kind="presentation" identifier="goToDriverProfile" modalPresentationStyle="fullScreen" id="d9y-IX-ew0"/>
                     </connections>
                 </viewController>
@@ -634,8 +690,8 @@
         <image name="arrow.backward" catalog="system" width="128" height="98"/>
         <image name="bell" catalog="system" width="128" height="124"/>
         <image name="house" catalog="system" width="128" height="106"/>
-        <image name="person" catalog="system" width="128" height="117"/>
         <image name="person" width="313" height="314"/>
+        <image name="person" catalog="system" width="128" height="117"/>
         <image name="rectangle.portrait.and.arrow.right" catalog="system" width="128" height="108"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
