@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import MapKit
 
 class Constants{
     
@@ -18,6 +19,12 @@ class Constants{
     static let DEFAULT_SCHOOL_ID = "no_school_id"
     static let INVALID_EMAIL_MSG = "wrong email format!"
     static let INVALID_PHONE_NO = "wrong phone number format! (514-134-1128)"
+    
+    static let tmpSource = CLLocationCoordinate2D(latitude: 45.49383382980044, longitude: -73.57925496874121)
+    static let tmpDestination = CLLocationCoordinate2D(latitude: 45.49383382980044, longitude: -73.57925496874121)
+    
+    static let SourceMaker:MKPlacemark = MKPlacemark(coordinate: tmpSource)
+    static let DestinationMaker:MKPlacemark = MKPlacemark(coordinate: tmpDestination)
     
 }
 

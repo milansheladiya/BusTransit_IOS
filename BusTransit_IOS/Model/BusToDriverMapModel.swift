@@ -9,8 +9,8 @@ import Foundation
 struct BusToDriverModel {
     var bus_id: String
     let bus_number: Int
-    let active_sharing: Bool
-    let current_lat: String
+    var active_sharing: Bool
+    var current_lat: String
     var current_long: String
     var destination_lat: String
     var destination_long: String
