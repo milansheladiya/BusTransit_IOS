@@ -35,6 +35,7 @@
 		B5F7977D289C80560089EBDE /* ParentBusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F7977B289C80560089EBDE /* ParentBusTableViewCell.swift */; };
 		B5F7977E289C80560089EBDE /* ParentBusTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5F7977C289C80560089EBDE /* ParentBusTableViewCell.xib */; };
 		B60A8E5328AAAB4F00B4F578 /* CustomTabBarControllerParent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60A8E5228AAAB4F00B4F578 /* CustomTabBarControllerParent.swift */; };
+		B60A8E5528AAC85100B4F578 /* UtilNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60A8E5428AAC85100B4F578 /* UtilNotification.swift */; };
 		B63D0FD428789C4400C92C6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63D0FD328789C4400C92C6B /* AppDelegate.swift */; };
 		B63D0FD628789C4400C92C6B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63D0FD528789C4400C92C6B /* SceneDelegate.swift */; };
 		B63D0FD828789C4400C92C6B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63D0FD728789C4400C92C6B /* ViewController.swift */; };
@@ -88,6 +89,7 @@
 		B5F7977B289C80560089EBDE /* ParentBusTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ParentBusTableViewCell.swift; path = Parent/Cell/ParentBusTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		B5F7977C289C80560089EBDE /* ParentBusTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ParentBusTableViewCell.xib; path = Parent/Cell/ParentBusTableViewCell.xib; sourceTree = SOURCE_ROOT; };
 		B60A8E5228AAAB4F00B4F578 /* CustomTabBarControllerParent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarControllerParent.swift; sourceTree = "<group>"; };
+		B60A8E5428AAC85100B4F578 /* UtilNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilNotification.swift; sourceTree = "<group>"; };
 		B63D0FD028789C4400C92C6B /* BusTransit_IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BusTransit_IOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B63D0FD328789C4400C92C6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B63D0FD528789C4400C92C6B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 			isa = PBXGroup;
 			children = (
 				B63D0FF02878A2CF00C92C6B /* UtilClass.swift */,
+				B60A8E5428AAC85100B4F578 /* UtilNotification.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -506,6 +509,7 @@
 				B63D0FF12878A2CF00C92C6B /* UtilClass.swift in Sources */,
 				B63D0FF52878D98900C92C6B /* LaunchScreenViewController.swift in Sources */,
 				4DAAE15D289096A100615053 /* AssignDriverViewController.swift in Sources */,
+				B60A8E5528AAC85100B4F578 /* UtilNotification.swift in Sources */,
 				4DF698322891D7040081F8CE /* DriverDetailsViewController.swift in Sources */,
 				4DBF1B132884D6970035FA5E /* AssignBusViewController.swift in Sources */,
 				4DBF1B0A2883172E0035FA5E /* SchoolModel.swift in Sources */,
@@ -677,6 +681,7 @@
 				EXCLUDED_ARCHS = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BusTransit_IOS/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Please allow use to find location";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = Main;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -710,6 +715,7 @@
 				EXCLUDED_ARCHS = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BusTransit_IOS/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Please allow use to find location";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = Main;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

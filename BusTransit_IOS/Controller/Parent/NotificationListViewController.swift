@@ -7,11 +7,13 @@
 
 import UIKit
 import Firebase
+import UserNotifications // for notification
 
 class NotificationListViewController: UIViewController, UITableViewDataSource,UITableViewDelegate
 {
     
     let fb = FirebaseUtil()
+    var isFirst:Bool = false
     
     @IBOutlet weak var notificationListView : UITableView!
     
@@ -87,6 +89,12 @@ class NotificationListViewController: UIViewController, UITableViewDataSource,UI
                 }
             self.notificationListView.reloadData()
             
+            if self.isFirst{
+//                self.TriggerNewNotification()
+                UtilNotification.TriggerNewNotification(_title: "Alert", _body: "check out the new Alert from bus of the school that you selected!")
+            }
+            
+            self.isFirst = true
         }
     }
     

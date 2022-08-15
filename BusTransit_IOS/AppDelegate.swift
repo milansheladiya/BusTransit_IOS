@@ -8,6 +8,7 @@
 import UIKit
 import FirebaseCore
 import GooglePlaces
+import UserNotifications
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,6 +21,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSPlacesClient.provideAPIKey("AIzaSyAgpLONoQLPhvXWh05qs8cCBdmZS9NDolw")
         
         FirebaseApp.configure()
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { granted, error in
+            if granted {
+                print("User gave permission for local local notification!")
+            }
+        }
+        
+        UIApplication.shared.setMinimumBackgroundFetchInterval(2)
         return true
     }
 
