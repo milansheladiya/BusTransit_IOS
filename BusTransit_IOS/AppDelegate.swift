@@ -28,7 +28,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         
-        UIApplication.shared.setMinimumBackgroundFetchInterval(2)
         return true
     }
 
