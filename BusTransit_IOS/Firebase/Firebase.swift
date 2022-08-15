@@ -143,6 +143,21 @@ class FirebaseUtil{
 
     }
     
+   
+    
+    func _readLiveDocuments(_collection:String,_field:String, _value:[String], callback: @escaping(QuerySnapshot) -> Void) {
+            
+        FirebaseUtil._db.collection(_collection).whereField(_field, in: _value).addSnapshotListener { (querySnapshot, err) in
+                if let err = err {
+                        print("Error getting documents: \(err)")
+                    }
+                callback(querySnapshot!)
+                
+            }
+    }
+    
+    
+    //----------------------------------
     
     
     static func _deleteDocumentWithId(_collection:String,_docId: String){

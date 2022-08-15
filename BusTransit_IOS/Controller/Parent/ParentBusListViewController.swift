@@ -40,6 +40,9 @@ class ParentBusListViewController: UIViewController {
                 let docSchoolId = document.data()["school_id"] as! String
                 schoolId.append(docSchoolId)
             }
+            
+            UserList.schoolId = schoolId
+            
             self.fb._readDocumentsWithMultipleFieldValues(_collection: "Bus", _field: "school_id", _value: schoolId) { QuerySnapshot in
                 for document in QuerySnapshot.documents{
                     let bus = Bus(
@@ -58,6 +61,8 @@ class ParentBusListViewController: UIViewController {
                         source: document.data()["source"] as! String)
                     busList.append(bus)
                 }
+                
+                ParentBusList.BusListCollection.removeAll()
                 
                 //Fetching driver for each bus
                 for busObj in busList{

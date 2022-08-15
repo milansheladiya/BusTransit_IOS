@@ -283,7 +283,7 @@
                             <constraint firstItem="XEJ-EJ-zhZ" firstAttribute="trailing" secondItem="uq8-B2-Ovt" secondAttribute="trailing" id="x6o-HO-4qn"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="Kaf-Dw-DK9"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="Home" image="house" catalog="system" id="Kaf-Dw-DK9"/>
                     <connections>
                         <outlet property="busListTableView" destination="5KH-cM-284" id="Nd3-yG-vnG"/>
                         <outlet property="navigationBarTitle" destination="fQ7-ly-g7O" id="5RE-pX-D40"/>
@@ -663,10 +663,10 @@
             </objects>
             <point key="canvasLocation" x="1844.9275362318842" y="97.767857142857139"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Custom Tab Bar Controller Parent-->
         <scene sceneID="oj4-zf-O3c">
             <objects>
-                <tabBarController storyboardIdentifier="VCParentTabBar" automaticallyAdjustsScrollViewInsets="NO" id="jUU-9A-guH" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="VCParentTabBar" automaticallyAdjustsScrollViewInsets="NO" id="jUU-9A-guH" customClass="CustomTabBarControllerParent" customModule="BusTransit_IOS" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ulD-ld-ch4">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -674,7 +674,20 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="selectedIndex">
+                                <integer key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="selectedIndex">
+                            <integer key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="initialIndex">
+                            <integer key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="N8Z-xt-msc" kind="relationship" relationship="viewControllers" id="Bis-de-w5m"/>
                         <segue destination="evb-EO-7hg" kind="relationship" relationship="viewControllers" id="YKN-jS-gmw"/>
