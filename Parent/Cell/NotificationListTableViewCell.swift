@@ -24,8 +24,8 @@ class NotificationListTableViewCell: UITableViewCell {
     }
 
     
-    func setUp(description: Notification){
-        notificationLbl.text = "Notification 10"
+    func setUp(description: Notification,index: Int){
+        notificationLbl.text = "Notification \(index+1)"
         timeLbl.text = UtilClass.getDate(date:description.timestamp)
         titleLbl.text = description.title
         descriptionLbl.text = description.message

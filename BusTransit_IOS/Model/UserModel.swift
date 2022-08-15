@@ -30,6 +30,8 @@ class UserList{
     
     
     static var GlobleUser:User = UserListCollection[0]
+    
+    static var schoolId:[String] = []
 }
 
 
