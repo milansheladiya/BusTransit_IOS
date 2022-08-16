@@ -53,6 +53,7 @@
 		B6E04D4228A216BA0068BF30 /* Artwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E04D4128A216BA0068BF30 /* Artwork.swift */; };
 		DA42B8C1289449BA008E2FD1 /* DriverStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA42B8C0289449BA008E2FD1 /* DriverStoryboard.storyboard */; };
 		DA42B8C52896011C008E2FD1 /* DriverProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42B8C42896011C008E2FD1 /* DriverProfileController.swift */; };
+		DAD355A128ABDB81000B374E /* ParentProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD355A028ABDB81000B374E /* ParentProfileViewController.swift */; };
 		DADB11D42897538D00171B17 /* ParentStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DADB11D32897538D00171B17 /* ParentStoryBoard.storyboard */; };
 		FB54ACC45033BBCFB6A039EE /* Pods_BusTransit_IOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9102DD997EADC548258612DF /* Pods_BusTransit_IOS.framework */; };
 /* End PBXBuildFile section */
@@ -109,6 +110,7 @@
 		B6E04D4128A216BA0068BF30 /* Artwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artwork.swift; sourceTree = "<group>"; };
 		DA42B8C0289449BA008E2FD1 /* DriverStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = DriverStoryboard.storyboard; path = Driver/DriverStoryboard.storyboard; sourceTree = SOURCE_ROOT; };
 		DA42B8C42896011C008E2FD1 /* DriverProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverProfileController.swift; sourceTree = "<group>"; };
+		DAD355A028ABDB81000B374E /* ParentProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentProfileViewController.swift; sourceTree = "<group>"; };
 		DADB11D32897538D00171B17 /* ParentStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ParentStoryBoard.storyboard; path = BusTransit_IOS/Controller/Driver/ParentStoryBoard.storyboard; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -329,6 +331,7 @@
 				4D04AE8028A15D4300DA14CB /* DriverProfileViewController.swift */,
 				4D04AE8228A16B3E00DA14CB /* BusLocationDetailsViewController.swift */,
 				B60A8E5228AAAB4F00B4F578 /* CustomTabBarControllerParent.swift */,
+				DAD355A028ABDB81000B374E /* ParentProfileViewController.swift */,
 			);
 			path = Parent;
 			sourceTree = "<group>";
@@ -502,6 +505,7 @@
 				B63D1004287A0F2200C92C6B /* Constants.swift in Sources */,
 				DA42B8C52896011C008E2FD1 /* DriverProfileController.swift in Sources */,
 				4DAAE15F2890B79500615053 /* Extensions.swift in Sources */,
+				DAD355A128ABDB81000B374E /* ParentProfileViewController.swift in Sources */,
 				B54B6F642899F4D500D3F88E /* NotificationModel.swift in Sources */,
 				4DBF1B0528830EE70035FA5E /* SchoolTableViewCell.swift in Sources */,
 				B5F7977A289C7F860089EBDE /* ParentBusListViewController.swift in Sources */,

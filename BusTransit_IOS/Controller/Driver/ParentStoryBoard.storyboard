@@ -11,7 +11,7 @@
         <!--Profile-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="VCParentProfile" id="Y6W-OH-hqX" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VCParentProfile" id="Y6W-OH-hqX" customClass="ParentProfileViewController" customModule="BusTransit_IOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -703,8 +703,8 @@
         <image name="arrow.backward" catalog="system" width="128" height="98"/>
         <image name="bell" catalog="system" width="128" height="124"/>
         <image name="house" catalog="system" width="128" height="106"/>
-        <image name="person" width="313" height="314"/>
         <image name="person" catalog="system" width="128" height="117"/>
+        <image name="person" width="313" height="314"/>
         <image name="rectangle.portrait.and.arrow.right" catalog="system" width="128" height="108"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
