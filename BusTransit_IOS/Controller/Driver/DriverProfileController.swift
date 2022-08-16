@@ -87,6 +87,7 @@ class  DriverProfileController:UIViewController,
                 self.txtContact.text = doc["phone_no"] as? String
                 self.lblAddress.text = doc["address"] as? String
                 self.btnGender.titleLabel?.text = doc["gender"] as? String
+                self.imgPerson.loadFrom(URLAddress: doc["photo_url"] as? String ?? "https://firebasestorage.googleapis.com/v0/b/bustracker-c52f5.appspot.com/o/Avatars%2FMultiavatar-0484b53368667a25c7.png?alt=media&token=8e76a404-c1c6-49af-8efe-119d4aab35ca")
             }
             else
             {
@@ -110,7 +111,7 @@ class  DriverProfileController:UIViewController,
             sender.setTitle(item, for: .normal) //9
             
         }
-        }
+    }
     
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
     {
@@ -185,9 +186,82 @@ class  DriverProfileController:UIViewController,
         
     }
     
+    
+    @IBAction func getCurrentPlace(_ sender: UIButton) {
+        
+        let autocompleteController = GMSAutocompleteViewController()
+        autocompleteController.delegate = self
+        
+        // Specify the place data types to return.
+        let fields: GMSPlaceField = GMSPlaceField(rawValue: UInt(GMSPlaceField.name.rawValue) |
+                                                  UInt(GMSPlaceField.placeID.rawValue))
+        autocompleteController.placeFields = fields
+        
+        // Specify a filter.
+        let filter = GMSAutocompleteFilter()
+        filter.type = .address
+        autocompleteController.autocompleteFilter = filter
+        
+        // Display the autocomplete view controller.
+        present(autocompleteController, animated: true, completion: nil)
+        
+    }
 
 }
 
+
+
+extension UIImageView {
+    func loadFrom(URLAddress: String) {
+        guard let url = URL(string: URLAddress) else {
+            return
+        }
+        
+        DispatchQueue.main.async { [weak self] in
+            if let imageData = try? Data(contentsOf: url) {
+                if let loadedImage = UIImage(data: imageData) {
+                        self?.image = loadedImage
+                }
+            }
+        }
+    }
+}
+
+
+extension DriverProfileController: GMSAutocompleteViewControllerDelegate {
+    
+    // Handle the user's selection.
+    func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
+        self.lblAddress.text = place.name
+//        self.btnAddress.setTitle(place.name, for: .normal)
+        print("Place lat: \(place.coordinate.latitude)")
+        print("Place long: \(place.coordinate.longitude)")
+        print("Place name: \(place.name)")
+        print("Place ID: \(place.placeID)")
+        print("Place attributions: \(place.attributions)")
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
+        // TODO: handle the error.
+        print("Error: ", error.localizedDescription)
+    }
+    
+    // User canceled the operation.
+    func wasCancelled(_ viewController: GMSAutocompleteViewController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    // Turn the network activity indicator on and off again.
+    func didRequestAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+    }
+    
+    func didUpdateAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+    }
+    
+}
 
 
 
