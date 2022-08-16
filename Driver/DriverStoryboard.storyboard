@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WHE-5A-2uo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HIo-rs-8Ri">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -52,7 +52,7 @@
             </objects>
             <point key="canvasLocation" x="34.782608695652179" y="78.348214285714278"/>
         </scene>
-        <!--Driver Home-->
+        <!--Item-->
         <scene sceneID="60I-nh-hX8">
             <objects>
                 <viewController storyboardIdentifier="VCDriverHome" id="WHE-5A-2uo" customClass="UIDriverHome" sceneMemberID="viewController">
@@ -79,28 +79,28 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Okx-9b-N2p">
-                                <rect key="frame" x="32" y="681" width="353" height="31"/>
+                                <rect key="frame" x="32" y="632" width="353" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Trip from School" cornerStyle="dynamic">
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aQD-AY-eCI">
-                                <rect key="frame" x="32" y="726" width="353" height="31"/>
+                                <rect key="frame" x="32" y="677" width="353" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Trip to Home">
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GfB-LY-s93">
-                                <rect key="frame" x="32" y="770" width="353" height="31"/>
+                                <rect key="frame" x="32" y="721" width="353" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Stop trip">
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uDW-pR-4G9">
-                                <rect key="frame" x="32" y="175" width="353" height="455"/>
+                                <rect key="frame" x="32" y="175" width="353" height="406"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                         </subviews>
@@ -128,12 +128,13 @@
                             <constraint firstAttribute="bottomMargin" secondItem="GfB-LY-s93" secondAttribute="bottom" constant="61" id="y7M-Is-Fcr"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" image="house" catalog="system" selectedImage="house.fill" id="cbd-Q9-FSE"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mqh-eY-ZV6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1137.68115942029" y="60.9375"/>
         </scene>
-        <!--Driver Notification-->
+        <!--Alert-->
         <scene sceneID="Ak4-9r-R1c">
             <objects>
                 <viewController storyboardIdentifier="DriverNotificationVC" id="eHd-Tp-CvG" customClass="UIDriverNotification" sceneMemberID="viewController">
@@ -180,14 +181,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Due to problem in bus engine, we need to repaire and it will take some time ." translatesAutoresizingMaskIntoConstraints="NO" id="Wwd-n3-YHF">
-                                <rect key="frame" x="42" y="411.5" width="321" height="261.5"/>
+                                <rect key="frame" x="42" y="411.5" width="321" height="212.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="icD-AW-rgq">
-                                <rect key="frame" x="85" y="723" width="244" height="38"/>
+                                <rect key="frame" x="85" y="674" width="244" height="38"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Send Message">
                                     <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="20"/>
@@ -224,12 +225,13 @@
                             <constraint firstItem="Wwd-n3-YHF" firstAttribute="top" secondItem="aaS-jF-W1q" secondAttribute="bottom" constant="22" id="zoT-Y9-ofU"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Alert" image="bell" catalog="system" selectedImage="bell.fill" id="Q00-nx-dee"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CJS-7R-7dJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2275.36231884058" y="99.776785714285708"/>
         </scene>
-        <!--Driver Profile Controller-->
+        <!--Item-->
         <scene sceneID="791-Fm-Dgv">
             <objects>
                 <viewController storyboardIdentifier="VCDriverProfile" id="ByA-I3-I46" customClass="DriverProfileController" customModule="BusTransit_IOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -245,7 +247,7 @@
                                 </items>
                             </navigationBar>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g5G-Li-c8S">
-                                <rect key="frame" x="0.0" y="89" width="414" height="773"/>
+                                <rect key="frame" x="0.0" y="89" width="414" height="724"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" semanticContentAttribute="spatial" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" translatesAutoresizingMaskIntoConstraints="NO" id="bMN-Bx-uzz">
                                         <rect key="frame" x="150" y="25" width="100" height="102"/>
@@ -309,16 +311,16 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="hGQ-YS-VcL" userLabel="Address Stack View">
-                                                <rect key="frame" x="0.0" y="284.5" width="350" height="36"/>
+                                                <rect key="frame" x="0.0" y="284.5" width="350" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tkd-VB-rML">
-                                                        <rect key="frame" x="0.0" y="0.0" width="111" height="36"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="111" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vrm-Fs-UcR">
-                                                        <rect key="frame" x="126" y="0.0" width="224" height="36"/>
+                                                        <rect key="frame" x="126" y="0.0" width="224" height="30"/>
                                                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -328,8 +330,20 @@
                                                     </button>
                                                 </subviews>
                                             </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current  :" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nLb-R7-uHl">
+                                                <rect key="frame" x="0.0" y="328.5" width="350" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="w8O-EE-8Cd"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="lek-ZE-feo">
+                                                <rect key="frame" x="0.0" y="402.5" width="350" height="42"/>
+                                            </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Cay-25-3fw" userLabel="Gender Stack View">
-                                                <rect key="frame" x="0.0" y="334.5" width="350" height="30"/>
+                                                <rect key="frame" x="0.0" y="458.5" width="350" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ape-QG-Rk8">
                                                         <rect key="frame" x="0.0" y="0.0" width="95.5" height="30"/>
@@ -352,58 +366,6 @@
                                                         </state>
                                                         <connections>
                                                             <action selector="tapSelectedGender:" destination="ByA-I3-I46" eventType="touchUpInside" id="86c-6m-eNN"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="tgP-q4-2rY" userLabel="User type Stack View">
-                                                <rect key="frame" x="0.0" y="378.5" width="350" height="30"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Type :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ClW-Ss-NkX">
-                                                        <rect key="frame" x="0.0" y="0.0" width="125.5" height="30"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4vn-Fo-NcL">
-                                                        <rect key="frame" x="129.5" y="0.0" width="220.5" height="30"/>
-                                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="30" id="cKZ-6B-G7s"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" title="Select User">
-                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <color key="titleShadowColor" systemColor="systemYellowColor"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="tapSelectUser:" destination="ByA-I3-I46" eventType="touchUpInside" id="USx-xO-1bn"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="lek-ZE-feo">
-                                                <rect key="frame" x="0.0" y="422.5" width="350" height="66"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your School" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xTc-tV-b8H">
-                                                        <rect key="frame" x="0.0" y="0.0" width="350" height="30"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qk9-Py-B7e">
-                                                        <rect key="frame" x="0.0" y="30" width="350" height="36"/>
-                                                        <color key="backgroundColor" red="1" green="0.81960784310000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
-                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" title="search your school">
-                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="SavePressed:" destination="ByA-I3-I46" eventType="touchUpInside" id="46r-qh-fC0"/>
-                                                            <action selector="schoolSelection:" destination="ByA-I3-I46" eventType="touchUpInside" id="uIN-DM-SR7"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -450,12 +412,12 @@
                             <constraint firstItem="5p4-jm-4ij" firstAttribute="trailing" secondItem="g5G-Li-c8S" secondAttribute="trailing" id="olZ-al-ZH2"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" image="person" catalog="system" selectedImage="person.fill" id="KPF-Nk-CJf"/>
                     <connections>
                         <outlet property="btnAddress" destination="Vrm-Fs-UcR" id="xHm-0B-YEN"/>
                         <outlet property="btnGender" destination="9w6-t5-f4W" id="i0N-Ob-ypU"/>
-                        <outlet property="btnSchool" destination="Qk9-Py-B7e" id="GMU-7U-9x2"/>
-                        <outlet property="btnSelectUser" destination="4vn-Fo-NcL" id="acp-i2-o5n"/>
                         <outlet property="imgPerson" destination="bMN-Bx-uzz" id="prg-rr-cey"/>
+                        <outlet property="lblAddress" destination="nLb-R7-uHl" id="rB5-6t-N2P"/>
                         <outlet property="txtContact" destination="iBc-jy-nD1" id="Th4-Pp-yic"/>
                         <outlet property="txtEmail" destination="c9i-14-VQi" id="zdh-bF-RSj"/>
                         <outlet property="txtFullName" destination="led-M6-Nh6" id="xcl-OH-Mif"/>
@@ -465,11 +427,41 @@
             </objects>
             <point key="canvasLocation" x="3339.130434782609" y="227.67857142857142"/>
         </scene>
+        <!--Custom Tab Bar Controller Parent-->
+        <scene sceneID="UWT-fi-hlZ">
+            <objects>
+                <tabBarController storyboardIdentifier="VCDriverTabBar" id="HIo-rs-8Ri" customClass="CustomTabBarControllerParent" customModule="BusTransit_IOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WvT-5N-EgE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="initialIndex">
+                            <integer key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <segue destination="eHd-Tp-CvG" kind="relationship" relationship="viewControllers" id="b6f-kM-gmB"/>
+                        <segue destination="WHE-5A-2uo" kind="relationship" relationship="viewControllers" id="Gtf-fe-4mg"/>
+                        <segue destination="ByA-I3-I46" kind="relationship" relationship="viewControllers" id="tZm-4B-dpv"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FUZ-d6-pTR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2183" y="-660"/>
+        </scene>
     </scenes>
     <color key="tintColor" systemColor="systemYellowColor"/>
     <resources>
+        <image name="bell" catalog="system" width="128" height="124"/>
+        <image name="bell.fill" catalog="system" width="128" height="124"/>
         <image name="busIcon" width="172" height="164"/>
+        <image name="house" catalog="system" width="128" height="106"/>
+        <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="person" width="313" height="314"/>
+        <image name="person" catalog="system" width="128" height="117"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

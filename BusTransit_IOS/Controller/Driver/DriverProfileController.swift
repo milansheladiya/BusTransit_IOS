@@ -10,7 +10,8 @@ import DropDown
 import GooglePlaces
 
 
-class  DriverProfileController:UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate
+class  DriverProfileController:UIViewController,
+                               UIImagePickerControllerDelegate,UINavigationControllerDelegate
 
 {
    let dropDown = DropDown()
@@ -18,6 +19,7 @@ class  DriverProfileController:UIViewController,UIImagePickerControllerDelegate,
    let dropDownSchool = DropDown()
     
    let dropDownGender = DropDown()
+    let fb = FirebaseUtil()
    
     @IBOutlet weak var imgPerson: UIImageView!
     
@@ -28,9 +30,8 @@ class  DriverProfileController:UIViewController,UIImagePickerControllerDelegate,
     @IBOutlet weak var txtContact: UITextField!
     @IBOutlet weak var btnAddress:UIButton!
     @IBOutlet weak var btnGender:UIButton!
-    @IBOutlet weak var btnSelectUser: UIButton!
-    @IBOutlet weak var btnSchool: UIButton!
-   
+    @IBOutlet weak var lblAddress: UILabel!
+    
     
    // var imgURL:String = "https://firebasestorage.googleapis.com/v0/b/kitchenanywhere-84ad5.appspot.com/o/splashMainLogo.png?alt=media&token=693ad5fe-45d4-4db4-975e-40026a249530"
     
@@ -53,8 +54,10 @@ class  DriverProfileController:UIViewController,UIImagePickerControllerDelegate,
         
         placeClient = GMSPlacesClient.shared()
         
+        txtEmail.isEnabled = false
+        
         //Do any additional setup after loading the view
-    
+        loadDriverDetails()
     }
     
     func setBorder(){
@@ -70,10 +73,31 @@ class  DriverProfileController:UIViewController,UIImagePickerControllerDelegate,
          
         btnAddress.layer.cornerRadius = 10
         btnGender.layer.cornerRadius = 10
-        btnSelectUser.layer.cornerRadius = 10
         
-        btnSchool.layer.cornerRadius = 10
+        
     }
+    
+    func loadDriverDetails()
+    {
+        fb._readSingleDocument(_collection: "User", _document: UserList.GlobleUser.user_id) { DocumentSnapshot in
+            
+            if let doc = DocumentSnapshot.data() {
+                self.txtEmail.text = doc["email_id"] as? String
+                self.txtFullName.text = doc["fullName"] as? String
+                self.txtContact.text = doc["phone_no"] as? String
+                self.lblAddress.text = doc["address"] as? String
+                self.btnGender.titleLabel?.text = doc["gender"] as? String
+            }
+            else
+            {
+                UtilClass._Alert(self, "Error", "Something wrong in fetching Driver Data")
+            }
+            
+               
+            
+        }
+    }
+    
     
     @IBAction func tapSelectedGender(_ sender: UIButton) {
         
@@ -128,31 +152,6 @@ class  DriverProfileController:UIViewController,UIImagePickerControllerDelegate,
         
     }*/
 
-    @IBAction func tapSelectUser(_ sender: UIButton) {
-        
-        dropDown.dataSource = ["Driver", "Parent"]//4
-        dropDown.anchorView = sender //5
-        dropDown.bottomOffset = CGPoint(x: 0, y: sender.frame.size.height) //6
-        dropDown.show() //7
-        dropDown.selectionAction = { [weak self] (index: Int, item: String) in //8
-            guard let _ = self else { return }
-            sender.setTitle(item, for: .normal) //9
-        }
-        
-        
-    }
-    @IBAction func schoolSelection(_ sender: UIButton) {
-        
-        dropDown.dataSource = Schools//4
-        dropDown.anchorView = sender //5
-        dropDown.bottomOffset = CGPoint(x: 0, y: sender.frame.size.height) //6
-        dropDown.show() //7
-        dropDown.selectionAction = { [weak self] (index: Int, item: String) in //8
-            guard let _ = self else { return }
-            sender.setTitle(item, for: .normal) //9
-        }
-        
-    }
     
     @IBAction func SavePressed(_ sender: UIButton) {
         
