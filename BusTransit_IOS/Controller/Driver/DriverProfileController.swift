@@ -8,7 +8,7 @@
 import UIKit
 import DropDown
 import GooglePlaces
-
+import FirebaseStorage
 
 class  DriverProfileController:UIViewController,
                                UIImagePickerControllerDelegate,UINavigationControllerDelegate
@@ -33,10 +33,10 @@ class  DriverProfileController:UIViewController,
     @IBOutlet weak var lblAddress: UILabel!
     
     
-   // var imgURL:String = "https://firebasestorage.googleapis.com/v0/b/kitchenanywhere-84ad5.appspot.com/o/splashMainLogo.png?alt=media&token=693ad5fe-45d4-4db4-975e-40026a249530"
+    var imgURL:String = "https://firebasestorage.googleapis.com/v0/b/kitchenanywhere-84ad5.appspot.com/o/splashMainLogo.png?alt=media&token=693ad5fe-45d4-4db4-975e-40026a249530"
     
     
-    let Schools = ["Gajera School","MAria International","Bitter Success school","Mtl school"];
+    var isPhotoChanged:Bool = false
     
     //api address
     
@@ -79,24 +79,34 @@ class  DriverProfileController:UIViewController,
     
     func loadDriverDetails()
     {
-        fb._readSingleDocument(_collection: "User", _document: UserList.GlobleUser.user_id) { DocumentSnapshot in
-            
-            if let doc = DocumentSnapshot.data() {
-                self.txtEmail.text = doc["email_id"] as? String
-                self.txtFullName.text = doc["fullName"] as? String
-                self.txtContact.text = doc["phone_no"] as? String
-                self.lblAddress.text = doc["address"] as? String
-                self.btnGender.titleLabel?.text = doc["gender"] as? String
-                self.imgPerson.loadFrom(URLAddress: doc["photo_url"] as? String ?? "https://firebasestorage.googleapis.com/v0/b/bustracker-c52f5.appspot.com/o/Avatars%2FMultiavatar-0484b53368667a25c7.png?alt=media&token=8e76a404-c1c6-49af-8efe-119d4aab35ca")
-            }
-            else
-            {
-                UtilClass._Alert(self, "Error", "Something wrong in fetching Driver Data")
-            }
-            
-               
-            
-        }
+        
+        self.txtEmail.text = UserList.GlobleUser.email_id
+        self.txtFullName.text = UserList.GlobleUser.fullName
+        self.txtContact.text = UserList.GlobleUser.phone_no
+        self.lblAddress.text = UserList.GlobleUser.address
+        self.btnGender.titleLabel?.text = UserList.GlobleUser.gender
+        self.imgURL = UserList.GlobleUser.photo_url
+        self.imgPerson.loadFrom(URLAddress: self.imgURL)
+        
+//        fb._readSingleDocument(_collection: "User", _document: UserList.GlobleUser.user_id) { DocumentSnapshot in
+//            
+//            if let doc = DocumentSnapshot.data() {
+//                self.txtEmail.text = doc["email_id"] as? String
+//                self.txtFullName.text = doc["fullName"] as? String
+//                self.txtContact.text = doc["phone_no"] as? String
+//                self.lblAddress.text = doc["address"] as? String
+//                self.btnGender.titleLabel?.text = doc["gender"] as? String
+//                self.imgURL = doc["photo_url"] as? String ?? self.imgURL
+//                self.imgPerson.loadFrom(URLAddress: self.imgURL)
+//            }
+//            else
+//            {
+//                UtilClass._Alert(self, "Error", "Something wrong in fetching Driver Data")
+//            }
+//            
+//               
+//            
+//        }
     }
     
     
@@ -133,25 +143,33 @@ class  DriverProfileController:UIViewController,
     
     //--------------------upload images---------------------
     
-    /*func UploadImage(fileUrl: URL)
+    func UploadImage(fileUrl: URL)
     {
         do{
             let fileExtension = fileUrl.pathExtension
             let storageref = Storage.storage().reference()
             let imagenode = storageref.child("\(UUID().uuidString).\(fileExtension)")
             
-            imagenode.putFile(from: fileUrl, metadata: nil){
-            (storageMetaData, error) in
+            imagenode.putFile(from: fileUrl, metadata: nil){(storageMetaData, error) in
                 
                 if let error = error {
-                    print("upload error: \(error.localizedDescription)")
+                    print("Upload error: \(error.localizedDescription)")
                     return
-                    
                 }
-                self.imgURL = url!.absoluteString
+                // Show UIAlertController here
+                
+                imagenode.downloadURL { (url, error) in
+                    if let error = error  {
+                        print("Error on getting download url: \(error.localizedDescription)")
+                        return
+                    }
+                    self.imgURL = url!.absoluteString
+                    self.isPhotoChanged = true
+                }
             }
+        }
         
-    }*/
+    }
 
     
     @IBAction func SavePressed(_ sender: UIButton) {
@@ -173,15 +191,27 @@ class  DriverProfileController:UIViewController,
                 UtilClass._Alert(self, "Error in saving data", "Wrong phone number formate! (514-xxx-xxxx)")
                 return
             }
-            if(btnAddress.currentTitle == "search here"){
+            if(lblAddress.text == ""){
                 UtilClass._Alert(self,"Error in saving data", "please find the valid address")
                 return
             }
-           /* if(imgURL == "")
-            {
-                UtilClass._Alert(self, "Error in saving data", "Please select image by tap on image")
-                return
-            }*/
+            
+            UserList.GlobleUser.fullName = txtFullName.text!
+            UserList.GlobleUser.phone_no = txtContact.text!
+            UserList.GlobleUser.address = lblAddress.text!
+            UserList.GlobleUser.gender = btnGender.currentTitle ?? "Male"
+            UserList.GlobleUser.photo_url = self.imgURL
+            
+            
+            FirebaseUtil._updateExistingFieldInDocumentWithId(_collection: "User", _docId: UserList.GlobleUser.user_id, _data:
+                ["fullName":UserList.GlobleUser.fullName,
+                 "phone_no":UserList.GlobleUser.phone_no,
+                 "address":UserList.GlobleUser.address,
+                 "gender":UserList.GlobleUser.gender,
+                 "photo_url":UserList.GlobleUser.photo_url])
+            
+            UtilClass._Alert(self,"Success", "Data saved")
+            
         }
         
     }
@@ -191,17 +221,17 @@ class  DriverProfileController:UIViewController,
         
         let autocompleteController = GMSAutocompleteViewController()
         autocompleteController.delegate = self
-        
+
         // Specify the place data types to return.
         let fields: GMSPlaceField = GMSPlaceField(rawValue: UInt(GMSPlaceField.name.rawValue) |
                                                   UInt(GMSPlaceField.placeID.rawValue))
         autocompleteController.placeFields = fields
-        
+
         // Specify a filter.
         let filter = GMSAutocompleteFilter()
         filter.type = .address
         autocompleteController.autocompleteFilter = filter
-        
+
         // Display the autocomplete view controller.
         present(autocompleteController, animated: true, completion: nil)
         
@@ -234,6 +264,7 @@ extension DriverProfileController: GMSAutocompleteViewControllerDelegate {
     func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
         self.lblAddress.text = place.name
 //        self.btnAddress.setTitle(place.name, for: .normal)
+        
         print("Place lat: \(place.coordinate.latitude)")
         print("Place long: \(place.coordinate.longitude)")
         print("Place name: \(place.name)")
