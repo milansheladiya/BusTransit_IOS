@@ -327,6 +327,9 @@
                                                         <state key="normal" title="Search here">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="getCurrentPlace:" destination="ByA-I3-I46" eventType="touchUpInside" id="AL0-uM-XgP"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
