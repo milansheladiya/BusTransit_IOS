@@ -30,6 +30,9 @@ class SchoolList{
         School(school_id: "1", address: "Montreal", email_id: "abc", name: "Concordia", phone_no: "423-233-2333", lat: "202.222", long:"202.22")
     
     ]
+    
+    static var CurrentSchool = School(school_id: "", address: "", email_id: "", name: "", phone_no: "", lat: "", long: "")
+    
 }
 
 
