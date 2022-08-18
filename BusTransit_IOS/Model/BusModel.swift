@@ -26,6 +26,8 @@ struct Bus{
 class BusList{
     static var BusListCollection:[Bus] = []
     
+    static var CurrentBus:Bus = Bus(bus_id: "", bus_number: 1, active_sharing: false, current_lat: "", current_long: "", destination_lat: "", destination_long: "", destination: "", going_to_school: false, school_id: "", source_lat: "", source_long: "", source: "")
+    
     static func ObjectConvert(data: [String : Any])-> Bus
     {
         return Bus(bus_id: data["bus_id"] as? String ?? "bus_id",

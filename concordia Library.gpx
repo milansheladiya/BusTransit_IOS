@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.topografix.com/GPX/1/1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" version="1.1" creator="Open GPX Tracker for iOS">
+	<wpt lat="45.4967571853438" lon="-73.5779037592455">
+		<ele>52.88529968261719</ele>
+		<time>2022-07-27T21:44:42Z</time>
+		<name>5:44:42 PM</name>
+		<desc>Jul 27, 2022 at 5:44:42 PM</desc>
+	</wpt>
+	<trk>
+		<trkseg>
+			<trkpt lat="45.4967571853438" lon="-73.5779037592455">
+				<ele>52.88529968261719</ele>
+				<time>2022-07-27T21:44:36Z</time>
+			</trkpt>
+		</trkseg>
+	</trk>
+</gpx>

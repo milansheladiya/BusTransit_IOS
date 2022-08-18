@@ -70,6 +70,7 @@ class AssignBusViewController: UIViewController {
         }
 
     }
+    
     @IBAction func backHandler(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true,completion: nil)
     }
@@ -122,6 +123,24 @@ class AssignBusViewController: UIViewController {
             self.busCountLbl.text = "Bus Section("+String(BusList.BusListCollection.count) + ")"
         }
     }
+    
+    
+    @IBAction func deleteSchool(_ sender: UIButton)
+    {
+        fb._readAllDocumentsWithField(_collection: "Bus", _field: "school_id", _value: SchoolList.CurrentSchool.school_id) { QuerySnapshot in
+            
+            if(QuerySnapshot.count > 0)
+            {
+                UtilClass._Alert(self, "Attention", "Inorder to delete school you need to delete all Buses!")
+                return
+            }
+            
+            FirebaseUtil._deleteDocumentWithId(_collection: "School", _docId: SchoolList.CurrentSchool.school_id)
+            self.dismiss(animated: true)
+            
+        }
+    }
+    
     
 }
 extension AssignBusViewController: UITableViewDelegate,UITableViewDataSource {

@@ -593,6 +593,9 @@
                                         <state key="normal" title="Delete School">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="deleteSchool:" destination="Q6k-Wp-WXY" eventType="touchUpInside" id="7fz-nB-udT"/>
+                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kS9-eR-XMo">
                                         <rect key="frame" x="16" y="87.5" width="382" height="242"/>

@@ -40,13 +40,18 @@ class SchoolListViewController: UIViewController,UITableViewDataSource,UITableVi
         searchController.searchBar.delegate = self
         navigationItem.hidesSearchBarWhenScrolling = false
 
-        
+        SchoolList.SchoolListCollection.removeAll()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        print("----------------------- preivous")
         loadData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToAssignBus"{
             let destinationVC = segue.destination as! AssignBusViewController
+            SchoolList.CurrentSchool = school!
             destinationVC.name = school?.name ?? ""
             destinationVC.address = school?.address ?? ""
             destinationVC.email = school?.email_id ?? ""
