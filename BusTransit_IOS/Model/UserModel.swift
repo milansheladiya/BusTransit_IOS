@@ -19,7 +19,7 @@ struct User{
     var user_long: String
     var photo_url: String
     let user_type: String
-    let school_id: [String]
+    var school_id: [String]
 }
 
 class UserList{
