@@ -134,10 +134,10 @@ class  DriverProfileController:UIViewController,
         let img = info[.originalImage] as! UIImage
         
         self.imgPerson.image = img
-        _ = info[UIImagePickerController.InfoKey.imageURL] as! URL
+        let imageURL = info[UIImagePickerController.InfoKey.imageURL] as! URL
         //
         
-      //  UploadImage(fileUrl: imageURL)
+        UploadImage(fileUrl: imageURL)
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -241,7 +241,8 @@ class  DriverProfileController:UIViewController,
 
 
 
-extension UIImageView {
+extension UIImageView
+{
     func loadFrom(URLAddress: String) {
         guard let url = URL(string: URLAddress) else {
             return

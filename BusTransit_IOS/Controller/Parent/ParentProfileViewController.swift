@@ -59,13 +59,7 @@ class ParentProfileViewController: UIViewController, UIImagePickerControllerDele
         loadParentDetails()
     }
     
-    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
-    {
-        imagePicker.delegate = self
-        imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
-        self.present(imagePicker, animated: true, completion: nil)
-        
-    }
+   
     
     func setBorder(){
         
@@ -91,7 +85,7 @@ class ParentProfileViewController: UIViewController, UIImagePickerControllerDele
                self.txtAddress.text = UserList.GlobleUser.address
                self.btnGender.titleLabel?.text = UserList.GlobleUser.gender
                self.imgURL = UserList.GlobleUser.photo_url
-               self.imgPerson.loadFrom(URLAddress: self.imgURL)
+               self.imgPerson.loadFromDB(URLAddress: self.imgURL)
     }
 
     
@@ -106,14 +100,23 @@ class ParentProfileViewController: UIViewController, UIImagePickerControllerDele
          }
     }
     
+    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
+    {
+        imagePicker.delegate = self
+        imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
+        self.present(imagePicker, animated: true, completion: nil)
+        
+    }
+    
     
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let img = info[.originalImage] as! UIImage
         
         self.imgPerson.image = img
-        _ = info[UIImagePickerController.InfoKey.imageURL] as! URL
+        let imageURL = info[UIImagePickerController.InfoKey.imageURL] as! URL
         
+        UploadImage(fileUrl: imageURL)
         self.dismiss(animated: true,completion: nil)
     }
  
@@ -220,8 +223,9 @@ class ParentProfileViewController: UIViewController, UIImagePickerControllerDele
 
 
 
-    extension UIImageView {
-        func loadFrom(URLAddress: String) {
+    extension UIImageView
+{
+        func loadFromDB(URLAddress: String) {
             guard let url = URL(string: URLAddress) else {
                 return
             }

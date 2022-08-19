@@ -680,8 +680,8 @@
         <image name="arrow.backward" catalog="system" width="128" height="98"/>
         <image name="bell" catalog="system" width="128" height="124"/>
         <image name="house" catalog="system" width="128" height="106"/>
-        <image name="person" catalog="system" width="128" height="117"/>
         <image name="person" width="313" height="314"/>
+        <image name="person" catalog="system" width="128" height="117"/>
         <image name="rectangle.portrait.and.arrow.right" catalog="system" width="128" height="108"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
