@@ -15,6 +15,8 @@ class DriverProfileViewController: UIViewController {
     @IBOutlet weak var addressLbl: UILabel!
     @IBOutlet weak var genderLbl: UILabel!
     @IBOutlet weak var driverProfileImage: UIImageView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
