@@ -10,6 +10,7 @@
 		4D04AE7F28A048DF00DA14CB /* BusToDriverMapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D04AE7E28A048DF00DA14CB /* BusToDriverMapModel.swift */; };
 		4D04AE8128A15D4300DA14CB /* DriverProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D04AE8028A15D4300DA14CB /* DriverProfileViewController.swift */; };
 		4D04AE8328A16B3E00DA14CB /* BusLocationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D04AE8228A16B3E00DA14CB /* BusLocationDetailsViewController.swift */; };
+		4D464C8428B94D620007D439 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D464C8328B94D620007D439 /* GoogleService-Info.plist */; };
 		4DAAE15A2890917B00615053 /* DriverTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAAE1582890917B00615053 /* DriverTableViewCell.swift */; };
 		4DAAE15B2890917B00615053 /* DriverTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DAAE1592890917B00615053 /* DriverTableViewCell.xib */; };
 		4DAAE15D289096A100615053 /* AssignDriverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAAE15C289096A100615053 /* AssignDriverViewController.swift */; };
@@ -47,7 +48,6 @@
 		B63D0FF12878A2CF00C92C6B /* UtilClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63D0FF02878A2CF00C92C6B /* UtilClass.swift */; };
 		B63D0FF52878D98900C92C6B /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63D0FF42878D98900C92C6B /* LaunchScreenViewController.swift */; };
 		B63D0FF92878F13200C92C6B /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63D0FF82878F13200C92C6B /* SignupViewController.swift */; };
-		B63D0FFB2879F8D000C92C6B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B63D0FFA2879F8D000C92C6B /* GoogleService-Info.plist */; };
 		B63D0FFE2879FA1800C92C6B /* Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63D0FFD2879FA1800C92C6B /* Firebase.swift */; };
 		B63D10002879FCB400C92C6B /* SignUp_Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63D0FFF2879FCB400C92C6B /* SignUp_Controller.swift */; };
 		B63D1002287A001B00C92C6B /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63D1001287A001B00C92C6B /* UserModel.swift */; };
@@ -66,6 +66,8 @@
 		4D04AE7E28A048DF00DA14CB /* BusToDriverMapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusToDriverMapModel.swift; sourceTree = "<group>"; };
 		4D04AE8028A15D4300DA14CB /* DriverProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverProfileViewController.swift; sourceTree = "<group>"; };
 		4D04AE8228A16B3E00DA14CB /* BusLocationDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusLocationDetailsViewController.swift; sourceTree = "<group>"; };
+		4D464C8228B940DA0007D439 /* BusTransit_IOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BusTransit_IOS.entitlements; sourceTree = "<group>"; };
+		4D464C8328B94D620007D439 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4DAAE1582890917B00615053 /* DriverTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DriverTableViewCell.swift; path = BusTransit_IOS/Controller/Admin/Cell/DriverTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		4DAAE1592890917B00615053 /* DriverTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = DriverTableViewCell.xib; path = Admin/Cell/DriverTableViewCell.xib; sourceTree = SOURCE_ROOT; };
 		4DAAE15C289096A100615053 /* AssignDriverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignDriverViewController.swift; sourceTree = "<group>"; };
@@ -106,7 +108,6 @@
 		B63D0FF02878A2CF00C92C6B /* UtilClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilClass.swift; sourceTree = "<group>"; };
 		B63D0FF42878D98900C92C6B /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
 		B63D0FF82878F13200C92C6B /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
-		B63D0FFA2879F8D000C92C6B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B63D0FFD2879FA1800C92C6B /* Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase.swift; sourceTree = "<group>"; };
 		B63D0FFF2879FCB400C92C6B /* SignUp_Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp_Controller.swift; sourceTree = "<group>"; };
 		B63D1001287A001B00C92C6B /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -204,10 +205,11 @@
 		B63D0FD228789C4400C92C6B /* BusTransit_IOS */ = {
 			isa = PBXGroup;
 			children = (
+				4D464C8228B940DA0007D439 /* BusTransit_IOS.entitlements */,
 				B6E04D4028A216A50068BF30 /* Map */,
 				B63D0FED2878A1D100C92C6B /* Utilities */,
 				B63D0FFC2879FA0600C92C6B /* Firebase */,
-				B63D0FFA2879F8D000C92C6B /* GoogleService-Info.plist */,
+				4D464C8328B94D620007D439 /* GoogleService-Info.plist */,
 				B63D0FEC2878A0EE00C92C6B /* Controller */,
 				B63D0FEB2878A0E000C92C6B /* Model */,
 				B63D0FE72878A0A700C92C6B /* View */,
@@ -412,12 +414,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D464C8428B94D620007D439 /* GoogleService-Info.plist in Resources */,
 				B63D0FE028789C4400C92C6B /* LaunchScreen.storyboard in Resources */,
 				4DBF1B0628830EE70035FA5E /* SchoolTableViewCell.xib in Resources */,
 				B5F7977E289C80560089EBDE /* ParentBusTableViewCell.xib in Resources */,
 				4DB925812882049700CD6F26 /* Admin.storyboard in Resources */,
 				DADB11D42897538D00171B17 /* ParentStoryBoard.storyboard in Resources */,
-				B63D0FFB2879F8D000C92C6B /* GoogleService-Info.plist in Resources */,
 				4DBF1B112884D0780035FA5E /* BusListTableViewCell.xib in Resources */,
 				B63D0FDD28789C4400C92C6B /* Assets.xcassets in Resources */,
 				B63D0FDB28789C4400C92C6B /* Main.storyboard in Resources */,
@@ -687,9 +689,11 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = BusTransit_IOS/BusTransit_IOS.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 63RB3M778L;
+				DEVELOPMENT_TEAM = "";
 				EXCLUDED_ARCHS = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BusTransit_IOS/Info.plist;
@@ -708,6 +712,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.MicronStar.BusTransit-IOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -721,9 +726,11 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = BusTransit_IOS/BusTransit_IOS.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 63RB3M778L;
+				DEVELOPMENT_TEAM = "";
 				EXCLUDED_ARCHS = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BusTransit_IOS/Info.plist;
@@ -743,6 +750,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.MicronStar.BusTransit-IOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
