@@ -11,15 +11,15 @@ struct User{
     var user_id: String
     let bus_id: String
     let email_id: String
-    let fullName: String
-    let gender: String
-    let phone_no: String
-    let address: String
-    let user_lat: String
-    let user_long: String
-    let photo_url: String
+    var fullName: String
+    var gender: String
+    var phone_no: String
+    var address: String
+    var user_lat: String
+    var user_long: String
+    var photo_url: String
     let user_type: String
-    let school_id: [String]
+    var school_id: [String]
 }
 
 class UserList{

@@ -198,10 +198,10 @@
             </objects>
             <point key="canvasLocation" x="509" y="563"/>
         </scene>
-        <!--VCDriverHome-->
+        <!--VCDriverTabBar-->
         <scene sceneID="JEA-m4-MGi">
             <objects>
-                <viewControllerPlaceholder storyboardName="DriverStoryboard" referencedIdentifier="VCDriverHome" id="h8U-x3-uIq" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="DriverStoryboard" referencedIdentifier="VCDriverTabBar" id="h8U-x3-uIq" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6rN-6B-odz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="794" y="561"/>

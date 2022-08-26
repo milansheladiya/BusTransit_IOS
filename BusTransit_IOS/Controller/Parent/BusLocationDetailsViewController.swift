@@ -47,7 +47,7 @@ class BusLocationDetailsViewController: UIViewController {
         CurrentLocation = CLLocationCoordinate2D(
             latitude: (busDetails!.destination_lat as NSString).doubleValue,
             longitude: (busDetails!.destination_long as NSString).doubleValue)
-        setMarkerLocation(LiveLocation: CurrentLocation, Title: "Destination", Subtitle: busDetails?.source ?? "Null")
+        setMarkerLocation(LiveLocation: CurrentLocation, Title: "Destination", Subtitle: busDetails?.destination ?? "Null")
         
         getLiveData()
         

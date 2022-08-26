@@ -35,6 +35,8 @@
 		B5F7977A289C7F860089EBDE /* ParentBusListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F79779289C7F860089EBDE /* ParentBusListViewController.swift */; };
 		B5F7977D289C80560089EBDE /* ParentBusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F7977B289C80560089EBDE /* ParentBusTableViewCell.swift */; };
 		B5F7977E289C80560089EBDE /* ParentBusTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5F7977C289C80560089EBDE /* ParentBusTableViewCell.xib */; };
+		B605B17A28AC19A600FA1BE2 /* DriverHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B605B17928AC19A600FA1BE2 /* DriverHomeViewController.swift */; };
+		B605B17C28AD5C6B00FA1BE2 /* SendNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B605B17B28AD5C6B00FA1BE2 /* SendNotificationViewController.swift */; };
 		B60A8E5328AAAB4F00B4F578 /* CustomTabBarControllerParent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60A8E5228AAAB4F00B4F578 /* CustomTabBarControllerParent.swift */; };
 		B60A8E5528AAC85100B4F578 /* UtilNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60A8E5428AAC85100B4F578 /* UtilNotification.swift */; };
 		B63D0FD428789C4400C92C6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63D0FD328789C4400C92C6B /* AppDelegate.swift */; };
@@ -53,6 +55,7 @@
 		B6E04D4228A216BA0068BF30 /* Artwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E04D4128A216BA0068BF30 /* Artwork.swift */; };
 		DA42B8C1289449BA008E2FD1 /* DriverStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA42B8C0289449BA008E2FD1 /* DriverStoryboard.storyboard */; };
 		DA42B8C52896011C008E2FD1 /* DriverProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42B8C42896011C008E2FD1 /* DriverProfileController.swift */; };
+		DAD355A128ABDB81000B374E /* ParentProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD355A028ABDB81000B374E /* ParentProfileViewController.swift */; };
 		DADB11D42897538D00171B17 /* ParentStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DADB11D32897538D00171B17 /* ParentStoryBoard.storyboard */; };
 		FB54ACC45033BBCFB6A039EE /* Pods_BusTransit_IOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9102DD997EADC548258612DF /* Pods_BusTransit_IOS.framework */; };
 /* End PBXBuildFile section */
@@ -90,6 +93,8 @@
 		B5F79779289C7F860089EBDE /* ParentBusListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentBusListViewController.swift; sourceTree = "<group>"; };
 		B5F7977B289C80560089EBDE /* ParentBusTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ParentBusTableViewCell.swift; path = Parent/Cell/ParentBusTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		B5F7977C289C80560089EBDE /* ParentBusTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ParentBusTableViewCell.xib; path = Parent/Cell/ParentBusTableViewCell.xib; sourceTree = SOURCE_ROOT; };
+		B605B17928AC19A600FA1BE2 /* DriverHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverHomeViewController.swift; sourceTree = "<group>"; };
+		B605B17B28AD5C6B00FA1BE2 /* SendNotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendNotificationViewController.swift; sourceTree = "<group>"; };
 		B60A8E5228AAAB4F00B4F578 /* CustomTabBarControllerParent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarControllerParent.swift; sourceTree = "<group>"; };
 		B60A8E5428AAC85100B4F578 /* UtilNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilNotification.swift; sourceTree = "<group>"; };
 		B63D0FD028789C4400C92C6B /* BusTransit_IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BusTransit_IOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,6 +115,7 @@
 		B6E04D4128A216BA0068BF30 /* Artwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artwork.swift; sourceTree = "<group>"; };
 		DA42B8C0289449BA008E2FD1 /* DriverStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = DriverStoryboard.storyboard; path = Driver/DriverStoryboard.storyboard; sourceTree = SOURCE_ROOT; };
 		DA42B8C42896011C008E2FD1 /* DriverProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverProfileController.swift; sourceTree = "<group>"; };
+		DAD355A028ABDB81000B374E /* ParentProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentProfileViewController.swift; sourceTree = "<group>"; };
 		DADB11D32897538D00171B17 /* ParentStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ParentStoryBoard.storyboard; path = BusTransit_IOS/Controller/Driver/ParentStoryBoard.storyboard; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -318,6 +324,8 @@
 			isa = PBXGroup;
 			children = (
 				DA42B8C42896011C008E2FD1 /* DriverProfileController.swift */,
+				B605B17928AC19A600FA1BE2 /* DriverHomeViewController.swift */,
+				B605B17B28AD5C6B00FA1BE2 /* SendNotificationViewController.swift */,
 			);
 			path = Driver;
 			sourceTree = "<group>";
@@ -331,6 +339,7 @@
 				4D04AE8028A15D4300DA14CB /* DriverProfileViewController.swift */,
 				4D04AE8228A16B3E00DA14CB /* BusLocationDetailsViewController.swift */,
 				B60A8E5228AAAB4F00B4F578 /* CustomTabBarControllerParent.swift */,
+				DAD355A028ABDB81000B374E /* ParentProfileViewController.swift */,
 			);
 			path = Parent;
 			sourceTree = "<group>";
@@ -499,11 +508,13 @@
 				B60A8E5328AAAB4F00B4F578 /* CustomTabBarControllerParent.swift in Sources */,
 				4D04AE8328A16B3E00DA14CB /* BusLocationDetailsViewController.swift in Sources */,
 				4D04AE7F28A048DF00DA14CB /* BusToDriverMapModel.swift in Sources */,
+				B605B17A28AC19A600FA1BE2 /* DriverHomeViewController.swift in Sources */,
 				B63D0FD428789C4400C92C6B /* AppDelegate.swift in Sources */,
 				4DBF1B1528858F430035FA5E /* BusModel.swift in Sources */,
 				B63D1004287A0F2200C92C6B /* Constants.swift in Sources */,
 				DA42B8C52896011C008E2FD1 /* DriverProfileController.swift in Sources */,
 				4DAAE15F2890B79500615053 /* Extensions.swift in Sources */,
+				DAD355A128ABDB81000B374E /* ParentProfileViewController.swift in Sources */,
 				B54B6F642899F4D500D3F88E /* NotificationModel.swift in Sources */,
 				4DBF1B0528830EE70035FA5E /* SchoolTableViewCell.swift in Sources */,
 				B5F7977A289C7F860089EBDE /* ParentBusListViewController.swift in Sources */,
@@ -519,6 +530,7 @@
 				B63D1002287A001B00C92C6B /* UserModel.swift in Sources */,
 				B5F7977D289C80560089EBDE /* ParentBusTableViewCell.swift in Sources */,
 				B63D0FD628789C4400C92C6B /* SceneDelegate.swift in Sources */,
+				B605B17C28AD5C6B00FA1BE2 /* SendNotificationViewController.swift in Sources */,
 				4DBF1B102884D0780035FA5E /* BusListTableViewCell.swift in Sources */,
 				4DBF1B0D288347810035FA5E /* AddSchoolViewController.swift in Sources */,
 			);
