@@ -45,8 +45,8 @@ class BusLocationDetailsViewController: UIViewController {
         
         
         CurrentLocation = CLLocationCoordinate2D(
-            latitude: (busDetails!.destination_lat as NSString).doubleValue,
-            longitude: (busDetails!.destination_long as NSString).doubleValue)
+            latitude: (UserList.GlobleUser.user_lat as NSString).doubleValue,
+            longitude: (UserList.GlobleUser.user_long as NSString).doubleValue)
         setMarkerLocation(LiveLocation: CurrentLocation, Title: "Destination", Subtitle: busDetails?.destination ?? "Null")
         
         getLiveData()
@@ -93,8 +93,8 @@ class BusLocationDetailsViewController: UIViewController {
                 else
                 {
                     self.destinationPlacemark = MKPlacemark(coordinate: CLLocationCoordinate2D(
-                        latitude: (tmpBus.destination_lat as NSString).doubleValue,
-                        longitude: (tmpBus.destination_long as NSString).doubleValue))
+                        latitude: (UserList.GlobleUser.user_lat as NSString).doubleValue,
+                        longitude: (UserList.GlobleUser.user_long as NSString).doubleValue))
                     self.titleInfo.text = "Your kid is Coming to school"
                 }
                 

@@ -51,7 +51,7 @@
          </BuildableReference>
       </BuildableProductRunnable>
       <LocationScenarioReference
-         identifier = "../concordia Library.gpx"
+         identifier = "../Appartment Milano.gpx"
          referenceType = "0">
       </LocationScenarioReference>
    </LaunchAction>

@@ -83,7 +83,7 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are on trip From school" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ef3-yp-7Eg">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Trip is offline!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ef3-yp-7Eg">
                                 <rect key="frame" x="23" y="103" width="363" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="6jv-vr-bUW"/>
@@ -95,11 +95,11 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Okx-9b-N2p">
                                 <rect key="frame" x="32" y="632" width="353" height="31"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Trip from School" cornerStyle="dynamic">
+                                <buttonConfiguration key="configuration" style="filled" title="Trip to School" cornerStyle="dynamic">
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="TripFromSchool:" destination="WHE-5A-2uo" eventType="touchUpInside" id="EuG-b3-aJp"/>
+                                    <action selector="TripToSchool:" destination="WHE-5A-2uo" eventType="touchUpInside" id="oau-s3-7Tf"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aQD-AY-eCI">
@@ -109,7 +109,7 @@
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="TripToSchool:" destination="WHE-5A-2uo" eventType="touchUpInside" id="n5m-hY-h80"/>
+                                    <action selector="TripFromSchool:" destination="WHE-5A-2uo" eventType="touchUpInside" id="Dp4-mc-Noc"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GfB-LY-s93">
@@ -168,6 +168,7 @@
                         <outlet property="btnTripStop" destination="GfB-LY-s93" id="Awy-am-O3c"/>
                         <outlet property="btnTripToSchool" destination="aQD-AY-eCI" id="oBS-Ci-7z4"/>
                         <outlet property="mapView" destination="rTP-1i-Fv8" id="MP5-lX-LkQ"/>
+                        <outlet property="txtTitle" destination="ef3-yp-7Eg" id="1MF-jT-CiE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mqh-eY-ZV6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

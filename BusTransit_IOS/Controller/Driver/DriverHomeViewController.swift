@@ -22,6 +22,9 @@ class DriverHomeViewController: UIViewController {
     @IBOutlet weak var btnTripStop: UIButton!
     @IBOutlet weak var mapView: MKMapView!
     
+    @IBOutlet weak var txtTitle: UILabel!
+    
+    
     var sourcePlacemark:MKPlacemark = Constants.SourceMaker
     var destinationPlacemark:MKPlacemark = Constants.DestinationMaker
     
@@ -31,6 +34,7 @@ class DriverHomeViewController: UIViewController {
         super.viewDidLoad()
         initSetup()
         getBusDetails()
+        mapView.delegate = self
     }
     
     func initSetup()
@@ -78,6 +82,12 @@ class DriverHomeViewController: UIViewController {
             self.checkPermission()
             self.locationSetup()
             
+            
+            if !(BusList.CurrentBus.active_sharing)
+            {
+                
+            }
+            
             //set marker
             self.CurrentLocation = CLLocationCoordinate2D(
                 latitude: (BusList.CurrentBus.source_lat as NSString).doubleValue,
@@ -109,7 +119,14 @@ class DriverHomeViewController: UIViewController {
         btnTripFromSchool.setTitleColor(.red, for: .normal)
         btnTripToSchool.setTitleColor(.black, for: .normal)
         btnTripStop.isEnabled = true
-        FirebaseUtil._updateExistingFieldInDocumentWithId(_collection: "Bus", _docId: UserList.GlobleUser.bus_id, _data: ["active_sharing":true])
+        FirebaseUtil._updateExistingFieldInDocumentWithId(_collection: "Bus", _docId: UserList.GlobleUser.bus_id, _data: ["active_sharing":true,"going_to_school":false])
+        
+        self.destinationPlacemark = MKPlacemark(coordinate: CLLocationCoordinate2D(
+            latitude: (BusList.CurrentBus.destination_lat as NSString).doubleValue,
+            longitude: (BusList.CurrentBus.destination_long as NSString).doubleValue))
+        self.txtTitle.text = "Your are on trip to Home"
+        
+        setDirectionLine()
         
         locationManager.startUpdatingLocation()
     }
@@ -124,6 +141,13 @@ class DriverHomeViewController: UIViewController {
         
         FirebaseUtil._updateExistingFieldInDocumentWithId(_collection: "Bus", _docId: UserList.GlobleUser.bus_id, _data: ["active_sharing":true,"going_to_school":true])
         
+        self.destinationPlacemark = MKPlacemark(coordinate: CLLocationCoordinate2D(
+            latitude: (BusList.CurrentBus.source_lat as NSString).doubleValue,
+            longitude: (BusList.CurrentBus.source_long as NSString).doubleValue))
+        self.txtTitle.text = "Your are on trip to School"
+        
+        setDirectionLine()
+        
         locationManager.startUpdatingLocation()
         
     }
@@ -137,6 +161,10 @@ class DriverHomeViewController: UIViewController {
         btnTripStop.isEnabled = false
         
         FirebaseUtil._updateExistingFieldInDocumentWithId(_collection: "Bus", _docId: UserList.GlobleUser.bus_id, _data: ["active_sharing":false,"going_to_school":false])
+        
+        self.txtTitle.text = "Your Trip is offline!"
+        
+        self.mapView.removeOverlays(self.mapView.overlays)
         
         locationManager.stopUpdatingLocation()
         
@@ -219,7 +247,17 @@ class DriverHomeViewController: UIViewController {
         
             self.mapView.removeOverlays(self.mapView.overlays)
             
-            let route = response.routes[0]
+            var route = response.routes[0]
+            for tmpRoute in response.routes
+            {
+                if tmpRoute.distance < route.distance
+                {
+                    route = tmpRoute
+                }
+                    
+            }
+            
+           
             self.mapView.addOverlay((route.polyline), level: MKOverlayLevel.aboveRoads)
            
             let rect = route.polyline.boundingMapRect
