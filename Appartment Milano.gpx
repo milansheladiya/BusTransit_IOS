@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.topografix.com/GPX/1/1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" version="1.1" creator="Open GPX Tracker for iOS">
+	<wpt lat="45.48977662367269" lon="-73.62351683528742">
+		<ele>96.52033233642578</ele>
+		<time>2022-08-27T22:29:12Z</time>
+		<name>6:29:12 PM</name>
+		<desc>Aug 27, 2022 at 6:29:12 PM</desc>
+	</wpt>
+	<trk>
+	</trk>
+</gpx>

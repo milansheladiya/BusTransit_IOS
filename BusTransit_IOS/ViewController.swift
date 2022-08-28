@@ -85,7 +85,7 @@ class ViewController: UIViewController {
 //            return
 //        }
         
-        if emailFromUI == "admin" && passwordFromUI == "admin"
+        if emailFromUI == "admin@gmail.com" && passwordFromUI == "Admin@123"
         {
             print("Call")
             self.performSegue(withIdentifier: "goToAdmin", sender: self)

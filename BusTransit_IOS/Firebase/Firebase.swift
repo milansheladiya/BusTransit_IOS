@@ -91,7 +91,7 @@ class FirebaseUtil{
     
     //------------------------- read document ------------------------
     
-    func _readSingleDocument(_collection:String,_document:String, callback: @escaping(DocumentSnapshot) -> Void) {
+     func _readSingleDocument(_collection:String,_document:String, callback: @escaping(DocumentSnapshot) -> Void) {
             
         FirebaseUtil._db.collection(_collection).document(_document).getDocument() { (document, err) in
                 if let err = err {
