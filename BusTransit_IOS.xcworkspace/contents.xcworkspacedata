@@ -2,12 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Appartment Milano.gpx">
-   </FileRef>
-   <FileRef
-      location = "group:../../../../Downloads/concordia Library.gpx">
-   </FileRef>
-   <FileRef
       location = "group:BusTransit_IOS.xcodeproj">
    </FileRef>
    <FileRef

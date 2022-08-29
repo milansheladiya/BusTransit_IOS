@@ -96,7 +96,7 @@ class UtilClass
         let newUser = ["user_id":obj.user_id,
                        "bus_id":obj.bus_id,
                        "email_id":obj.email_id,
-                       "fullnName":obj.fullName,
+                       "fullName":obj.fullName,
                        "gender":obj.gender,
                        "phone_no":obj.phone_no,
                        "address":obj.address,

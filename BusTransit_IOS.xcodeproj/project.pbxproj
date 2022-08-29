@@ -11,6 +11,7 @@
 		4D04AE8128A15D4300DA14CB /* DriverProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D04AE8028A15D4300DA14CB /* DriverProfileViewController.swift */; };
 		4D04AE8328A16B3E00DA14CB /* BusLocationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D04AE8228A16B3E00DA14CB /* BusLocationDetailsViewController.swift */; };
 		4D464C8428B94D620007D439 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D464C8328B94D620007D439 /* GoogleService-Info.plist */; };
+		4D9A332328BC34A100E781C5 /* NoBusAssignedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9A332228BC34A100E781C5 /* NoBusAssignedViewController.swift */; };
 		4DAAE15A2890917B00615053 /* DriverTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAAE1582890917B00615053 /* DriverTableViewCell.swift */; };
 		4DAAE15B2890917B00615053 /* DriverTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DAAE1592890917B00615053 /* DriverTableViewCell.xib */; };
 		4DAAE15D289096A100615053 /* AssignDriverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAAE15C289096A100615053 /* AssignDriverViewController.swift */; };
@@ -68,6 +69,7 @@
 		4D04AE8228A16B3E00DA14CB /* BusLocationDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusLocationDetailsViewController.swift; sourceTree = "<group>"; };
 		4D464C8228B940DA0007D439 /* BusTransit_IOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BusTransit_IOS.entitlements; sourceTree = "<group>"; };
 		4D464C8328B94D620007D439 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4D9A332228BC34A100E781C5 /* NoBusAssignedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoBusAssignedViewController.swift; sourceTree = "<group>"; };
 		4DAAE1582890917B00615053 /* DriverTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DriverTableViewCell.swift; path = BusTransit_IOS/Controller/Admin/Cell/DriverTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		4DAAE1592890917B00615053 /* DriverTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = DriverTableViewCell.xib; path = Admin/Cell/DriverTableViewCell.xib; sourceTree = SOURCE_ROOT; };
 		4DAAE15C289096A100615053 /* AssignDriverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignDriverViewController.swift; sourceTree = "<group>"; };
@@ -326,6 +328,7 @@
 				DA42B8C42896011C008E2FD1 /* DriverProfileController.swift */,
 				B605B17928AC19A600FA1BE2 /* DriverHomeViewController.swift */,
 				B605B17B28AD5C6B00FA1BE2 /* SendNotificationViewController.swift */,
+				4D9A332228BC34A100E781C5 /* NoBusAssignedViewController.swift */,
 			);
 			path = Driver;
 			sourceTree = "<group>";
@@ -514,6 +517,7 @@
 				B63D1004287A0F2200C92C6B /* Constants.swift in Sources */,
 				DA42B8C52896011C008E2FD1 /* DriverProfileController.swift in Sources */,
 				4DAAE15F2890B79500615053 /* Extensions.swift in Sources */,
+				4D9A332328BC34A100E781C5 /* NoBusAssignedViewController.swift in Sources */,
 				DAD355A128ABDB81000B374E /* ParentProfileViewController.swift in Sources */,
 				B54B6F642899F4D500D3F88E /* NotificationModel.swift in Sources */,
 				4DBF1B0528830EE70035FA5E /* SchoolTableViewCell.swift in Sources */,

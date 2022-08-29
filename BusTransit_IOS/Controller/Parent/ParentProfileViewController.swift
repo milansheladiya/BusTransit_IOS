@@ -207,7 +207,10 @@ class ParentProfileViewController: UIViewController, UIImagePickerControllerDele
 
       // Specify the place data types to return.
       let fields: GMSPlaceField = GMSPlaceField(rawValue: UInt(GMSPlaceField.name.rawValue) |
-                                                UInt(GMSPlaceField.placeID.rawValue))
+                                                UInt(GMSPlaceField.placeID.rawValue) |
+                                                UInt(GMSPlaceField.coordinate.rawValue) |
+                                                            GMSPlaceField.addressComponents.rawValue |
+                                                            GMSPlaceField.formattedAddress.rawValue)
       autocompleteController.placeFields = fields
 
       // Specify a filter.

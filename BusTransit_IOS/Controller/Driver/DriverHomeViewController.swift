@@ -21,6 +21,7 @@ class DriverHomeViewController: UIViewController {
     @IBOutlet weak var btnTripToSchool: UIButton!
     @IBOutlet weak var btnTripStop: UIButton!
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var navigationBarTitle: UINavigationItem!
     
     @IBOutlet weak var txtTitle: UILabel!
     
@@ -35,6 +36,7 @@ class DriverHomeViewController: UIViewController {
         initSetup()
         getBusDetails()
         mapView.delegate = self
+        navigationBarTitle.title = UserList.GlobleUser.fullName
     }
     
     func initSetup()

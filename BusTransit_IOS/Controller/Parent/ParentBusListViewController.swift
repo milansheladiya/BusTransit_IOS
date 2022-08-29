@@ -19,6 +19,8 @@ class ParentBusListViewController: UIViewController {
         busListTableView.register(UINib(nibName: ParentBusTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: ParentBusTableViewCell.identifier)
         busListTableView.dataSource = self
         busListTableView.delegate = self
+    }
+    override func viewWillAppear(_ animated: Bool) {
         loadData()
     }
     @IBAction func logout(_ sender: UIBarButtonItem) {

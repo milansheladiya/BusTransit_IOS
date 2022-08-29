@@ -48,7 +48,8 @@ class SignupViewController: UIViewController,UIImagePickerControllerDelegate,UIN
     //address place api
     
     private var placesClient: GMSPlacesClient!
-    
+    var latitude = ""
+    var longitude = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -164,7 +165,7 @@ class SignupViewController: UIViewController,UIImagePickerControllerDelegate,UIN
     
     @IBAction func tapSelectUser(_ sender: UIButton) {
         
-        dropDown.dataSource = ["Driver", "Parent"]//4
+        dropDown.dataSource = ["DRIVER", "PARENT"]//4
         dropDown.anchorView = sender //5
         dropDown.bottomOffset = CGPoint(x: 0, y: sender.frame.size.height) //6
         dropDown.show() //7
@@ -242,7 +243,7 @@ class SignupViewController: UIViewController,UIImagePickerControllerDelegate,UIN
         
         // collect information
         
-        UserList.GlobleUser = User(user_id: "", bus_id: "", email_id: txtEmail.text!, fullName: txtFullname.text!, gender: btnGender.titleLabel!.text!, phone_no: txtContact.text!, address: btnAddress.currentTitle ?? "Search here", user_lat: "2202.22", user_long: "2.2222", photo_url: imgURL, user_type: btnSelectUser.titleLabel!.text!, school_id: [])
+        UserList.GlobleUser = User(user_id: "", bus_id: "", email_id: txtEmail.text!, fullName: txtFullname.text!, gender: btnGender.titleLabel!.text!, phone_no: txtContact.text!, address: btnAddress.currentTitle ?? "Search here", user_lat: latitude, user_long: longitude, photo_url: imgURL, user_type: btnSelectUser.titleLabel!.text!, school_id: [])
         
         FirebaseUtil.createUser(newUser: UserList.GlobleUser, password: txtPassword.text!) { (uid) in
             if (uid == "") {
@@ -266,8 +267,9 @@ class SignupViewController: UIViewController,UIImagePickerControllerDelegate,UIN
                 {
                     UtilClass._Alert(self, "Success", "Now, you are regiested!")
                 }
-                
+                self.CleanForm()
             }
+            
         }
         
 
@@ -294,7 +296,7 @@ class SignupViewController: UIViewController,UIImagePickerControllerDelegate,UIN
         txtRePassword.text = "123456"
         
         btnGender.setTitle("Male", for: .normal)
-        btnSelectUser.setTitle("Driver", for: .normal)
+        btnSelectUser.setTitle("DRIVER", for: .normal)
         btnSchool.setTitle("School", for: .normal)
         
     }
@@ -314,7 +316,10 @@ class SignupViewController: UIViewController,UIImagePickerControllerDelegate,UIN
         
         // Specify the place data types to return.
         let fields: GMSPlaceField = GMSPlaceField(rawValue: UInt(GMSPlaceField.name.rawValue) |
-                                                  UInt(GMSPlaceField.placeID.rawValue))
+                                                  UInt(GMSPlaceField.placeID.rawValue) |
+                                                  UInt(GMSPlaceField.coordinate.rawValue) |
+                                                              GMSPlaceField.addressComponents.rawValue |
+                                                              GMSPlaceField.formattedAddress.rawValue)
         autocompleteController.placeFields = fields
         
         // Specify a filter.
@@ -335,6 +340,8 @@ extension SignupViewController: GMSAutocompleteViewControllerDelegate {
     // Handle the user's selection.
     func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
         btnAddress.setTitle(place.name, for: .normal)
+        latitude = String(format: "%f", place.coordinate.latitude)
+        longitude = String(format: "%f", place.coordinate.longitude)
         print("Place lat: \(place.coordinate.latitude)")
         print("Place long: \(place.coordinate.longitude)")
         print("Place name: \(place.name)")

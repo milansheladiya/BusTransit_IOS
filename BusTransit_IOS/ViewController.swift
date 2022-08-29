@@ -85,7 +85,7 @@ class ViewController: UIViewController {
 //            return
 //        }
         
-        if emailFromUI == "admin@gmail.com" && passwordFromUI == "Admin@123"
+        if emailFromUI == "admin" && passwordFromUI == "admin"
         {
             print("Call")
             self.performSegue(withIdentifier: "goToAdmin", sender: self)
@@ -131,7 +131,9 @@ class ViewController: UIViewController {
                         photo_url: doc.get("photo_url") as! String,
                         user_type: doc.get("user_type") as! String,
                         school_id: doc.get("school_id") as! [String])
-                    if(userType == Constants.DRIVER){
+                    if(userType == Constants.DRIVER && UserList.GlobleUser.bus_id == ""){
+                        self?.navigateToScreen(screenId: "goToNoBus")
+                    }else if(userType == Constants.DRIVER){
                         self?.navigateToScreen(screenId: "goToDriver")
                     }else{
                         self?.navigateToScreen(screenId: "goToParent")
